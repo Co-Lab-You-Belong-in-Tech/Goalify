@@ -1,3 +1,7 @@
 :root {
   --mainColor: #415472;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
