@@ -38,10 +38,21 @@ const goalSlice = createSlice({
     removeGoal(state, action) {
       return state.filter((item) => item.id !== action.payload);
     },
+    editGoal(state, { payload }) {
+      const res = state.map((goal) => {
+        if (goal.id === payload.id) {
+          return {
+            ...payload,
+          };
+        }
+        return goal;
+      });
+      return res;
+    },
   },
 });
 
 // export actions
-export const { addGoal, removeGoal } = goalSlice.actions;
+export const { addGoal, removeGoal, editGoal } = goalSlice.actions;
 
 export default goalSlice.reducer;

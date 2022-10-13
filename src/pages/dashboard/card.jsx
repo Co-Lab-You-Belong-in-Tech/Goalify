@@ -6,7 +6,7 @@ import eye from '../../assets/icons/eye.svg';
 import play from '../../assets/icons/Play.svg';
 import deleteI from '../../assets/icons/delete.svg';
 import editI from '../../assets/icons/edit.svg';
-import { removeGoal, addGoal } from '../../redux/goal/goalSlice';
+import { removeGoal, addGoal, editGoal } from '../../redux/goal/goalSlice';
 import { useDispatch } from 'react-redux';
 
 const Card = ({ item }) => {
@@ -23,7 +23,7 @@ const Card = ({ item }) => {
       </Button>
       <Button
         onClick={() =>
-          dispatch(addGoal({ id: Math.random() * 100, goal: 'hello omar' }))
+          dispatch(editGoal({ id: item.id, goal: 'hello new omar' }))
         }
         className="btn-primary bg-blue-50 font-semibold text-slate-800 w-24 py-2 text-sm"
       >
