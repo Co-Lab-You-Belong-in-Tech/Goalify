@@ -2,7 +2,6 @@ import { useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
   const error = useRouteError();
-  console.error(error);
   return (
     <div className="flex flex-col items-center justify-center w-auto">
       <h1>Oops!</h1>
