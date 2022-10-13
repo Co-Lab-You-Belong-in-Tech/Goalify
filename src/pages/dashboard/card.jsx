@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '../../components/UI/button';
+import Button from '../../components/button';
 import prgress from '../../assets/icons/progress.svg';
 import dots from '../../assets/icons/dots.svg';
 import eye from '../../assets/icons/eye.svg';
