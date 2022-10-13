@@ -1,16 +1,40 @@
-import React from 'react';
+import { useState } from 'react';
 import Button from '../../components/UI/button';
 import prgress from '../../assets/icons/progress.svg';
 import dots from '../../assets/icons/dots.svg';
 import eye from '../../assets/icons/eye.svg';
 import play from '../../assets/icons/Play.svg';
+import deleteI from '../../assets/icons/delete.svg';
+import editI from '../../assets/icons/edit.svg';
 
 const Card = ({ item }) => {
+  const [action, setAction] = useState(false);
+  const actionView = action ? (
+    <div className="flex gap-2">
+      <Button className="btn-primary bg-red-300 font-semibold text-red-600 py-2">
+        <img src={deleteI} alt="delete" className="pr-2" />
+        <span> Delete</span>
+      </Button>
+      <Button className="btn-primary bg-blue-50 font-semibold text-slate-800 w-24 py-2 text-sm">
+        <img src={editI} alt="edit" className="pr-2" />
+        <span> Edit</span>
+      </Button>
+    </div>
+  ) : (
+    <img
+      className="w-8 h-8 hover:cursor-pointer"
+      onClick={() => setAction((prev) => !prev)}
+      src={dots}
+      alt="dots"
+    />
+  );
   return (
     <div className="w-96 p-2 border border-slate-400 w rounded">
       <div className="flex justify-between mb-4">
-        <img className="w-8 h-8" src={play} alt="play" />
-        <img className="w-8 h-8" src={dots} alt="dots" />
+        <div>
+          <img className="w-8 h-8" src={play} alt="play" />
+        </div>
+        <div>{actionView}</div>
       </div>
       <small>Your goal</small>
       <h3 className="font-semibold">{item.goal}</h3>

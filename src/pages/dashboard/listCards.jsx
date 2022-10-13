@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import Card from './card';
 const ListCards = () => {
   const goals = useSelector((state) => state.goals);
-  console.log(goals);
   return (
     <div className="flex flex-wrap gap-x-5 gap-y-12 justify-center my-10">
       {goals.map((goal) => (
