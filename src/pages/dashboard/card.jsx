@@ -5,15 +5,15 @@ import dots from '../../assets/icons/dots.svg';
 import eye from '../../assets/icons/eye.svg';
 import play from '../../assets/icons/Play.svg';
 
-const Card = () => {
+const Card = ({ item }) => {
   return (
-    <div className="m-5 p-2 border border-slate-400 rounded">
+    <div className="w-96 p-2 border border-slate-400 w rounded">
       <div className="flex justify-between mb-4">
         <img className="w-8 h-8" src={play} alt="play" />
         <img className="w-8 h-8" src={dots} alt="dots" />
       </div>
       <small>Your goal</small>
-      <h3 className="font-semibold">Get all A’s this semester</h3>
+      <h3 className="font-semibold">{item.goal}</h3>
       <div className="bg-gray-100 rounded flex justify-between items-center py-4 px-1 mt-4">
         <div className="flex">
           <img className="w-5 h-5" src={prgress} alt="progress" />
