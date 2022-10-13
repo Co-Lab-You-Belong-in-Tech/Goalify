@@ -1,3 +1,13 @@
+:root {
+  color: #415472;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-indigo-800 flex justify-center items-center text-white w-full rounded-3xl py-3;
+  }
+}
