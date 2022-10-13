@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// const initialState = [{ id: 2, name: 'gffg' }];
-
 const goalSlice = createSlice({
   name: 'goals',
   initialState: [],
