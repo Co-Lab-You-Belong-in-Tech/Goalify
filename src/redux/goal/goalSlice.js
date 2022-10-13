@@ -35,10 +35,13 @@ const goalSlice = createSlice({
     addGoal(state, action) {
       state.push(action.payload);
     },
+    removeGoal(state, action) {
+      return state.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
 // export actions
-export const { addGoal } = goalSlice.actions;
+export const { addGoal, removeGoal } = goalSlice.actions;
 
 export default goalSlice.reducer;

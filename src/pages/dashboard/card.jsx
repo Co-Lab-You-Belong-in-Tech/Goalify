@@ -6,16 +6,27 @@ import eye from '../../assets/icons/eye.svg';
 import play from '../../assets/icons/Play.svg';
 import deleteI from '../../assets/icons/delete.svg';
 import editI from '../../assets/icons/edit.svg';
+import { removeGoal, addGoal } from '../../redux/goal/goalSlice';
+import { useDispatch } from 'react-redux';
 
 const Card = ({ item }) => {
+  const dispatch = useDispatch();
   const [action, setAction] = useState(false);
   const actionView = action ? (
     <div className="flex gap-2">
-      <Button className="btn-primary bg-red-300 font-semibold text-red-600 py-2">
+      <Button
+        onClick={() => dispatch(removeGoal(item.id))}
+        className="btn-primary bg-red-300 font-semibold text-red-600 py-2"
+      >
         <img src={deleteI} alt="delete" className="pr-2" />
         <span> Delete</span>
       </Button>
-      <Button className="btn-primary bg-blue-50 font-semibold text-slate-800 w-24 py-2 text-sm">
+      <Button
+        onClick={() =>
+          dispatch(addGoal({ id: Math.random() * 100, goal: 'hello omar' }))
+        }
+        className="btn-primary bg-blue-50 font-semibold text-slate-800 w-24 py-2 text-sm"
+      >
         <img src={editI} alt="edit" className="pr-2" />
         <span> Edit</span>
       </Button>
