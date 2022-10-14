@@ -1,5 +1,9 @@
+import BasicModal from "./components/modal.jsx";
+
 function App() {
-  return <div className="App">Hello</div>;
+  return <div className="App">
+    <BasicModal />
+  </div>;
 }
 
 export default App;
