@@ -40,7 +40,7 @@ const Card = ({ item }) => {
     />
   );
   return (
-    <div className="w-96 p-2 border border-slate-400 w rounded">
+    <div className="w-80 p-2 border border-slate-400 w rounded">
       <div className="flex justify-between mb-4">
         <div>
           <img className="w-8 h-8" src={play} alt="play" />
