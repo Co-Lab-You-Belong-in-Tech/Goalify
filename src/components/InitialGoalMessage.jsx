@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import HorizontalLinearStepper from "./stepper.jsx";
+import {Grid} from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 const style = {
     position: 'absolute',
@@ -16,14 +18,17 @@ const style = {
     p: 4,
 };
 
-export default function BasicModal() {
+export default function InitialGoalMessage() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (
-        <div>
-            <Button onClick={handleOpen}>Open modal</Button>
+        <Grid xs display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+            <Typography variant="h6" gutterBottom>
+                Looks like you don’t have any goals just yet....let’s get that sorted
+            </Typography>
+            <Button onClick={handleOpen}>+ Create A Goal</Button>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -32,14 +37,8 @@ export default function BasicModal() {
             >
                 <Box sx={style}>
                     <HorizontalLinearStepper />
-                    {/*<Typography id="modal-modal-title" variant="h6" component="h2">*/}
-                    {/*    Text in a modal*/}
-                    {/*</Typography>*/}
-                    {/*<Typography id="modal-modal-description" sx={{ mt: 2 }}>*/}
-                    {/*    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.*/}
-                    {/*</Typography>*/}
                 </Box>
             </Modal>
-        </div>
+        </Grid>
     );
 }
