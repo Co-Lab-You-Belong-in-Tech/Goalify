@@ -12,7 +12,7 @@ import SetDateStep from "./SetDateStep.jsx";
 const steps = [
     {title: 'Create Goal', content: <CreateNewGoalStep/>},
     {title: 'Create Milestones', content: <DevelopMilestonesStep/>},
-    {title: 'Create Steps', content: <SetDateStep/>},]
+    {title: 'Assign Dates', content: <SetDateStep/>},]
 
 export default function HorizontalLinearStepper() {
     const [activeStep, setActiveStep] = React.useState(0); //Index of the Active step
@@ -82,13 +82,14 @@ export default function HorizontalLinearStepper() {
                 }
                 // Show the title of the step
                 return (<Step key={step} {...stepProps}>
-                    <StepLabel {...labelProps}>{step.content}</StepLabel>
+                    <StepLabel {...labelProps}>{step.title}</StepLabel>
                 </Step>);
             })}
         </Stepper>
+        {/*Stepper body*/}
         {/*All steps are done?*/}
         {activeStep === steps.length ?
-            // Yes
+            // Yes, show the end message and reset button
             (<React.Fragment>
                 <Typography sx={{mt: 2, mb: 1}}>
                     Your first goal is set :)
@@ -98,9 +99,10 @@ export default function HorizontalLinearStepper() {
                     <Button onClick={handleReset}>Reset</Button>
                 </Box>
             </React.Fragment>) :
-            // In the middle show the content
+            // No, show the step content
             (<React.Fragment>
-                <Typography sx={{mt: 2, mb: 1}}>Step {activeStep + 1}</Typography>
+                <Box sx={{mt: 2, mb: 1}}>{steps[activeStep].content}</Box>
+                {/*Navigation Buttons*/}
                 <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
                     <Button
                         color="inherit"
