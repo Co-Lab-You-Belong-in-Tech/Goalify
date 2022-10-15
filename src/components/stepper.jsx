@@ -12,15 +12,15 @@ import SetDateStep from "./SetDateStep.jsx";
 const steps = [
     {title: 'Create Goal', content: <CreateNewGoalStep/>},
     {title: 'Create Milestones', content: <DevelopMilestonesStep/>},
-    {title: 'Assign Dates', content: <SetDateStep/>},]
+    {title: 'Assign Dates', content: <SetDateStep/>, optional: true},]
 
 export default function HorizontalLinearStepper() {
     const [activeStep, setActiveStep] = React.useState(0); //Index of the Active step
     const [skipped, setSkipped] = React.useState(new Set()); //Skipped set
 
     // Check if the step is optional by checking the index
-    const isStepOptional = (step) => {
-        return step === 1;
+    const isStepOptional = (index) => {
+        return steps[index].optional;
     };
 
     // Check if the step belong to skipped set
