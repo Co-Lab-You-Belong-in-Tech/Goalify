@@ -6,7 +6,7 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CreateNewGoalStep from "./CreateNewGoalStep.jsx";
-import DevelopMilestonesStep from "./DevelopMilestonesStep";
+import DevelopMilestonesStep from "./DevelopMilestonesStep.jsx";
 import SetDateStep from "./SetDateStep.jsx";
 
 const steps = [
