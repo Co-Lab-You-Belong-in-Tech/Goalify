@@ -8,13 +8,24 @@ import Typography from '@mui/material/Typography';
 import CreateNewGoalStep from "./CreateNewGoalStep.jsx";
 import DevelopMilestonesStep from "./DevelopMilestonesStep.jsx";
 import SetDateStep from "./SetDateStep.jsx";
-
-const steps = [
-    {title: 'Create Goal', content: <CreateNewGoalStep/>},
-    {title: 'Create Milestones', content: <DevelopMilestonesStep/>},
-    {title: 'Assign Dates', content: <SetDateStep/>, optional: true},]
+import {useDispatch} from "react-redux";
+import {addGoal} from "../../redux/goal/goalSlice.js";
+import {useState} from "react";
 
 export default function HorizontalLinearStepper() {
+
+
+    const dispatch = useDispatch();
+    const createGoal = ({goal, motivation}) => {
+        dispatch(addGoal({goal, motivation}))
+    }
+
+    const [goal, setGoal] = useState({})
+    const steps = [
+        {title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoal}/>},
+        {title: 'Create Milestones', content: <DevelopMilestonesStep setGoal={setGoal}/>},
+        {title: 'Assign Dates', content: <SetDateStep setGoal={setGoal}/>, optional: true},]
+
     const [activeStep, setActiveStep] = React.useState(0); //Index of the Active step
     const [skipped, setSkipped] = React.useState(new Set()); //Skipped set
 
@@ -63,9 +74,13 @@ export default function HorizontalLinearStepper() {
     };
 
     // Assign activeStep to 0
-    const handleReset = () => {
-        setActiveStep(0);
-    };
+    // const handleReset = () => {
+    //     setActiveStep(0);
+    // };
+
+    const navigateDashboard = () => {
+        createGoal(goal)
+    }
 
     return (<Box sx={{width: '100%'}}>
         <Stepper activeStep={activeStep}>
@@ -96,7 +111,10 @@ export default function HorizontalLinearStepper() {
                 </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
                     <Box sx={{flex: '1 1 auto'}}/>
-                    <Button onClick={handleReset}>Reset</Button>
+                    {/*Add the goal to redux store*/}
+                    {/*Go to Dashboard*/}
+                    <Button onClick={navigateDashboard}>Dashboard</Button>
+                    {/*<Button onClick={handleReset}>Reset</Button>*/}
                 </Box>
             </React.Fragment>) :
             // No, show the step content
@@ -124,3 +142,5 @@ export default function HorizontalLinearStepper() {
             </React.Fragment>)}
     </Box>);
 }
+
+
