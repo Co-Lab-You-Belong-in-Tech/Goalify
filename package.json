@@ -16,8 +16,13 @@
     "@mui/x-date-pickers": "^5.0.4",
     "dayjs": "^1.11.5",
     "moment": "^2.29.4",
+    "@reduxjs/toolkit": "^1.8.6",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.2",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
