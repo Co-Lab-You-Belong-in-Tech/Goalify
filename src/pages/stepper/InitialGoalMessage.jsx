@@ -24,7 +24,9 @@ export default function InitialGoalMessage() {
     const handleClose = () => setOpen(false);
 
     return (
-        <Grid xs display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+        <Grid xs display="flex" flexDirection="column" justifyContent="center" alignItems="center" style={{
+            display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh',
+        }}>
             <Typography variant="h6" gutterBottom>
                 Looks like you don’t have any goals just yet....let’s get that sorted
             </Typography>
