@@ -9,6 +9,7 @@ import App from './App';
 import './index.css';
 import Login from './pages/login/login';
 import Signup from './pages/signup/signup';
+import InitialGoalMessage from "./pages/stepper/InitialGoalMessage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup />,
+  },
+  {
+    path: '/firstGoal',
+    element: <InitialGoalMessage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
