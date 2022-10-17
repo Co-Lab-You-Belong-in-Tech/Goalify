@@ -12,6 +12,8 @@ import {useDispatch} from "react-redux";
 import {addGoal} from "../../redux/goal/goalSlice.js";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import star from "../../assets/icons/star.svg";
+
 
 export default function HorizontalLinearStepper() {
 
@@ -21,7 +23,7 @@ export default function HorizontalLinearStepper() {
         dispatch(addGoal(goal))
     }
 
-    const [goalObj, setGoalObj] = useState({milestones:[], startDate:'', endDate:''})
+    const [goalObj, setGoalObj] = useState({milestones: [], startDate: '', endDate: ''})
     const steps = [
         {title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoalObj}/>},
         {title: 'Develop Milestones', content: <DevelopMilestonesStep setGoal={setGoalObj}/>},
@@ -108,9 +110,9 @@ export default function HorizontalLinearStepper() {
         {activeStep === steps.length ?
             // Yes, show the end message and reset button
             (<React.Fragment>
-                <Typography sx={{mt: 2, mb: 1}}>
-                    Your first goal is set :)
-                </Typography>
+                <p className={"text-2xl font-bold leading-9 inline"}> Your first goal is set
+                <img width={30} height={30} src={star} alt="edit" className="mx-3 pr-2 inline"/>
+                </p>
                 <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
                     <Box sx={{flex: '1 1 auto'}}/>
                     {/*Add the goalObj to redux store*/}

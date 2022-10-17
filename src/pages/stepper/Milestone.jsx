@@ -1,23 +1,22 @@
 import {Grid, TextField} from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}) =>
-{
+const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}) => {
     return <Grid xs display="flex" flexDirection="column"
-          justifyContent="center" alignItems="center"
-          sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              padding: "16px",
-              margin: "5px",
-              gap: "16px",
-              width: "1090px",
-              height: "172px",
-              background: "#FFFFFF",
-              border: "1px solid rgba(65, 84, 114, 0.25)",
-              borderRadius: "4px",
-          }}
+                 justifyContent="center" alignItems="center"
+                 sx={{
+                     display: "flex",
+                     flexDirection: "column",
+                     alignItems: "flex-start",
+                     padding: "16px",
+                     margin: "5px",
+                     gap: "16px",
+                     width: "1090px",
+                     height: "172px",
+                     background: "#FFFFFF",
+                     border: "1px solid rgba(65, 84, 114, 0.25)",
+                     borderRadius: "4px",
+                 }}
     >
         <Typography
             sx={{
@@ -28,7 +27,6 @@ const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}
                 justifyContent: "center",
                 alignItems: "center",
                 gap: "10px",
-
                 width: "48px",
                 height: "48px",
             }}
