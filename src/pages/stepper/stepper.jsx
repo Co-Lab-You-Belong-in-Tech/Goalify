@@ -11,10 +11,11 @@ import SetDateStep from "./SetDateStep.jsx";
 import {useDispatch} from "react-redux";
 import {addGoal} from "../../redux/goal/goalSlice.js";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function HorizontalLinearStepper() {
 
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const createGoal = (goal) => {
         dispatch(addGoal(goal))
@@ -80,6 +81,7 @@ export default function HorizontalLinearStepper() {
 
     const navigateDashboard = () => {
         createGoal(goalObj)
+        navigate('/dashboard');
     }
 
     return (<Box sx={{width: '100%'}}>
