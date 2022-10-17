@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
-    path: '/firstGoal',
+    path: '/createGoal',
     element: <InitialGoalMessage />,
     errorElement: <ErrorPage />,
   },

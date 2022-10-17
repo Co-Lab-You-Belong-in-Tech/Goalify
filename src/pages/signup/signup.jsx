@@ -15,7 +15,7 @@ const Signup = () => {
 
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      navigate('/firstGoal');
+      navigate('/createGoal');
     },
   });
   return (
