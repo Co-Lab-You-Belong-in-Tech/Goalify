@@ -24,7 +24,7 @@ export default function HorizontalLinearStepper() {
     const [goalObj, setGoalObj] = useState({milestones:[], startDate:'', endDate:''})
     const steps = [
         {title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoalObj}/>},
-        {title: 'Create Milestones', content: <DevelopMilestonesStep setGoal={setGoalObj}/>},
+        {title: 'Develop Milestones', content: <DevelopMilestonesStep setGoal={setGoalObj}/>},
         {title: 'Assign Dates', content: <SetDateStep setGoal={setGoalObj}/>, optional: true},]
 
     const [activeStep, setActiveStep] = React.useState(0); //Index of the Active step
