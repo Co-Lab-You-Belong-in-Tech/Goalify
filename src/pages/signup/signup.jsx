@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { useFormik } from 'formik';
 import Button from '../../components/button';
 import FormInput from '../../components/formInput';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -14,6 +15,7 @@ const Signup = () => {
 
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      navigate('/firstGoal');
     },
   });
   return (
