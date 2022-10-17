@@ -2,18 +2,22 @@ import Typography from "@mui/material/Typography";
 import {Button} from "@mui/material";
 import {useState} from "react";
 import Milestone from "./Milestone.jsx";
+import progress from "../../assets/icons/progress.svg";
+import * as React from "react";
 
 function CreateNewGoal({setGoal}) {
     const [milestones, setMilestones] = useState([])
     const [milestoneInput, setMileStoneInput] = useState('')
 
-    return <box>
-        <Typography variant="h6" gutterBottom>
-            Developing your new goal
-        </Typography>
-        <Typography variant="subtitle1" gutterBottom>
-            To develop this goal, let’s break it down into smaller goals or as we like to call them, Milestones.
-        </Typography>
+    return <div>
+        <p className={"text-2xl font-bold leading-9"}> Developing your new goal </p>
+        <div className={"flex my-3 items-center"}>
+            <p className={"inline"}>
+                <img width={30} height={30} src={progress} alt="edit" className="pr-2 inline"/>
+                To develop this goal, let’s break it down into smaller goals or as we like to call them, Milestones.
+            </p>
+        </div>
+
         <Typography variant="caption" display="block" gutterBottom>
             Visualize the end result of the goal you are working on to a high standard.
             Work backwards to plan each step you need to take to increase the chances of achieving this goal.
@@ -30,8 +34,9 @@ function CreateNewGoal({setGoal}) {
             {<Milestone milestoneInput={milestoneInput} setMileStoneInput={setMileStoneInput}
                         number={milestones.length + 1}/>}
         </grid>
-        <Button variant="outlined" size="large" fullWidth
+        <Button variant="text" size="large" fullWidth
                 sx={{
+                    border: "none",
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "center",
@@ -51,9 +56,9 @@ function CreateNewGoal({setGoal}) {
                         return {...prev, milestones:[...milestones, {content: milestoneInput}]}
                     })
                 }}>
-            + Add milestone
+             <p className={"font-black"}>+ Add milestone</p>
         </Button>
-    </box>
+    </div>
 
 }
 
