@@ -12,7 +12,7 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 1000,
-    bgcolor: 'background.paper',
+    backgroundColor: 'background.paper',
     border: '2px solid grey',
     boxShadow: 1,
     p: 4,
@@ -24,7 +24,7 @@ export default function InitialGoalMessage() {
     const handleClose = () => setOpen(false);
 
     return (
-        <Grid xs display="flex" flexDirection="column" justifyContent="center" alignItems="center" style={{
+        <Grid display="flex" flexDirection="column" justifyContent="center" alignItems="center" style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh',
         }}>
             <Typography variant="h6" gutterBottom>
