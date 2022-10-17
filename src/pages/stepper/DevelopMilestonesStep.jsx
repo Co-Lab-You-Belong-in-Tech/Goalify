@@ -24,16 +24,14 @@ function CreateNewGoal({setGoal}) {
             Have a go at setting a few milestones you think would be worth celebrating towards your goal and don’t
             worry you can always add or reduce milestones later.
         </Typography>
-        <grid
-            sx={{
-                height: 100
-            }}
+        <div
+            className={"max-h-96 overflow-scroll  overscroll-contain"}
         >
             {milestones.map((m, i) => (<Milestone key={i}
                 milestoneContent={m.content} number={i + 1}/>))}
             {<Milestone milestoneInput={milestoneInput} setMileStoneInput={setMileStoneInput}
                         number={milestones.length + 1}/>}
-        </grid>
+        </div>
         <Button variant="text" size="large" fullWidth
                 sx={{
                     border: "none",
