@@ -16,15 +16,15 @@ export default function HorizontalLinearStepper() {
 
 
     const dispatch = useDispatch();
-    const createGoal = ({goal, motivation}) => {
-        dispatch(addGoal({goal, motivation}))
+    const createGoal = (goal) => {
+        dispatch(addGoal(goal))
     }
 
-    const [goal, setGoal] = useState({})
+    const [goalObj, setGoalObj] = useState({milestones:[], startDate:'', endDate:''})
     const steps = [
-        {title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoal}/>},
-        {title: 'Create Milestones', content: <DevelopMilestonesStep setGoal={setGoal}/>},
-        {title: 'Assign Dates', content: <SetDateStep setGoal={setGoal}/>, optional: true},]
+        {title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoalObj}/>},
+        {title: 'Create Milestones', content: <DevelopMilestonesStep setGoal={setGoalObj}/>},
+        {title: 'Assign Dates', content: <SetDateStep setGoal={setGoalObj}/>, optional: true},]
 
     const [activeStep, setActiveStep] = React.useState(0); //Index of the Active step
     const [skipped, setSkipped] = React.useState(new Set()); //Skipped set
@@ -79,7 +79,7 @@ export default function HorizontalLinearStepper() {
     // };
 
     const navigateDashboard = () => {
-        createGoal(goal)
+        createGoal(goalObj)
     }
 
     return (<Box sx={{width: '100%'}}>
@@ -111,7 +111,7 @@ export default function HorizontalLinearStepper() {
                 </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
                     <Box sx={{flex: '1 1 auto'}}/>
-                    {/*Add the goal to redux store*/}
+                    {/*Add the goalObj to redux store*/}
                     {/*Go to Dashboard*/}
                     <Button onClick={navigateDashboard}>Dashboard</Button>
                     {/*<Button onClick={handleReset}>Reset</Button>*/}
