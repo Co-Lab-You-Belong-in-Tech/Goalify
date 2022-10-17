@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import {Button} from "@mui/material";
 import {useState} from "react";
 import Milestone from "./Milestone.jsx";
-import progress from "../../assets/icons/progress.svg";
+import net from "../../assets/icons/net.svg";
 import * as React from "react";
 
 function CreateNewGoal({setGoal}) {
@@ -13,7 +13,7 @@ function CreateNewGoal({setGoal}) {
         <p className={"text-2xl font-bold leading-9"}> Developing your new goal </p>
         <div className={"flex my-3 items-center"}>
             <p className={"inline"}>
-                <img width={30} height={30} src={progress} alt="edit" className="pr-2 inline"/>
+                <img width={30} height={30} src={net} alt="edit" className="pr-2 inline"/>
                 To develop this goal, let’s break it down into smaller goals or as we like to call them, Milestones.
             </p>
         </div>

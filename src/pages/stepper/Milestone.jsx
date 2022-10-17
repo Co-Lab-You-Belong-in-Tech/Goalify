@@ -21,10 +21,19 @@ const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}
     >
         <Typography
             sx={{
-                borderRadius: "50%", border: 'grey 1px  solid', padding: '5px',
+                borderRadius: "50%",
+                border: 'grey 1px  solid',
+                padding: '16px',
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "10px",
+
+                width: "48px",
+                height: "48px",
             }}
             alignSelf="start" variant="caption" display="block" gutterBottom>
-            {String(number).padStart(2, '0')}
+            <p className="font-black text-xl"> {String(number).padStart(2, '0')} </p>
         </Typography>
         <TextField id="filled-basic"
                    fullWidth
@@ -33,6 +42,7 @@ const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}
                    }}
                    mb={1}
                    value={milestoneContent || milestoneInput}
+                   placeholder={"Ex: The first milestone towards my goal of getting all A’s this semester is creating a schedule so I can manage my time better."}
                    onChange={(e) => milestoneContent || setMileStoneInput(e.target.value)}/>
     </Grid>
 }
