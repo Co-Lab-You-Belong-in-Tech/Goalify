@@ -14,7 +14,7 @@ const Signup = () => {
     },
 
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
       navigate('/createGoal');
     },
   });
@@ -60,7 +60,7 @@ const Signup = () => {
           </Button>
         </form>
         <div className="my-3">
-          <Link to="/login">Are you have an account?</Link>
+          <Link to="/login">Do you have an account?</Link>
         </div>
       </div>
     </>

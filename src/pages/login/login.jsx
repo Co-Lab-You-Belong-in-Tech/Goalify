@@ -11,7 +11,7 @@ const Login = () => {
     },
 
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
   return (
@@ -40,7 +40,7 @@ const Login = () => {
           </Button>
         </form>
         <div className="my-3">
-          <Link to="/signup">Are you don't have an account?</Link>
+          <Link to="/signup">Don't have an account yet?</Link>
         </div>
       </div>
     </>
