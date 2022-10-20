@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import CreateNewGoalStep from "./CreateNewGoalStep.jsx";
 import DevelopMilestonesStep from "./DevelopMilestonesStep.jsx";
 import SetDateStep from "./SetDateStep.jsx";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addGoal} from "../../redux/goal/goalSlice.js";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
@@ -19,11 +19,13 @@ export default function HorizontalLinearStepper() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const goals = useSelector((state) => state.goals);
+
     const createGoal = (goal) => {
         dispatch(addGoal(goal))
     }
 
-    const [goalObj, setGoalObj] = useState({milestones: [], startDate: '', endDate: ''})
+    const [goalObj, setGoalObj] = useState({id:goals.length,milestones: [], startDate: '', endDate: ''})
     const steps = [
         {title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoalObj}/>},
         {title: 'Develop Milestones', content: <DevelopMilestonesStep setGoal={setGoalObj}/>},
