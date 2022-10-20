@@ -12,7 +12,7 @@ const goalSlice = createSlice({
             return state.map((goal) => {
                 if (goal.id === payload.id) {
                     return {
-                        ...payload,
+                        ...goal, ...payload,
                     };
                 }
                 return goal;
