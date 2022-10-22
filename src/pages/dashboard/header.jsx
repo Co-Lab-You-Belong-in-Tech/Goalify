@@ -37,7 +37,7 @@ const Header = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <HorizontalLinearStepper/>
+                    <HorizontalLinearStepper handleClose={handleClose} />
                 </Box>
             </Modal>
         </div>

@@ -15,7 +15,7 @@ import {useNavigate} from "react-router-dom";
 import star from "../../assets/icons/star.svg";
 
 
-export default function HorizontalLinearStepper() {
+export default function HorizontalLinearStepper({handleClose}) {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -85,6 +85,7 @@ export default function HorizontalLinearStepper() {
 
     const navigateDashboard = () => {
         createGoal(goalObj)
+        handleClose();
         navigate('/dashboard');
     }
 
