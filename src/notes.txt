@@ -1,1 +1,16 @@
 Main colors: sl8at-800
+
+todo:
+    Add route to stepper ✅
+    Get the initial goal with
+        the text, ✅
+        motivations, ✅
+        milestones, ✅
+        startDate, ✅
+        endDate, ✅
+    Add the initial goal to the redux store ✅
+    navigate to dashboard when click on dashboard ✅
+    user can sign uo then navigate to stepper ✅
+    user can login  then navigate to dashboard
+    Style the design as Figma ✅
+    Transform routs into an object
