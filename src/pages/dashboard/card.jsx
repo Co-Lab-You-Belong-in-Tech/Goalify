@@ -6,7 +6,7 @@ import eye from '../../assets/icons/eye.svg';
 import play from '../../assets/icons/Play.svg';
 import deleteI from '../../assets/icons/delete.svg';
 import editI from '../../assets/icons/edit.svg';
-import { removeGoal, addGoal, editGoal } from '../../redux/goal/goalSlice';
+import {removeGoal, editGoal} from '../../redux/goal/goalSlice';
 import { useDispatch } from 'react-redux';
 
 const Card = ({ item }) => {
@@ -23,7 +23,7 @@ const Card = ({ item }) => {
       </Button>
       <Button
         onClick={() =>
-          dispatch(editGoal({ id: item.id, goal: 'hello new omar' }))
+          dispatch(editGoal({ id: item.id, goal: 'Updated goal' }))
         }
         className="btn-primary bg-blue-50 font-semibold text-slate-800 w-24 py-2 text-sm"
       >
@@ -52,7 +52,7 @@ const Card = ({ item }) => {
       <div className="bg-gray-100 rounded flex justify-between items-center py-4 px-1 mt-4">
         <div className="flex">
           <img className="w-5 h-5" src={prgress} alt="progress" />
-          <span className="pl-2">2/6 Milestones Reached</span>
+          <span className="pl-2">0/{item.milestones.length} Milestones Reached</span>
         </div>
         <span>
           <img className="w-5 h-5" src={eye} alt="eye" />
@@ -63,9 +63,14 @@ const Card = ({ item }) => {
         When you’ve completed your next milestone, you can check it as done to
         update your goal
       </p>
-      <div className="bg-blue-50 py-5 rounded px-1 my-5">
-        Milestone 3: Get above a B+ on all midterms
-      </div>
+        {
+            item.milestones.map((milestone, i)=>(
+                <div className="bg-blue-50 py-5 rounded px-1 my-5">
+                    Milestone {i}: {milestone.content}
+                </div>
+            ))
+        }
+
       <Button className="btn-primary">Update Progress</Button>
     </div>
   );
