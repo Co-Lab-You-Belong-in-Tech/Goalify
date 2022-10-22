@@ -1,19 +1,11 @@
-import {Grid, TextField} from "@mui/material";
+import {TextField} from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}) => {
-    return <Grid xs display="flex" flexDirection="column"
-                 justifyContent="center" alignItems="center"
-                 sx={{
-                     display: "flex",
-                     flexDirection: "column",
-                     alignItems: "flex-start",
-                     padding: "16px",
-                     margin: "5px",
-                     gap: "16px",
-                     width: "1090px",
-                     height: "172px",
-                     background: "#FFFFFF",
+    return <div className={"snap-end my-2"}>
+        <div className={"p-4"}
+                 style={{
+                     width: "100%",
                      border: "1px solid rgba(65, 84, 114, 0.25)",
                      borderRadius: "4px",
                  }}
@@ -30,7 +22,7 @@ const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}
                 width: "48px",
                 height: "48px",
             }}
-            alignSelf="start" variant="caption" display="block" gutterBottom>
+            gutterBottom>
             <p className="font-black text-xl"> {String(number).padStart(2, '0')} </p>
         </Typography>
         <TextField id="filled-basic"
@@ -42,6 +34,7 @@ const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}
                    value={milestoneContent || milestoneInput}
                    placeholder={"Ex: The first milestone towards my goal of getting all A’s this semester is creating a schedule so I can manage my time better."}
                    onChange={(e) => milestoneContent || setMileStoneInput(e.target.value)}/>
-    </Grid>
+    </div>
+    </div>
 }
 export default Milestone
