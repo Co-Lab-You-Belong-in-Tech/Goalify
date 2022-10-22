@@ -13,3 +13,4 @@ todo:
     user can sign uo then navigate to stepper ✅
     user can login  then navigate to dashboard
     Style the design as Figma ✅
+    Transform routs into an object
