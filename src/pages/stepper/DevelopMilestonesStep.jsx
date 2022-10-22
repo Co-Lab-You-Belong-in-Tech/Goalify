@@ -25,10 +25,10 @@ function CreateNewGoal({setGoal}) {
             worry you can always add or reduce milestones later.
         </Typography>
         <div
-            className={"max-h-96 overflow-scroll  overscroll-contain"}
+            className={"snap-mandatory snap-y max-h-96 overflow-scroll  overscroll-contain "}
         >
             {milestones.map((m, i) => (<Milestone key={i}
-                milestoneContent={m.content} number={i + 1}/>))}
+                                                  milestoneContent={m.content} number={i + 1}/>))}
             {<Milestone milestoneInput={milestoneInput} setMileStoneInput={setMileStoneInput}
                         number={milestones.length + 1}/>}
         </div>
@@ -51,10 +51,10 @@ function CreateNewGoal({setGoal}) {
                     setMileStoneInput('')
 
                     setGoal((prev) => {
-                        return {...prev, milestones:[...milestones, {content: milestoneInput}]}
+                        return {...prev, milestones: [...milestones, {completed: false, content: milestoneInput}]}
                     })
                 }}>
-             <p className={"font-black"}>+ Add milestone</p>
+            <p className={"font-black"}>+ Add milestone</p>
         </Button>
     </div>
 
