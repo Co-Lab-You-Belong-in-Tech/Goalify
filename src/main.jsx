@@ -9,7 +9,7 @@ import App from './App';
 import './index.css';
 import Login from './pages/login/login';
 import Signup from './pages/signup/signup';
-import InitialGoalMessage from "./pages/stepper/InitialGoalMessage.jsx";
+import InitialGoalMessage from "./components/stepper/InitialGoalMessage.jsx";
 
 const router = createBrowserRouter([
   {

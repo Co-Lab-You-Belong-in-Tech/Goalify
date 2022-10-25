@@ -43,7 +43,7 @@ export default function InitialGoalMessage() {
             aria-describedby="modal-modal-description"
         >
             <Box sx={style}>
-                <HorizontalLinearStepper />
+                <HorizontalLinearStepper handleClose={handleClose} />
             </Box>
         </Modal>
     </Grid>);

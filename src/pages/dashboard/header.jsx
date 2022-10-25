@@ -3,7 +3,7 @@ import Logo from '../../assets/icons/logo.png';
 import * as React from "react";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import HorizontalLinearStepper from "../stepper/stepper.jsx";
+import HorizontalLinearStepper from "../../components/stepper/stepper.jsx";
 
 const style = {
     position: 'absolute',
