@@ -6,7 +6,12 @@ import {useState} from "react";
 import Box from "@mui/material/Box";
 import * as React from "react";
 
+
+
 function SetDateStep({setGoal}) {
+    const getDateText = (dateObj) => {
+       return dateObj.toString().split(' ').slice(0,4).join(' ')
+    }
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
 
@@ -26,7 +31,7 @@ function SetDateStep({setGoal}) {
                         onChange={(newValue) => {
                             setStartDate(newValue);
                             setGoal((prev) => {
-                                return {...prev, startDate: newValue}
+                                return {...prev, startDate: getDateText(newValue)}
                             })
                             console.log(newValue)
                         }}
@@ -42,7 +47,7 @@ function SetDateStep({setGoal}) {
                         onChange={(newValue) => {
                             setEndDate(newValue);
                             setGoal((prev) => {
-                                return {...prev, endDate: newValue}
+                                return {...prev, endDate: getDateText(newValue)}
                             })
                             console.log(newValue)
                         }}
