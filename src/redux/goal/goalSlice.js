@@ -2,7 +2,10 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = [{
     id:0, content:"I want to get a Tech Job min 1500$", milestones:[
-        { content: "I want to strengthen my React skills"}],
+        { content: "I want to strengthen my Tailwind skills", date:"October 19, 2022", completed:true},
+        { content: "I want to strengthen my React skills", completed:false},
+        { content: "I want to strengthen my Rails skills",  completed:false},
+    ],
     motivation: "I could save some of it to travel outside."
 }];
 
