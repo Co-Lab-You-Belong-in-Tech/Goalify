@@ -27,7 +27,7 @@ const Card = ({item}) => {
             <Button
                 onClick={() => {
                     navigate(`/goals/${item.id}`);
-                    dispatch(editGoal({id: item.id, goal: 'Updated goal'}))
+                    // dispatch(editGoal({id: item.id, goal: 'Updated goal'}))
                 }}
                 className="btn-primary bg-blue-50 font-semibold text-slate-800 w-24 py-2 text-sm"
             >
@@ -52,7 +52,7 @@ const Card = ({item}) => {
                 <div>{actionView}</div>
             </div>
             <small>Your goal</small>
-            <h3 className="font-semibold">{item.goal}</h3>
+            <h3 className="font-semibold">{item.content}</h3>
             <div className="bg-gray-100 rounded flex justify-between items-center py-4 px-1 mt-4">
                 <div className="flex">
                     <img className="w-5 h-5" src={prgress} alt="progress"/>
