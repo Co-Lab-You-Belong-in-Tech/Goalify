@@ -1,6 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = [];
+const initialState = [{
+    id:0, content:"I want to get a Tech Job min 1500$", milestones:[
+        { content: "I want to strengthen my React skills"}],
+    motivation: "I could save some of it to travel outside."
+}];
 
 const goalSlice = createSlice({
     name: 'goals', initialState, reducers: {
