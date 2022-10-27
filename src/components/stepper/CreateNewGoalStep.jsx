@@ -17,7 +17,7 @@ function CreateNewGoalStep({setGoal}) {
             <TextField placeholder="ex: I want to learn how to ride a bike" fullWidth
                        onChange={(e) => {
                            setGoal((prev) => {
-                               return {...prev, goal: e.target.value}
+                               return {...prev, content: e.target.value}
                            })
                        }}
             />
