@@ -29,7 +29,6 @@ const GoalPage = () => {
               Your Motivation
             </p>
             <blockquote
-              //   contentEditable="true"
               suppressContentEditableWarning={true}
               className={'bg-slate-100 p-3'}
             >
