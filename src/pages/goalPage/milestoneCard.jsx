@@ -17,14 +17,10 @@ const MilestoneCard = ({ milestone, goal, i }) => {
   const reflection = (
     <div>
       <div className={'pl-4 pb-4 mb-5 flex bg-white'}>
-        <div
-          className={'w-9 h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}
-        >
+        <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}>
           <img src={uploadImg} />
         </div>
-        <div
-          className={'w-9 h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}
-        >
+        <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}>
           <img src={selectEmoji} />
         </div>
       </div>
@@ -118,7 +114,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           <div className={'flex items-center '}>
             <div
               className={
-                'w-10 h-10 border rounded-full w-fit p-2  border-slate-300 mr-2 flex '
+                'h-10 border rounded-full w-fit p-2  border-slate-300 mr-2 flex '
               }
             >
               <p className=" bold text-base font-black leading-5">
