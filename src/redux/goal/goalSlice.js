@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = [
   {
     id: 0,
+    currentMilestone: 0,
     content: 'I want to get a Tech Job min 1500$',
     milestones: [
       {
@@ -12,17 +13,17 @@ const initialState = [
       },
       {
         id: 1,
-        content: 'I want to strengthen my Tailwind skills',
+        content: 'strengthen Tailwind skills',
         date: 'October 19, 2022',
         completed: true,
       },
 
       {
         id: 2,
-        content: 'I want to strengthen my Rails skills',
+        content: 'strengthen Rails skills',
         completed: false,
       },
-      { id: 3, content: 'I want to strengthen my JS skills', completed: false },
+      { id: 3, content: 'strengthen JS skills', completed: false },
     ],
     motivation: 'I could save some of it to travel outside.',
   },
@@ -39,9 +40,6 @@ const goalSlice = createSlice({
       return state.filter((item) => item.id !== action.payload);
     },
     editGoal(state, { payload }) {
-      console.log('payload');
-      console.log(payload);
-
       return state.map((goal) => {
         if (goal.id === payload.id) {
           return {
@@ -53,10 +51,26 @@ const goalSlice = createSlice({
         return goal;
       });
     },
+    updateProgress(state, { payload }) {
+      return state.map((goal) => {
+        if (
+          goal.id === payload.id &&
+          goal.currentMilestone < goal.milestones.length - 1
+        ) {
+          return {
+            ...goal,
+            currentMilestone: goal.currentMilestone + 1,
+          };
+        }
+
+        return goal;
+      });
+    },
   },
 });
 
 // export actions
-export const { addGoal, removeGoal, editGoal } = goalSlice.actions;
+export const { addGoal, removeGoal, editGoal, updateProgress } =
+  goalSlice.actions;
 
 export default goalSlice.reducer;

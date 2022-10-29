@@ -11,3 +11,8 @@
     @apply bg-indigo-800 flex justify-center items-center text-white w-full rounded-3xl py-3;
   }
 }
+
+.btn-progress:disabled {
+  background-color: #f5f5f5;
+  color: #717171;
+}
