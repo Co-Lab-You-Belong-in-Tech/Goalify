@@ -17,13 +17,15 @@ const goalSlice = createSlice({
         }, removeGoal(state, action) {
             return state.filter((item) => item.id !== action.payload);
         }, editGoal(state, {payload}) {
-            console.log(payload)
+            console.log("payload")
+
             return state.map((goal) => {
                 if (goal.id === payload.id) {
                     return {
                         ...goal, ...payload,
                     };
                 }
+
                 return goal;
             });
         },
