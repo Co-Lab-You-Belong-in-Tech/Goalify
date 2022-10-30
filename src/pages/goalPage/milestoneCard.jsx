@@ -6,6 +6,7 @@ import dots from '../../assets/icons/dots.svg';
 import uploadImg from '../../assets/icons/uploadImg.svg';
 import selectEmoji from '../../assets/icons/selectEmoji.svg';
 import save from '../../assets/icons/save.svg';
+import saveWhite from '../../assets/icons/saveWhite.svg';
 import x from '../../assets/icons/x.svg';
 import undo from '../../assets/icons/undo.svg';
 import remove from '../../assets/icons/delete.svg';
@@ -14,7 +15,11 @@ import inProgress from '../../assets/icons/inProgress.svg';
 const MilestoneCard = ({ milestone, goal, i }) => {
   const dispatch = useDispatch();
   const [modify, setModify] = useState({ state: false });
-  const reflection = (
+  const [onChange, setOnChange] = useState( false );
+  const [reflection, setReflection] = useState({content: '', img: ''})
+
+  console.log(onChange)
+  const reflectionComponent = (
     <div>
       <div className={'pl-4 pb-4 mb-5 flex bg-white'}>
         <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}>
@@ -28,13 +33,31 @@ const MilestoneCard = ({ milestone, goal, i }) => {
         <div className={' bg-gray-100 w-full pr-4 mb-3'}>
           <p> Reflection </p>
           <input
+            onChange={()=> setOnChange(true)}
             className={
               'my-2 bg-gray-100 border border-gray-300 w-full p-2 rounded-l'
             }
           />
         </div>
-        <button className={' bg-gray-200 flex p-2 rounded-xl'}>
-          <img className={'mr-4'} src={save} />
+        <button className={`${onChange? 'bg-indigo-800 text-white' : 'bg-gray-200'} bg-gray-200 flex p-2 rounded-xl`}
+                onClick={() => {
+                  setOnChange(false)
+        //   let milestones = goal.milestones.map((m) => {
+        //     if (m.id === milestone.id) {
+        //       return {
+        //         ...m,
+        //         reflection: false,
+        //       };
+        //     } else {
+        //       return m;
+        //     }
+        //   });
+        //   dispatch(
+        //       editGoal({ ...goal, milestones: [...milestones] })
+        //   );
+        }}
+        >
+          <img className={'mr-4'} src={onChange? saveWhite: save} />
           <p> Save reflection</p>
         </button>
       </div>
@@ -88,7 +111,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
                       }
                     });
                     dispatch(
-                      editGoal({ ...goal, milestones: [...milestones] })
+                        editGoal({ ...goal, milestones: [...milestones] })
                     );
                   }}
                 >
@@ -126,7 +149,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           </div>
         </div>
         {/*Reflection*/}
-        {milestone.completed ? reflection : <></>}
+        {milestone.completed ? reflectionComponent : <></>}
       </div>
     </div>
   );
