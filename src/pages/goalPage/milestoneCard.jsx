@@ -16,9 +16,10 @@ const MilestoneCard = ({ milestone, goal, i }) => {
   const dispatch = useDispatch();
   const [modify, setModify] = useState({ state: false });
   const [onChange, setOnChange] = useState( false );
-  const [reflection, setReflection] = useState({content: '', img: ''})
+  const [reflection, setReflection] = useState({
+    content: milestone?.reflection?.content?? false ? milestone?.reflection?.content : null
+  });
 
-  console.log(onChange)
   const reflectionComponent = (
     <div>
       <div className={'pl-4 pb-4 mb-5 flex bg-white'}>
@@ -33,13 +34,16 @@ const MilestoneCard = ({ milestone, goal, i }) => {
         <div className={' bg-gray-100 w-full pr-4 mb-3'}>
           <p> Reflection </p>
           <input
-            onChange={()=> setOnChange(true)}
+            onChange={(e)=> {setOnChange(true); setReflection({...reflection, content: e.target.value })}}
             className={
               'my-2 bg-gray-100 border border-gray-300 w-full p-2 rounded-l'
             }
+            // value={`${milestone?.reflection?.content?? false ? milestone?.reflection?.content : ''}`}
+            value={`${reflection.content??''}`}
+
           />
         </div>
-        <button className={`${onChange? 'bg-indigo-800 text-white' : 'bg-gray-200'} bg-gray-200 flex p-2 rounded-xl`}
+        <button className={`${reflection.content && !onChange? 'hidden':'block'} ${onChange? 'bg-indigo-800 text-white' : 'bg-gray-200'} bg-gray-200 flex p-2 rounded-xl`}
                 onClick={() => {
                   setOnChange(false)
         //   let milestones = goal.milestones.map((m) => {
@@ -98,7 +102,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
                   />
                 </button>
                 <button
-                  className={'mr-4 flex bg-indigo-50 rounded-full p-1.5'}
+                  className={`${!milestone.completed? 'hidden': 'block'} mr-4 flex bg-indigo-50 rounded-full p-1.5`}
                   onClick={() => {
                     let milestones = goal.milestones.map((m) => {
                       if (m.id === milestone.id) {
