@@ -5,6 +5,7 @@ const initialState = [{
     content: 'I want to get a Tech Job min 1500$',
     milestones: [{
         id: 0, content: 'I want to strengthen my React skills', completed: true,
+        reflection: {content: 'I have completed the take home project'}
     }, {
         id: 1, content: 'I want to strengthen my Tailwind skills', date: 'October 19, 2022', completed: true,
     },
