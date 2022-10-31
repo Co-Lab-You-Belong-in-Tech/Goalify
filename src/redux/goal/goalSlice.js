@@ -9,13 +9,13 @@ const initialState = [
       {
         id: 0,
         content: 'I want to strengthen my React skills',
-        completed: true,
+        completed: false,
       },
       {
         id: 1,
         content: 'strengthen Tailwind skills',
         date: 'October 19, 2022',
-        completed: true,
+        completed: false,
       },
 
       {
@@ -57,15 +57,28 @@ const goalSlice = createSlice({
           goal.id === payload.id &&
           goal.currentMilestone < goal.milestones.length - 1
         ) {
+          let milestoness = goal.milestones.map((m) => {
+            if (m.id === goal.milestones[goal.currentMilestone].id) {
+              return {
+                ...m,
+                completed: true,
+              };
+            } else {
+              return m;
+            }
+          });
           return {
             ...goal,
             currentMilestone: goal.currentMilestone + 1,
+            milestones: milestoness,
           };
         }
 
         return goal;
       });
     },
+
+    milestoneCompleted(state, { payload }) {},
   },
 });
 

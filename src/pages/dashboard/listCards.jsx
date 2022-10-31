@@ -6,7 +6,7 @@ const ListCards = () => {
   return (
     <div className="flex flex-wrap gap-x-5 gap-y-12 justify-center my-10">
       {goals.map((goal) => (
-        <Card key={goal.id} item={goal} />
+        <Card key={goal.id} goal={goal} />
       ))}
     </div>
   );
