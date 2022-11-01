@@ -6,6 +6,7 @@ import eyeI from './icons/eye.svg';
 import playI from './icons/Play.svg';
 import dotsI from './icons/dots.svg';
 import progressI from './icons/progress.svg';
+import uneyeI from './icons/uneye.svg';
 
 export {
   progressI,
@@ -16,4 +17,5 @@ export {
   editI,
   deleteI,
   dotsI,
+  uneyeI,
 };

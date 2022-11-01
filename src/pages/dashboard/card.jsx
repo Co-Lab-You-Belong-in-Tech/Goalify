@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { removeGoal, updateProgress } from '../../redux/goal/goalSlice';
+import useToggle from '../../hooks/useToggle';
 import Button from '../../components/button';
 import Progress from '../../components/progress';
 import {
@@ -13,6 +14,7 @@ import {
   completeI,
   editI,
   deleteI,
+  uneyeI,
 } from '../../assets/icons';
 
 const Card = ({ goal }) => {
@@ -20,6 +22,7 @@ const Card = ({ goal }) => {
   const navigate = useNavigate();
   const [action, setAction] = useState(false);
   const [complete, setComplete] = useState(false);
+  const [view, toggleView] = useToggle(false);
   const actionView = action ? (
     <div className="flex gap-2">
       <Button
@@ -71,13 +74,33 @@ const Card = ({ goal }) => {
               Reached
             </span>
           </div>
-          <span>
-            <img className="w-5 h-5" src={eyeI} alt="eyeI" />
-          </span>
+          {view ? (
+            <span>
+              <img
+                onClick={toggleView}
+                className="w-5 h-5"
+                src={uneyeI}
+                alt="eyeI"
+              />
+            </span>
+          ) : (
+            <span>
+              <img
+                onClick={toggleView}
+                className="w-5 h-5"
+                src={eyeI}
+                alt="eyeI"
+              />
+            </span>
+          )}
         </div>
-        <div className="px-1">
-          <Progress goal={goal} />
-        </div>
+        {view ? (
+          <div className="px-1">
+            <Progress goal={goal} />
+          </div>
+        ) : (
+          ''
+        )}
       </div>
       <div className="my-3 text-sm ">Next Milestone</div>
       <p className="text-xs">
