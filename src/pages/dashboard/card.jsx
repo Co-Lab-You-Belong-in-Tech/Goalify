@@ -15,6 +15,7 @@ import {
   editI,
   deleteI,
   uneyeI,
+  pauseI,
 } from '../../assets/icons';
 
 const Card = ({ goal }) => {
@@ -23,6 +24,7 @@ const Card = ({ goal }) => {
   const [action, setAction] = useState(false);
   const [complete, setComplete] = useState(false);
   const [view, toggleView] = useToggle(false);
+  const [status, toggleStatus] = useToggle(false);
   const actionView = action ? (
     <div className="flex gap-2">
       <Button
@@ -59,7 +61,21 @@ const Card = ({ goal }) => {
     <div className="w-80 p-2 border border-slate-400 w rounded">
       <div className="flex justify-between mb-4">
         <div>
-          <img className="w-8 h-8" src={playI} alt="playI" />
+          {status ? (
+            <img
+              className="w-8 h-8"
+              src={playI}
+              alt="playI"
+              onClick={toggleStatus}
+            />
+          ) : (
+            <img
+              className="w-8 h-8"
+              src={pauseI}
+              alt="pauseI"
+              onClick={toggleStatus}
+            />
+          )}
         </div>
         <div>{actionView}</div>
       </div>
