@@ -30,7 +30,7 @@ const Header = () => {
       </div>
       <div className="flex">
         <Catagory />
-        <Button className="btn-primary w-40 ml-2" onClick={handleOpen}>
+        <Button className="btn-primary w-40 ml-2 h-10" onClick={handleOpen}>
           + Create a goal
         </Button>
       </div>
