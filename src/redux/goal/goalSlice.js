@@ -7,12 +7,12 @@ const initialState = [{
         id: 0, content: 'I want to strengthen my React skills', completed: true,
         reflection: {content: 'I have completed the take home project'}
     }, {
-        id: 1, content: 'I want to strengthen my Tailwind skills', date: 'October 19, 2022', completed: true,
+        id: 1, content: 'I want to strengthen my Tailwind skills', date: 'October 19, 2022', completed: false,
     },
 
         {
             id: 2, content: 'I want to strengthen my Rails skills', completed: false,
-        }, {id: 3, content: 'I want to strengthen my JS skills', completed: false},],
+        }, {id: 3, content: 'I want to strengthen my JS skills', completed: true},],
     motivation: 'I could save some of it to travel outside.',
 },];
 

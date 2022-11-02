@@ -11,7 +11,7 @@ const GoalPage = () => {
     let params = useParams();
     const goals = useSelector((state) => state.goals);
     const goal = goals.find((goal) => goal.id == params.goalId);
-    const [category, setCategory] = useState('achieved')
+    const [category, setCategory] = useState('completed')
     return (// wrap
         <div className={'bg-gray-100 relative h-full w-full'}>
             {/*header*/}
@@ -56,23 +56,37 @@ const GoalPage = () => {
                     <div
                         className="border border-2 border-gray-200 w-fit rounded-full p-2 flex  font-semibold gap-3 text-slate-600 leading-5  mb-4">
                         <button onClick={() => {
-                            setCategory('achieved')
+                            setCategory('completed')
                         }}
-                                className={`${category == "achieved" ? "bg-white" : null} rounded-3xl p-2 text-xl `}> Achieved
+                                className={`${category == "completed" ? "bg-white" : null} rounded-3xl p-2 text-xl `}> Achieved
                             milestones
                         </button>
                         <button onClick={() => {
                             setCategory('in-progress')
                         }} className={`${category == "in-progress" ? "bg-white" : null} rounded-3xl p-2 text-xl`}> In-progress milestones</button>
                     </div>
-                    {goal.milestones.map((m, i) => (
 
-                        <MilestoneCard
-                            milestone={m}
-                            goal={goal}
-                            key={Math.random() * 100}
-                            i={i}
-                        />))}
+                    { (category=="completed" )? (goal.milestones.filter(m => m.completed  )).map((m, i) => {
+                            {
+                                return(
+                                    <MilestoneCard
+                                        milestone={m}
+                                        goal={goal}
+                                        key={Math.random() * 100}
+                                        i={i}
+                                    />)}
+                        }
+                    ): (goal.milestones.filter(m => !m.completed  )).map((m, i) => {
+                            {
+                                return(
+                                    <MilestoneCard
+                                        milestone={m}
+                                        goal={goal}
+                                        key={Math.random() * 100}
+                                        i={i}
+                                    />)}
+                        }
+                    )}
                 </div>
                 {/*3rd col*/}
                 <div className="flex-none w-1/4 h-14 mx-2 right-0 top-20 bottom-0  h-full fixed p-5">03</div>
