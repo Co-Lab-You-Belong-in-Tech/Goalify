@@ -5,12 +5,13 @@ import MilestoneCard from './milestoneCard';
 import plus from '../../assets/icons/plus.svg';
 import dir from '../../assets/icons/dir.svg';
 import share from '../../assets/icons/share.svg';
+import {useState} from "react";
 
 const GoalPage = () => {
     let params = useParams();
     const goals = useSelector((state) => state.goals);
     const goal = goals.find((goal) => goal.id == params.goalId);
-
+    const [category, setCategory] = useState('achieved')
     return (// wrap
         <div className={'bg-gray-100 relative h-full w-full'}>
             {/*header*/}
@@ -21,10 +22,15 @@ const GoalPage = () => {
                     <p className={"font-bold text-2xl leading-8"}> G </p>
                 </div>
                 <div className={"flex justify-center items-center gap-4"}>
-                    <div className={"bg-indigo-800 w-10 h-10 flex justify-center items-center rounded-3xl"}><img src={plus}/></div>
-                    <div className={"bg-gray-200 w-10 h-10 flex justify-center items-center rounded-3xl"}><img src={dir}/></div>
-                    <div className={"bg-gray-200 w-10 h-10 flex justify-center items-center rounded-3xl"}><img src={share}/></div>
-                    <div className={"bg-red-100 w-10 h-10 flex justify-center items-center rounded-3xl font-bold text-2xl leading-8"}><p> A </p> </div>
+                    <div className={"bg-indigo-800 w-10 h-10 flex justify-center items-center rounded-3xl"}><img
+                        src={plus}/></div>
+                    <div className={"bg-gray-200 w-10 h-10 flex justify-center items-center rounded-3xl"}><img
+                        src={dir}/></div>
+                    <div className={"bg-gray-200 w-10 h-10 flex justify-center items-center rounded-3xl"}><img
+                        src={share}/></div>
+                    <div
+                        className={"bg-red-100 w-10 h-10 flex justify-center items-center rounded-3xl font-bold text-2xl leading-8"}>
+                        <p> A </p></div>
                 </div>
             </div>
             {/*body wrap*/}
@@ -47,10 +53,21 @@ const GoalPage = () => {
                 {/*2nd col*/}
                 <div className="grow   h-full w-2/4 mx-[24%]">
                     <p className={'text-3xl font-bold leading-9 mb-8'}>{goal.content}</p>
-                    <p className="font-semibold text-slate-600 leading-5 text-base mb-5">
-                        Your Milestones
-                    </p>
-                    {goal.milestones.map((m, i) => (<MilestoneCard
+                    <div
+                        className="border border-2 border-gray-200 w-fit rounded-full p-2 flex  font-semibold gap-3 text-slate-600 leading-5  mb-4">
+                        <button onClick={() => {
+                            setCategory('achieved')
+                        }}
+                                className={`${category == "achieved" ? "bg-white" : null} rounded-3xl p-2 text-xl `}> Achieved
+                            milestones
+                        </button>
+                        <button onClick={() => {
+                            setCategory('in-progress')
+                        }} className={`${category == "in-progress" ? "bg-white" : null} rounded-3xl p-2 text-xl`}> In-progress milestones</button>
+                    </div>
+                    {goal.milestones.map((m, i) => (
+
+                        <MilestoneCard
                             milestone={m}
                             goal={goal}
                             key={Math.random() * 100}
