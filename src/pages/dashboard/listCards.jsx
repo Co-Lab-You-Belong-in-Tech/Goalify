@@ -8,12 +8,15 @@ const ListCards = () => {
     selected === 0
       ? goals
       : goals.filter((goal) => goal.catagoryId === selected);
-  console.log(selected);
   return (
     <div className="flex flex-wrap gap-x-5 gap-y-12 justify-center my-10">
-      {myGoals.map((goal) => (
-        <Card key={goal.id} goal={goal} />
-      ))}
+      {myGoals.length > 0 ? (
+        myGoals.map((goal) => <Card key={goal.id} goal={goal} />)
+      ) : (
+        <div className="text-center text-xl font-bold">
+          This catagory is empty !
+        </div>
+      )}
     </div>
   );
 };

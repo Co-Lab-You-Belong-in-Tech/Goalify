@@ -8,8 +8,12 @@ import dotsI from './icons/dots.svg';
 import progressI from './icons/progress.svg';
 import uneyeI from './icons/uneye.svg';
 import plusI from './icons/plus.svg';
+import nameI from './icons/name.svg';
+import logo from './icons/logo.png';
 
 export {
+  logo,
+  nameI,
   plusI,
   progressI,
   eyeI,

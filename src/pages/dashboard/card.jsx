@@ -67,7 +67,7 @@ const Card = ({ goal }) => {
       <h3 className="font-semibold">{goal.content}</h3>
       <div className="bg-gray-100 pb-1">
         <div className="rounded flex justify-between items-center py-2 px-1 mt-4">
-          <div className="flex">
+          <div className="flex px-1 pt-1">
             <img className="w-5 h-5" src={progressI} alt="progress" />
             <span className="pl-2 text-sm">
               {goal.currentMilestone}/{goal.milestones.length} Milestones
