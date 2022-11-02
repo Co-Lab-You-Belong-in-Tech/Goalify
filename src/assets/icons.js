@@ -7,8 +7,10 @@ import playI from './icons/Play.svg';
 import dotsI from './icons/dots.svg';
 import progressI from './icons/progress.svg';
 import uneyeI from './icons/uneye.svg';
+import plusI from './icons/plus.svg';
 
 export {
+  plusI,
   progressI,
   eyeI,
   completeI,
