@@ -27,7 +27,7 @@ const Header = () => {
     <div className="bg-yellow-100 py-7 md:px-20">
       <div className="flex justify-between items-center ">
         <div>
-          <Link to="/">
+          <Link to="/dashboard">
             <img src={nameI} />
           </Link>
         </div>
