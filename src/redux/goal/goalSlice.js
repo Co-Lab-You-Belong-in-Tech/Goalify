@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   {
+    catagoryId: 1,
     id: 0,
     currentMilestone: 0,
     content: 'I want to get a Tech Job min 1500$',
@@ -77,8 +78,6 @@ const goalSlice = createSlice({
         return goal;
       });
     },
-
-    milestoneCompleted(state, { payload }) {},
   },
 });
 
