@@ -4,6 +4,7 @@ import * as React from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import HorizontalLinearStepper from '../../components/stepper/stepper.jsx';
+import Catagory from '../../components/catagory';
 
 const style = {
   position: 'absolute',
@@ -22,13 +23,14 @@ const Header = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div className="bg-yellow-200 h-56 py-3 md:py-5 md:px-20">
+    <div className="bg-yellow-100 h-56 py-3 md:py-5 md:px-20">
       <div className="flex gap-4 items-center my-5">
         <img src={Logo} alt="logo" />
         <h1 className="text-4xl font-semibold">Welcome back, Jason</h1>
       </div>
-      <div>
-        <Button className="btn-primary w-44 ml-2" onClick={handleOpen}>
+      <div className="flex">
+        <Catagory />
+        <Button className="btn-primary w-40 ml-2" onClick={handleOpen}>
           + Create a goal
         </Button>
       </div>
