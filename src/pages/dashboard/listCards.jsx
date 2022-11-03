@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import InitialGoalMessage from '../../components/stepper/InitialGoalMessage';
 import Card from './card';
 const ListCards = () => {
   const { goals, catagories } = useSelector((state) => state);
@@ -13,9 +14,7 @@ const ListCards = () => {
       {myGoals.length > 0 ? (
         myGoals.map((goal) => <Card key={goal.id} goal={goal} />)
       ) : (
-        <div className="text-center text-xl font-bold">
-          This catagory is empty !
-        </div>
+        <InitialGoalMessage />
       )}
     </div>
   );
