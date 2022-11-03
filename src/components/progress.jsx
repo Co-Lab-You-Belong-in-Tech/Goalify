@@ -3,7 +3,7 @@ import React from 'react';
 const Progress = ({ goal }) => {
   const percent = (goal.currentMilestone / goal.milestones.length) * 100;
   return (
-    <div className="">
+    <>
       <small className="text-xs">You’ve met {percent}% of your goal</small>
       <div className="w-full bg-gray-200 rounded h-1">
         <div
@@ -11,7 +11,7 @@ const Progress = ({ goal }) => {
           style={{ width: `${percent}%` }}
         ></div>
       </div>
-    </div>
+    </>
   );
 };
 

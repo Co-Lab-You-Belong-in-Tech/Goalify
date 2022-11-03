@@ -78,11 +78,28 @@ const goalSlice = createSlice({
         return goal;
       });
     },
+    updateGoalStatus(state, { payload }) {
+      return state.map((goal) => {
+        if (goal.id === payload.id) {
+          return {
+            ...goal,
+            catagoryId: payload.catagoryId,
+          };
+        }
+
+        return goal;
+      });
+    },
   },
 });
 
 // export actions
-export const { addGoal, removeGoal, editGoal, updateProgress } =
-  goalSlice.actions;
+export const {
+  addGoal,
+  removeGoal,
+  editGoal,
+  updateProgress,
+  updateGoalStatus,
+} = goalSlice.actions;
 
 export default goalSlice.reducer;
