@@ -13,7 +13,7 @@ const GoalPage = () => {
     const goal = goals.find((goal) => goal.id == params.goalId);
     const [category, setCategory] = useState('completed')
     return (// wrap
-        <div className={'bg-gray-100 relative h-full w-full'}>
+        <div className={'bg-gray-100 relative h-full w-full min-h-screen'}>
             {/*header*/}
             <div className="bg-yellow-100 fixed top-0 left-0 w-full h-20 py-5 px-20 flex  justify-between items-center">
                 <div className={"text-lg w-14  h-14 flex justify-center items-center rounded-3xl"} style={{

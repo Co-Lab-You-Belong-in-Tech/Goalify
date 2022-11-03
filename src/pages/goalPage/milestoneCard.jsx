@@ -25,16 +25,16 @@ const MilestoneCard = ({milestone, goal, i}) => {
     // const [selectedFile, setSelectedFile] = useState();
     // const [isFileLoaded, setIsFileLoaded] = useState(false);
 
-    const uploadImgHandler = () => {
-        console.log(milestone.id)
+    const uploadImgHandler = (event, id) => {
         // setSelectedFile(event.target.files[0]);
-        // const reader = new FileReader();
-        // reader.readAsDataURL(event.target.files[0]);
-        // reader.addEventListener("load", () => {
-        //     localStorage.setItem(`${milestone.id}`, reader.result)
-        //     // setReflection({...reflection, imgSrc: localStorage.getItem(`${milestone.id}`)})
-        //     // setIsFileLoaded(true);
-        // })
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.addEventListener("load", () => {
+            localStorage.setItem(`${id}`, reader.result)
+            console.log(id)
+            // setReflection({...reflection, imgSrc: localStorage.getItem(`${milestone.id}`)})
+            // setIsFileLoaded(true);
+        })
     };
 
 
@@ -60,14 +60,19 @@ const MilestoneCard = ({milestone, goal, i}) => {
 
             <div className={"flex mt-4 justify-between"}>
                 <div className={"flex"}>
-            <input type="file" id="uploadImg-btn" className={"hidden"} onChange={uploadImgHandler} />
-            <label htmlFor="uploadImg-btn">
+                    {/**/}
+            <input type="file" id="uploadImg-btn" className={"hidden"}
+                   //
+                   />
+            <label htmlFor="uploadImg-btn"
+                onChange={(e)=> {uploadImgHandler(e, milestone.id) }  }
+                   >
                 <div
                     className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4 hover:bg-indigo-100 cursor-pointer'}>
                     <img src={uploadImg}/>
                 </div>
             </label>
-            <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}>
+            <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'} >
                 <img src={selectEmoji} />
             </div>
                 </div>
