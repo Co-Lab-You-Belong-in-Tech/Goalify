@@ -25,11 +25,14 @@ export default function HorizontalLinearStepper({handleClose}) {
         dispatch(addGoal(goal))
     }
 
-    const [goalObj, setGoalObj] = useState({id:goals.length,milestones: [], startDate: '', endDate: ''})
-    const steps = [
-        {title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoalObj}/>},
-        {title: 'Develop Milestones', content: <DevelopMilestonesStep setGoal={setGoalObj}/>},
-        {title: 'Assign Dates', content: <SetDateStep setGoal={setGoalObj}/>, optional: true},]
+    const [goalObj, setGoalObj] = useState({
+        id: goals.length, content: '', motivation: '', milestones: [], startDate: '', endDate: ''
+    })
+    const steps = [{
+        title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoalObj}/>
+    }, {title: 'Develop Milestones', content: <DevelopMilestonesStep setGoal={setGoalObj}/>}, {
+        title: 'Assign Dates', content: <SetDateStep setGoal={setGoalObj}/>, optional: true
+    },]
 
     const [activeStep, setActiveStep] = React.useState(0); //Index of the Active step
     const [skipped, setSkipped] = React.useState(new Set()); //Skipped set
@@ -110,11 +113,10 @@ export default function HorizontalLinearStepper({handleClose}) {
         </Stepper>
         {/*Stepper body*/}
         {/*All steps are done?*/}
-        {activeStep === steps.length ?
-            // Yes, show the end message and reset button
+        {activeStep === steps.length ? // Yes, show the end message and reset button
             (<React.Fragment>
                 <p className={"text-2xl font-bold leading-9 inline"}> Your first goal is set
-                <img width={30} height={30} src={star} alt="edit" className="mx-3 pr-2 inline"/>
+                    <img width={30} height={30} src={star} alt="edit" className="mx-3 pr-2 inline"/>
                 </p>
                 <Box sx={{display: 'flex', flexDirection: 'row', pt: 2}}>
                     <Box sx={{flex: '1 1 auto'}}/>
@@ -123,8 +125,7 @@ export default function HorizontalLinearStepper({handleClose}) {
                     <Button onClick={navigateDashboard}>Dashboard</Button>
                     {/*<Button onClick={handleReset}>Reset</Button>*/}
                 </Box>
-            </React.Fragment>) :
-            // No, show the step content
+            </React.Fragment>) : // No, show the step content
             (<React.Fragment>
                 <Box sx={{mt: 2, mb: 1}}>{steps[activeStep].content}</Box>
                 {/*Navigation Buttons*/}

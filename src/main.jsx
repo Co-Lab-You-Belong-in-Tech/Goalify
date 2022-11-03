@@ -9,7 +9,9 @@ import App from './App';
 import './index.css';
 import Login from './pages/login/login';
 import Signup from './pages/signup/signup';
-import InitialGoalMessage from "./pages/stepper/InitialGoalMessage.jsx";
+import GoalPage from './pages/goalPage/GoalPage.jsx';
+
+import InitialGoalMessage from "./components/stepper/InitialGoalMessage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
     element: <InitialGoalMessage />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: '/goals/:goalId',
+    element: <GoalPage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
