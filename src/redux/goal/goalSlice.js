@@ -1,5 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
-
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   {
@@ -28,9 +27,10 @@ const initialState = [
       { id: 3, content: 'strengthen JS skills', completed: false },
     ],
     motivation: 'I could save some of it to travel outside.',
-},];
+  },
+];
 
-export const {addGoal, removeGoal, editGoal} = goalSlice.actions;
+const goalSlice = createSlice({
   name: 'goals',
   initialState,
   reducers: {
