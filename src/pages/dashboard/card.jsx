@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { removeGoal, updateProgress } from '../../redux/goal/goalSlice';
+import {
+  removeGoal,
+  updateProgress,
+  updateGoalStatus,
+} from '../../redux/goal/goalSlice';
 import useToggle from '../../hooks/useToggle';
 import Button from '../../components/button';
 import Progress from '../../components/progress';
@@ -61,19 +65,25 @@ const Card = ({ goal }) => {
     <div className="w-80 p-2 border border-slate-400 w rounded">
       <div className="flex justify-between mb-4">
         <div>
-          {status ? (
+          {goal.catagoryId === 2 ? (
             <img
               className="w-8 h-8"
               src={playI}
               alt="playI"
-              onClick={toggleStatus}
+              onClick={() => {
+                toggleStatus();
+                dispatch(updateGoalStatus({ id: goal.id, catagoryId: 1 }));
+              }}
             />
           ) : (
             <img
               className="w-8 h-8"
               src={pauseI}
               alt="pauseI"
-              onClick={toggleStatus}
+              onClick={() => {
+                toggleStatus();
+                dispatch(updateGoalStatus({ id: goal.id, catagoryId: 2 }));
+              }}
             />
           )}
         </div>
