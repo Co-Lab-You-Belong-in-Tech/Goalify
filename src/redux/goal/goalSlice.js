@@ -5,7 +5,7 @@ const initialState = [
     catagoryId: 1,
     id: 0,
     currentMilestone: 0,
-    content: 'I want to get a Tech Job min 1500$',
+    content: 'I want to get a Tech Job min 1600$',
     milestones: [
       {
         id: 0,
