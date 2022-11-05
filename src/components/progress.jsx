@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Progress = ({ goal }) => {
-  const percent = (goal.currentMilestone / goal.milestones.length) * 100;
+
+  const percent = (goal.milestones.filter(m=>m.completed).length / goal.milestones.length) * 100;
   return (
     <>
         <small className="text-xs font-bold text-[#717171]">You’ve met <span className={"font-extrabold "}>{percent}% </span> of your goal</small>

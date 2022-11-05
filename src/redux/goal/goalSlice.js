@@ -25,6 +25,11 @@ const initialState = [
         completed: false,
       },
       { id: 3, content: 'strengthen JS skills', completed: false },
+      { id: 3, content: 'strengthen Ruby skills', completed: false },
+      { id: 3, content: 'strengthen Redis skills', completed: false },
+      { id: 3, content: 'strengthen Next skills', completed: false },
+      { id: 3, content: 'strengthen GraphQL skills', completed: false },
+
     ],
     motivation: 'I could save some of it to travel outside.',
   },
