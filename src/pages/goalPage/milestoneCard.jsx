@@ -31,7 +31,6 @@ const MilestoneCard = ({milestone, goal, i}) => {
         reader.readAsDataURL(event.target.files[0]);
         reader.addEventListener("load", () => {
             localStorage.setItem(`${id}`, reader.result)
-            console.log(id)
             // setReflection({...reflection, imgSrc: localStorage.getItem(`${milestone.id}`)})
             // setIsFileLoaded(true);
         })
@@ -123,7 +122,7 @@ const MilestoneCard = ({milestone, goal, i}) => {
     </div>);
     const background = milestone.completed ? ' bg-yellow-50' : 'bg-indigo-50 ';
     return (<div
-        className={`border border-gray-200 rounded-b-xl bg-gray-100  mb-3 ${milestone.completed ? 'pb-4' : ''}`}
+        className={`snap-start border border-gray-200 rounded-b-xl bg-gray-100  mb-3 ${milestone.completed ? 'pb-4' : ''}`}
     >
         <div className={'bg-grey '}>
             <div className={'bg-white p-4'}>
