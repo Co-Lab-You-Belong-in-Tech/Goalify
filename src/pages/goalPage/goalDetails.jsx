@@ -14,12 +14,11 @@ const GoalDetails = ({ goal }) => {
   };
   return (
     <>
-      <div className="w-80 p-2 border border-slate-100 bg-white w rounded">
-        <div className="pb-1">
-          <div className="rounded flex justify-between items-center py-2 px-1 mt-4">
-            <div className="flex px-1 pt-1">
-              <img className="w-5 h-5" src={progressI} alt="progress" />
-              <span className="pl-2 text-sm">
+      <div className="w-80 pb-4 px-3 border border-gray-200 bg-white w rounded min-w-full">
+          <div className="rounded flex justify-between items-center pb-3  mt-4">
+            <div className="flex  pt-1">
+              <img className="w-5 h-5 mr-1.5" src={progressI} alt="progress" />
+              <span className="pl-1 font-semibold text-[#415472] leading-5 text-base ">
                 {goal.currentMilestone}/{goal.milestones.length} Milestones
                 Reached
               </span>
@@ -28,13 +27,12 @@ const GoalDetails = ({ goal }) => {
           <div className="px-1">
             <Progress goal={goal} />
           </div>
-        </div>
-        <div className="my-3 text-sm ">Next Milestone</div>
+        <div className="mt-3 mb-1.5 text-sm font-semibold text-gray-500">Next Milestone</div>
         <p className="text-xs">
           When you’ve completed your next milestone, you can check it as done to
           update your goal
         </p>
-        <div className="bg-blue-50 py-5 rounded px-2 my-5 flex gap-3">
+        <div className="bg-blue-50 py-3 rounded px-2 my-3 flex gap-3">
           {complete ? (
             <img className="w-5" src={completeI} alt="completeI" />
           ) : (
