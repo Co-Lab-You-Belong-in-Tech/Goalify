@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   {
-    catagoryId: 1,
+    categoryId: 1,
     id: 0,
     currentMilestone: 0,
     content: 'I want to get a Tech Job min 1500$',
