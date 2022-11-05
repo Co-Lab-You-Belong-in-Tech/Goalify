@@ -11,6 +11,7 @@ import x from '../../assets/icons/x.svg';
 import undo from '../../assets/icons/undo.svg';
 import remove from '../../assets/icons/delete.svg';
 import inProgress from '../../assets/icons/inProgress.svg';
+import achieved from '../../assets/icons/cardAchieved.svg';
 import show from '../../assets/icons/show.svg';
 import hide from '../../assets/icons/hide.svg';
 
@@ -53,33 +54,37 @@ const MilestoneCard = ({milestone, goal, i}) => {
     const reflectionComponent = (<div>
         <div className={'pl-4 pb-4 mb-5 flex bg-white flex-col'}>
 
-            {
-                visible.reflectionImhg && localStorage.getItem(`${milestone.id}`)? <img className={`h-96 object-contain`} src={localStorage.getItem(`${milestone.id}`)}/> : null
-            }
+            {visible.reflectionImhg && localStorage.getItem(`${milestone.id}`) ?
+                <img className={`h-96 object-contain`} src={localStorage.getItem(`${milestone.id}`)}/> : null}
 
             <div className={"flex mt-4 justify-between"}>
                 <div className={"flex"}>
                     {/**/}
-            <input type="file" id="uploadImg-btn" className={"hidden"}
-                   //
-                   />
-            <label htmlFor="uploadImg-btn"
-                onChange={(e)=> {uploadImgHandler(e, milestone.id) }  }
-                   >
-                <div
-                    className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4 hover:bg-indigo-100 cursor-pointer'}>
-                    <img src={uploadImg}/>
+                    <input type="file" id="uploadImg-btn" className={"hidden"}
+                        //
+                    />
+                    <label htmlFor="uploadImg-btn"
+                           onChange={(e) => {
+                               uploadImgHandler(e, milestone.id)
+                           }}
+                    >
+                        <div
+                            className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4 hover:bg-indigo-100 cursor-pointer'}>
+                            <img src={uploadImg}/>
+                        </div>
+                    </label>
+                    <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}>
+                        <img src={selectEmoji}/>
+                    </div>
                 </div>
-            </label>
-            <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'} >
-                <img src={selectEmoji} />
-            </div>
-                </div>
-                <button onClick={()=>{setVisible({...visible, reflectionImhg: !visible.reflectionImhg})}}>
-                    <div className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4 flex justify-between items-center'}>
+                <button onClick={() => {
+                    setVisible({...visible, reflectionImhg: !visible.reflectionImhg})
+                }}>
+                    <div
+                        className={'hover:bg-indigo-100 h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4 flex justify-between items-center'}>
 
-                        <img className={"mr-3"} src={visible.reflectionImhg?  hide : show} />
-                        <p> {visible.reflectionImhg? 'Hide image ' :  ' View image'}</p>
+                        <img className={"mr-3"} src={visible.reflectionImhg ? hide : show}/>
+                        <p> {visible.reflectionImhg ? 'Hide image ' : ' View image'}</p>
                     </div>
                 </button>
 
@@ -135,29 +140,30 @@ const MilestoneCard = ({milestone, goal, i}) => {
                             <img className={'mr-2'} src={progress}/>
                             <p> Achieved {milestone.date}</p>
                         </>) : (<>
-                            <button className={"flex items-center"} onClick={editGoalMilestone}>
-                                <img className={'mr-2'} src={inProgress}/>
+                            <div className={"flex items-center"}>
+                                <img className={'mr-2'} src={achieved}/>
                                 <p> Work In Progress </p>
-                            </button>
+                            </div>
                         </>)}
                     </div>
-                    {visible.dotsMenu? (<div className={'flex items-center'}>
+                    {visible.dotsMenu ? (<div className={'flex items-center'}>
                         <button className={'mr-4'}>
                             <img
                                 className={'justify-end bg-indigo-50 rounded-full p-3'}
                                 src={remove}
                             />
                         </button>
+
                         <button
-                            className={`${!milestone.completed ? 'hidden' : 'block'} mr-4 flex bg-indigo-50 rounded-full p-1.5`}
+                            className={`hover:bg-indigo-100 mr-4 flex bg-indigo-50 rounded-full py-1.5 px-4 `}
                             onClick={editGoalMilestone}
                         >
-                            <img className={'justify-end mr-2'} src={undo}/>
-                            <p> Undo </p>
+                            <img className={'justify-end mr-2'} src={milestone.completed ? Undo : achieved}/>
+                            <p> {milestone.completed ? 'Undo' : 'Mark as achieved'} </p>
                         </button>
                         <button
                             onClick={() => setVisible({...visible, dotsMenu: false})}
-                            className={'mr-4 '}
+                            className={'mr-4'}
                         >
                             <img className={'justify-end'} src={x}/>
                         </button>
