@@ -43,10 +43,10 @@ const GoalPage = () => {
                 </div>
             </div>
             {/*body wrap*/}
-            <div className="h-full  p-5  mt-20">
+            <div className="h-full  px-4 py-2  mt-20">
                 {/*1st col*/}
                 <div className="w-1/4  left-0 top-20 bottom-0 h-full fixed flex flex-col items-center py-5 p-7">
-                    <div className={'mb-3 p-3  bg-white min-w-full rounded-[4px]'}>
+                    <div className={'mb-3 p-3  bg-white min-w-full border-solid border border-gray-200 rounded-[4px]'}>
                         <p className="font-semibold text-[#415472] leading-5 text-base mb-4">
                             Your Motivation
                         </p>
@@ -61,15 +61,15 @@ const GoalPage = () => {
                 </div>
                 {/*2nd col*/}
                 <div className="grow  h-full w-2/4 mx-[24%]">
-                    <div className={"top-20 fixed w-2/4  bg-[#FAFAFA] "}>
+                    <div className={"top-20 py-5 fixed w-2/4  bg-[#FAFAFA] "}>
                         <p className={'pl-3 text-3xl font-bold leading-9 mb-8 text-[#152E40]'}>{goal.content}</p>
                         <div
-                            className="bg-[#F5F5F5] border-2 border-gray-200 w-fit rounded-full p-2 flex  font-semibold gap-3 text-slate-600 leading-5  mb-4">
+                            className="bg-[#F9F9F9] border-2 border-[rgba(65, 84, 114, 0.08)] w-fit rounded-full p-2 flex  font-semibold gap-3 text-slate-600 leading-5  mb-4">
                             <button
                                 onClick={() => {
                                     setCategory('all');
                                 }}
-                                className={`${category == 'all' ? 'bg-white' : null} rounded-3xl p-2 text-base font-black`}
+                                className={`${category == 'all' ? 'bg-white border-solid border border-gray-200' : null} hover:bg-white rounded-3xl p-2 text-base font-black  `}
                             >
                                 {' '}
                                 All milestones
@@ -78,7 +78,7 @@ const GoalPage = () => {
                                 onClick={() => {
                                     setCategory('completed');
                                 }}
-                                className={`${category == 'completed' ? 'bg-white' : null} rounded-3xl p-2 text-base font-black `}
+                                className={`${category == 'completed' ? 'bg-white border-solid border border-gray-200' : null}  hover:bg-white rounded-3xl p-2 text-base font-black   `}
                             >
                                 {' '}
                                 Achieved milestones
@@ -87,14 +87,14 @@ const GoalPage = () => {
                                 onClick={() => {
                                     setCategory('in-progress');
                                 }}
-                                className={`${category == 'in-progress' ? 'bg-white' : null} rounded-3xl p-2 text-base font-black`}
+                                className={`${category == 'in-progress' ? 'bg-white border-solid border border-gray-200' : null}  hover:bg-white rounded-3xl p-2 text-base font-black `}
                             >
                                 {' '}
                                 In-progress milestones
                             </button>
                         </div>
                     </div>
-                    <div className={"mt-36 snap-mandatory snap-y snap-always "}>
+                    <div className={"mt-[12rem] snap-mandatory snap-y snap-always "}>
                         {
                             category == 'all'?
                                 goal.milestones
