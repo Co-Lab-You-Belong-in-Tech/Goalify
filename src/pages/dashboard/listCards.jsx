@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import InitialGoalMessage from '../../components/stepper/InitialGoalMessage';
 import Card from './card';
 const ListCards = () => {
-  const { goals, catagories } = useSelector((state) => state);
-  const selected = catagories.selected;
+  const { goals, categories } = useSelector((state) => state);
+  const selected = categories.selected;
   const myGoals =
     selected === 0
       ? goals
-      : goals.filter((goal) => goal.catagoryId === selected);
+      : goals.filter((goal) => goal.categoryId === selected);
   return (
     <div className="flex flex-wrap gap-x-5 gap-y-12 justify-center my-10">
       {myGoals.length > 0 ? (

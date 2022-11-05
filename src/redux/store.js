@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import goalSlice from './goal/goalSlice';
-import catagorySlice from './catagory/catagorySlice';
+import categorySlice from './category/categorySlice';
 
 const store = configureStore({
   reducer: {
     goals: goalSlice,
-    catagories: catagorySlice,
+    categories: categorySlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }).concat(logger),

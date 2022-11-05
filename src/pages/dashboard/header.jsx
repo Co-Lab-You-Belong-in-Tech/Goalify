@@ -4,7 +4,7 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '../../components/button';
 import HorizontalLinearStepper from '../../components/stepper/stepper.jsx';
-import Catagory from '../../components/catagory';
+import Category from '../../components/category';
 import { nameI, logo } from '../../assets/icons';
 
 const style = {
@@ -37,7 +37,7 @@ const Header = () => {
         </div>
       </div>
       <div className="flex">
-        <Catagory />
+        <Category />
         <Button className="btn-primary w-40 ml-2 h-9" onClick={handleOpen}>
           + Create a goal
         </Button>

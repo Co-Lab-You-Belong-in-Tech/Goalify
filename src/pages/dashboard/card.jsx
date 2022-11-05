@@ -146,7 +146,7 @@ const Card = ({ goal }) => {
         )}
         <p className="text-sm">
           Milestone {goal.currentMilestone + 1}:
-          {goal.milestones[goal.currentMilestone].content.substring(0, 24)}...
+          {goal?.milestones[goal.currentMilestone]?.content?.substring(0, 24)}...
         </p>
       </div>
 

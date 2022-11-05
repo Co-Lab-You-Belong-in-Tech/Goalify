@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateSelected } from '../redux/catagory/catagorySlice';
+import {modifyCategories, updateSelected} from '../redux/category/categorySlice';
 import { plusI } from '../assets/icons';
 
-const Catagory = () => {
+const category = () => {
   const dispatch = useDispatch();
-  const { catagories, selected } = useSelector((state) => state.catagories);
+  const { categories, selected } = useSelector((state) => state.categories);
   return (
     <div className="flex gap-3 w-full rounded-full p-1 bg-slate-100">
-      {catagories.map(({ catagory, id }) => (
-        <button
+      {categories.map(({ category, id }) => (
+        <p
           className={`py-1 px-2 ${
             selected === id ? 'bg-white rounded-full' : ''
           }`}
           key={id}
           onClick={() => dispatch(updateSelected(id))}
         >
-          {catagory}
-        </button>
+          {category}
+        </p>
       ))}
-      <img src={plusI} />
+      <img src={plusI} onClick={()=> {dispatch(modifyCategories([...categories, {id: Math.random * 1000, category: 'New Category'}]))}} />
     </div>
   );
 };
 
-export default Catagory;
+export default category;
