@@ -1,15 +1,34 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { updateProgress } from '../../redux/goal/goalSlice';
+import {useDispatch, } from 'react-redux';
 import Progress from '../../components/progress';
 import Button from '../../components/button';
 import { progressI, unprogressI, completeI } from '../../assets/icons';
+import {editGoal} from "../../redux/goal/goalSlice.js";
 
 const GoalDetails = ({ goal }) => {
   const dispatch = useDispatch();
   const [complete, setComplete] = useState(false);
-  const handleProgress = () => {
-    dispatch(updateProgress(goal));
+  const indexOfFirstCompleted = goal.milestones.indexOf(goal.milestones.filter(m=>!m.completed)[0])
+  const getCurrentMilestone = (indexOfFirstCompleted ===-1)? goal.milestones.length-1 : indexOfFirstCompleted;
+  console.log(getCurrentMilestone)
+  console.log(goal.milestones[1])
+  console.log(goal.milestones[getCurrentMilestone])
+    console.log(goal.milestones)
+    const handleProgress = () => {
+    // dispatch(updateProgress(goal));
+      let milestones = goal.milestones.map((milestone) => {
+        if (milestone.id === goal.milestones[getCurrentMilestone].id) {
+          return {
+            ...milestone,
+            completed: true,
+          };
+        } else {
+          return milestone ;
+        }
+      });
+      dispatch(
+          editGoal({ ...goal, milestones: [...milestones] })
+      );
     setComplete(false);
   };
   return (
@@ -19,7 +38,7 @@ const GoalDetails = ({ goal }) => {
             <div className="flex  pt-1">
               <img className="w-5 h-5 mr-1.5" src={progressI} alt="progress" />
               <span className="pl-1 font-semibold text-[#415472] leading-5 text-base ">
-                {goal.currentMilestone}/{goal.milestones.length} Milestones
+                {goal.milestones.filter(m=>m.completed).length}/{goal.milestones.length} Milestones
                 Reached
               </span>
             </div>
@@ -44,8 +63,8 @@ const GoalDetails = ({ goal }) => {
             />
           )}
           <p className="text-sm">
-            Milestone {goal.currentMilestone + 1}:
-            {goal.milestones[goal.currentMilestone].content.substring(0, 24)}...
+            Milestone {getCurrentMilestone + 1} :
+            {' ' + goal.milestones[getCurrentMilestone].content.substring(0, 24)}...
           </p>
         </div>
 
