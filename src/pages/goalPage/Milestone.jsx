@@ -52,7 +52,7 @@ const Milestone = () => {
                           completed: false,
                         };
                       } else {
-                        return { milestone };
+                        return  milestone ;
                       }
                     });
                     dispatch(
