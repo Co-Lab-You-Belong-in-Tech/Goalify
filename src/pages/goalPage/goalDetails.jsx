@@ -9,13 +9,8 @@ const GoalDetails = ({ goal }) => {
   const dispatch = useDispatch();
   const [complete, setComplete] = useState(false);
   const indexOfFirstCompleted = goal.milestones.indexOf(goal.milestones.filter(m=>!m.completed)[0])
-  const getCurrentMilestone = (indexOfFirstCompleted ===-1)? goal.milestones.length-1 : indexOfFirstCompleted;
-  console.log(getCurrentMilestone)
-  console.log(goal.milestones[1])
-  console.log(goal.milestones[getCurrentMilestone])
-    console.log(goal.milestones)
+  const getCurrentMilestone = (indexOfFirstCompleted ===-1)? goal.milestones.length : indexOfFirstCompleted;
     const handleProgress = () => {
-    // dispatch(updateProgress(goal));
       let milestones = goal.milestones.map((milestone) => {
         if (milestone.id === goal.milestones[getCurrentMilestone].id) {
           return {
@@ -63,18 +58,18 @@ const GoalDetails = ({ goal }) => {
             />
           )}
           <p className="text-sm">
-            Milestone {getCurrentMilestone + 1} :
-            {' ' + goal.milestones[getCurrentMilestone].content.substring(0, 24)}...
+
+            {getCurrentMilestone === goal.milestones.length ? 'CONGRATS You Finished Your Goal' :
+                `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[getCurrentMilestone]?.content?.substring(0, 24)}...`}
           </p>
         </div>
-
-        <Button
-          disabled={!complete}
-          onClick={handleProgress}
-          className="btn-primary btn-progress font-semibold"
+        {getCurrentMilestone !== goal.milestones.length ?  <Button
+            disabled={!complete}
+            onClick={handleProgress}
+            className="btn-primary btn-progress font-semibold"
         >
           Update Progress
-        </Button>
+        </Button> : null}
       </div>
     </>
   );
