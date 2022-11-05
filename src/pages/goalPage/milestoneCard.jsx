@@ -158,7 +158,7 @@ const MilestoneCard = ({milestone, goal, i}) => {
                             className={`hover:bg-indigo-100 mr-4 flex bg-indigo-50 rounded-full py-1.5 px-4 `}
                             onClick={editGoalMilestone}
                         >
-                            <img className={'justify-end mr-2'} src={milestone.completed ? Undo : achieved}/>
+                            <img className={'justify-end mr-2'} src={milestone.completed ? undo : achieved}/>
                             <p> {milestone.completed ? 'Undo' : 'Mark as achieved'} </p>
                         </button>
                         <button

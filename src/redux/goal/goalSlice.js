@@ -4,7 +4,7 @@ const initialState = [
   {
     categoryId: 1,
     id: 0,
-    currentMilestone: 0,
+    // currentMilestone: 0,
     content: 'I want to get a Tech Job min 1400$',
     milestones: [
       {
@@ -25,10 +25,10 @@ const initialState = [
         completed: false,
       },
       { id: 3, content: 'strengthen JS skills', completed: false },
-      { id: 3, content: 'strengthen Ruby skills', completed: false },
-      { id: 3, content: 'strengthen Redis skills', completed: false },
-      { id: 3, content: 'strengthen Next skills', completed: false },
-      { id: 3, content: 'strengthen GraphQL skills', completed: false },
+      { id: 4, content: 'strengthen Ruby skills', completed: false },
+      { id: 5, content: 'strengthen Redis skills', completed: false },
+      { id: 6, content: 'strengthen Next skills', completed: false },
+      { id: 7, content: 'strengthen GraphQL skills', completed: false },
 
     ],
     motivation: 'I could save some of it to travel outside.',
@@ -60,22 +60,20 @@ const goalSlice = createSlice({
     updateProgress(state, { payload }) {
       return state.map((goal) => {
         if (
-          goal.id === payload.id &&
-          goal.currentMilestone < goal.milestones.length - 1
+          goal.id === payload.id
         ) {
           let milestoness = goal.milestones.map((m) => {
-            if (m.id === goal.milestones[goal.currentMilestone].id) {
-              return {
-                ...m,
-                completed: true,
-              };
-            } else {
-              return m;
-            }
+            // if (m.id === goal.milestones[getCurrentMilestone].id) {
+            //   return {
+            //     ...m,
+            //     completed: true,
+            //   };
+            // } else {
+            //   return m;
+            // }
           });
           return {
             ...goal,
-            currentMilestone: goal.currentMilestone + 1,
             milestones: milestoness,
           };
         }
