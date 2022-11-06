@@ -58,7 +58,7 @@ const Card = ({goal}) => {
         dispatch(editGoal({...goal, milestones: [...milestones]}));
         setComplete(false);
     }
-    return (<div className="w-80 p-2 border border-slate-400 w rounded">
+    return (<div className="w-80 p-2 border border-grey-100  w rounded">
         <div className="flex justify-between mb-4">
             <div>
                 {goal.catagoryId === 2 ? (<img
@@ -112,8 +112,8 @@ const Card = ({goal}) => {
                 <Progress goal={goal}/>
             </div>) : ('')}
         </div>
-        <div className="my-3 text-sm ">Next Milestone</div>
-        <p className="text-xs">
+        <div className="mt-3  text-sm  font-semibold  text-[#717171]">Next Milestone</div>
+        <p className="text-xs text-[#717171]">
             When you’ve completed your next milestone, you can check it as done to
             update your goal
         </p>
