@@ -13,10 +13,10 @@ const ListCards = () => {
     <div className="flex flex-wrap gap-x-5 gap-y-12 justify-center mt-44 px-10 py-7">
       {myGoals.length > 0 ? (
         myGoals.map((goal) => <Card key={goal.id} goal={goal} />)
-      ) : <d>
+      ) : <div>
         <InitialGoalMessage />
 
-      </d>
+      </div>
       }
     </div>
   );
