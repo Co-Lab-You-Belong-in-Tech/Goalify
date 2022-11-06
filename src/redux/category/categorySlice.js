@@ -5,14 +5,10 @@ const initialState = {
   categories: [
     {
       id: 0,
-      category: 'All goals',
-    },
-    {
-      id: 1,
       category: 'Active goals',
     },
     {
-      id: 2,
+      id: 1,
       category: 'Paused goals',
     },
   ],
@@ -28,10 +24,13 @@ const categorySlice = createSlice({
     modifyCategories(state, action) {
       state.categories = [...action.payload];
     },
+    modifyCategory(state, action) {
+       state.categories = action.payload;
+    },
   },
 });
 
 // export actions
-export const { updateSelected, modifyCategories } = categorySlice.actions;
+export const { updateSelected, modifyCategories, modifyCategory } = categorySlice.actions;
 
 export default categorySlice.reducer;
