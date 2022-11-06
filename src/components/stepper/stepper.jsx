@@ -89,7 +89,7 @@ export default function HorizontalLinearStepper({handleClose}) {
     const navigateDashboard = () => {
         createGoal(goalObj)
         handleClose();
-        navigate('/dashboard');
+        navigate('/');
     }
 
     return (<Box sx={{width: '100%'}}>
