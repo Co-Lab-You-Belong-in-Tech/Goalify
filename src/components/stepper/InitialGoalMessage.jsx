@@ -23,7 +23,7 @@ export default function InitialGoalMessage() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    return (<Grid display="flex" flexDirection="column" justifyContent="center" alignItems="center" height="100vh" sx={{background:"#FFFFF9"}}>
+    return (<Grid display="flex" flexDirection="column" justifyContent="center" alignItems="center" height={`${100-50}vh`} sx={{background:"#FFFFF9"}}>
         <p className="text-4xl leading-10 font-bold mb-10"> Welcome, Jason</p>
 
         <div className="border divide-neutral-300 border-solid p-5 bg-white	">
