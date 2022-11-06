@@ -11,8 +11,8 @@ const ListCards = () => {
       : goals.filter((goal) => goal.categoryId === selected);
   return (
     <div className="flex flex-wrap gap-x-5 gap-y-12 justify-center mt-44 px-10 py-7">
-      {myGoals.length > 0 ? (
-        myGoals.map((goal) => <Card key={goal.id} goal={goal} />)
+      {myGoals.length > 0 ?  (
+        myGoals.filter((g)=> g.categoryId == selected).map((goal) => <Card key={goal.id} goal={goal} />)
       ) : <div>
         <InitialGoalMessage />
 

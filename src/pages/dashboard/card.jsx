@@ -61,13 +61,13 @@ const Card = ({goal}) => {
     return (<div className="w-80 p-2 border border-grey-100  w rounded">
         <div className="flex justify-between mb-4">
             <div>
-                {goal.catagoryId === 2 ? (<img
+                {goal.categoryId === 1 ? (<img
                     className="w-8 h-8"
                     src={playI}
                     alt="playI"
                     onClick={() => {
                         toggleStatus();
-                        dispatch(updateGoalStatus({id: goal.id, catagoryId: 1}));
+                        dispatch(updateGoalStatus({...goal, categoryId: 0}));
                     }}
                 />) : (<img
                     className="w-8 h-8"
@@ -75,7 +75,7 @@ const Card = ({goal}) => {
                     alt="pauseI"
                     onClick={() => {
                         toggleStatus();
-                        dispatch(updateGoalStatus({id: goal.id, catagoryId: 2}));
+                        dispatch(updateGoalStatus({...goal, categoryId: 1}));
                     }}
                 />)}
             </div>
