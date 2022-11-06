@@ -51,7 +51,7 @@ function CreateNewGoal({setGoal}) {
                     setMileStoneInput('')
 
                     setGoal((prev) => {
-                        return {...prev, milestones: [...prev.milestones, {id:Math.random()*100, completed: false, content: milestoneInput}]}
+                        return {...prev, milestones: [...prev.milestones, {id:prev.milestones.length, completed: false, content: milestoneInput}]}
                     })
                 }}>
             <p className={"font-black"}>+ Add milestone</p>

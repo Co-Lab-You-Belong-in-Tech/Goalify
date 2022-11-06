@@ -13,7 +13,6 @@ const initialState = [{
     }, {id: 5, content: 'strengthen Redis skills', completed: false}, {
         id: 6, content: 'strengthen Next skills', completed: false
     }, {id: 7, content: 'strengthen GraphQL skills', completed: false},
-
     ], motivation: 'I could save some of it to travel outside.',
 },];
 
