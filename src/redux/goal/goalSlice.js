@@ -1,7 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = [{
-    categoryId: 1, id: 0,
+    categoryId: 0,
+    id: 0,
     content: 'I want to get a Tech Job min 1400$', milestones: [{
         id: 0, content: 'I want to strengthen my React skills', completed: false,
     }, {
@@ -33,11 +34,11 @@ const goalSlice = createSlice({
                 return goal;
             });
         },
-        updateGoalStatus(state, {payload}) {
+        updateGoalStatus(state, action) {
             return state.map((goal) => {
-                if (goal.id === payload.id) {
+                if (goal.id === action.payload.id) {
                     return {
-                        ...goal, catagoryId: payload.catagoryId,
+                        ...action.payload
                     };
                 }
 
