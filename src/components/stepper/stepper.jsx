@@ -21,12 +21,15 @@ export default function HorizontalLinearStepper({handleClose}) {
     const dispatch = useDispatch();
     const goals = useSelector((state) => state.goals);
 
+    const { categories, selected } = useSelector((state) => state.categories);
+
+
     const createGoal = (goal) => {
         dispatch(addGoal(goal))
     }
 
     const [goalObj, setGoalObj] = useState({
-        id: goals.length, content: '', motivation: '', milestones: [], startDate: '', endDate: ''
+        id: goals.length, content: '', motivation: '', milestones: [], startDate: '', endDate: '', categoryId: categories[selected].id
     })
     const steps = [{
         title: 'Create Goal', content: <CreateNewGoalStep setGoal={setGoalObj}/>
