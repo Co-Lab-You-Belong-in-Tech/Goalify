@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -42,17 +42,10 @@ const Card = ({ goal }) => {
 
   const handleButtonClick = () => {
     setIsAlertVisible(true);
-
     setTimeout(() => {
       setIsAlertVisible(false);
     }, 6000);
   };
-
-  useEffect(() => {
-    if (getCurrentMilestone === goal.milestones.length) {
-      handleButtonClick();
-    }
-  }, [getCurrentMilestone]);
 
   const actionView = action ? (
     <div className="flex gap-2">
@@ -95,6 +88,9 @@ const Card = ({ goal }) => {
     });
     dispatch(editGoal({ ...goal, milestones: [...milestones] }));
     setComplete(false);
+    if (getCurrentMilestone === goal.milestones.length - 1) {
+      handleButtonClick();
+    }
   };
   return (
     <div className="w-80 p-2 border border-grey-100  w rounded">
