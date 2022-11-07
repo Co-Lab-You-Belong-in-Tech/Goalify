@@ -5,7 +5,6 @@ import { editGoal } from '../../redux/goal/goalSlice.js';
 import undo from '../../assets/icons/undo.svg';
 import x from '../../assets/icons/x.svg';
 import dots from '../../assets/icons/dots.svg';
-import * as React from 'react';
 
 const Milestone = () => {
   return (
@@ -52,7 +51,7 @@ const Milestone = () => {
                           completed: false,
                         };
                       } else {
-                        return  milestone ;
+                        return milestone;
                       }
                     });
                     dispatch(
