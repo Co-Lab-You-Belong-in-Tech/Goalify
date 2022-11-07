@@ -47,12 +47,15 @@ const goalSlice = createSlice({
   reducers: {
     addGoal(state, action) {
       state.push(action.payload);
+      localStorage.setItem('goals', JSON.stringify(state));
     },
     removeGoal(state, action) {
-      return state.filter((item) => item.id !== action.payload);
+      const goals = state.filter((item) => item.id !== action.payload);
+      localStorage.setItem('goals', JSON.stringify(goals));
+      return goals;
     },
     editGoal(state, { payload }) {
-      return state.map((goal) => {
+      const goals = state.map((goal) => {
         if (goal.id === payload.id) {
           return {
             ...goal,
@@ -62,9 +65,11 @@ const goalSlice = createSlice({
 
         return goal;
       });
+      localStorage.setItem('goals', JSON.stringify(goals));
+      return goals;
     },
     updateGoalStatus(state, action) {
-      return state.map((goal) => {
+      const goals = state.map((goal) => {
         if (goal.id === action.payload.id) {
           return {
             ...action.payload,
@@ -73,6 +78,8 @@ const goalSlice = createSlice({
 
         return goal;
       });
+      localStorage.setItem('goals', JSON.stringify(goals));
+      return goals;
     },
   },
 });
