@@ -45,7 +45,7 @@ const Card = ({ goal }) => {
 
     setTimeout(() => {
       setIsAlertVisible(false);
-    }, 5000);
+    }, 6000);
   };
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const Card = ({ goal }) => {
         <div>
           {goal.categoryId === 1 ? (
             <img
-              className="w-8 h-8"
+              className="w-8 h-8 hover:scale-75"
               src={playI}
               alt="playI"
               onClick={() => {
@@ -112,7 +112,7 @@ const Card = ({ goal }) => {
             />
           ) : (
             <img
-              className="w-8 h-8"
+              className="w-8 h-8 hover:scale-75"
               src={pauseI}
               alt="pauseI"
               onClick={() => {
