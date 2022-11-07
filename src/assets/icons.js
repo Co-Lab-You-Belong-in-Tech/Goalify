@@ -9,13 +9,17 @@ import dotsI from './icons/dots.svg';
 import progressI from './icons/progress.svg';
 import uneyeI from './icons/uneye.svg';
 import plusI from './icons/plus.svg';
-import nameI from './icons/name.svg';
+import Glogo from './icons/name.svg';
 import logo from './icons/logo.png';
+import dir from './icons/headerCategory.svg';
+import share from './icons/headerShare.svg';
 
 export {
+  dir,
+  share,
   logo,
   pauseI,
-  nameI,
+  Glogo,
   plusI,
   progressI,
   eyeI,

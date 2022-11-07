@@ -1,14 +1,10 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MilestoneCard from './milestoneCard';
 import GoalDetails from './goalDetails';
-import plus from '../../assets/icons/headerPlus.svg';
-import glogo from '../../assets/icons/headerLogo.svg';
-import dir from '../../assets/icons/headerCategory.svg';
-import share from '../../assets/icons/headerShare.svg';
-import { useState } from 'react';
+import { Glogo, plusI, share, dir } from '../../assets/icons';
 
 const GoalPage = () => {
   let params = useParams();
@@ -28,10 +24,10 @@ const GoalPage = () => {
         }
       >
         <Link to="/">
-          <img src={glogo} alt="" />
+          <img src={Glogo} alt="" />
         </Link>
         <div className={'flex justify-center items-center gap-4'}>
-          <img src={plus} />
+          <img src={plusI} />
           <div
             className={
               'bg-gray-200 w-10 h-10 flex justify-center items-center rounded-3xl'

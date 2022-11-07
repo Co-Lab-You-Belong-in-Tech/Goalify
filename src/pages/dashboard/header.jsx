@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '../../components/button';
 import HorizontalLinearStepper from '../../components/stepper/stepper.jsx';
 import Category from '../../components/category';
-import { nameI, logo } from '../../assets/icons';
+import { Glogo, logo } from '../../assets/icons';
 
 const style = {
   position: 'absolute',
@@ -27,8 +27,8 @@ const Header = () => {
     <div className="h-50 bg-r bg-orange-50 fixed top-0 left-0 w-full py-5 px-10">
       <div className="flex justify-between items-center ">
         <div>
-          <Link to="/dashboard">
-            <img src={nameI} />
+          <Link to="/">
+            <img src={Glogo} />
           </Link>
         </div>
         <div className="flex gap-4 items-center my-5">
