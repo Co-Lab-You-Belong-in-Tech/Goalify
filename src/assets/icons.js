@@ -13,8 +13,10 @@ import Glogo from './icons/name.svg';
 import logo from './icons/logo.png';
 import dir from './icons/headerCategory.svg';
 import share from './icons/headerShare.svg';
+import congrts from './icons/congrts.gif';
 
 export {
+  congrts,
   dir,
   share,
   logo,

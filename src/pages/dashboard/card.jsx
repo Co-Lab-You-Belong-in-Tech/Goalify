@@ -21,6 +21,7 @@ import {
   deleteI,
   uneyeI,
   pauseI,
+  congrts,
 } from '../../assets/icons';
 
 const Card = ({ goal }) => {
@@ -168,8 +169,14 @@ const Card = ({ goal }) => {
         When you’ve completed your next milestone, you can check it as done to
         update your goal
       </p>
-      <div className="bg-blue-50 py-5 rounded px-2 my-5 flex gap-3">
-        {complete ? (
+      <div
+        className={`bg-blue-50 rounded px-2 my-4 flex gap-3 ${
+          getCurrentMilestone === goal.milestones.length ? 'py-2' : 'py-4'
+        }`}
+      >
+        {getCurrentMilestone === goal.milestones.length ? (
+          <img className="w-10" src={congrts} alt="completeI" />
+        ) : complete ? (
           <img className="w-5" src={completeI} alt="completeI" />
         ) : (
           <img
@@ -179,14 +186,12 @@ const Card = ({ goal }) => {
             className="w-5"
           />
         )}
-        <p className="text-sm">
+        <p className="text-sm flex items-center">
           {getCurrentMilestone === goal.milestones.length
             ? 'CONGRATS You Finished Your Goal'
             : `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[
                 getCurrentMilestone
               ]?.content?.substring(0, 24)}...`}
-          {/* {getCurrentMilestone === goal.milestones.length &&
-            handleButtonClick()} */}
           {isAlertVisible && <Celebrate />}
         </p>
       </div>
