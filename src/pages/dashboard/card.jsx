@@ -40,7 +40,7 @@ const Card = ({ goal }) => {
       ? goal.milestones.length
       : indexOfFirstCompleted;
 
-  const handleButtonClick = () => {
+  const handleCelebrations = () => {
     setIsAlertVisible(true);
     setTimeout(() => {
       setIsAlertVisible(false);
@@ -89,7 +89,7 @@ const Card = ({ goal }) => {
     dispatch(editGoal({ ...goal, milestones: [...milestones] }));
     setComplete(false);
     if (getCurrentMilestone === goal.milestones.length - 1) {
-      handleButtonClick();
+      handleCelebrations();
     }
   };
   return (
