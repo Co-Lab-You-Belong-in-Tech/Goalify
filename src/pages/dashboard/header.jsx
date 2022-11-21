@@ -6,6 +6,8 @@ import Button from '../../components/button';
 import HorizontalLinearStepper from '../../components/stepper/stepper.jsx';
 import Category from '../../components/category';
 import { Glogo, logo } from '../../assets/icons';
+import {useSelector} from "react-redux";
+
 
 const style = {
   position: 'absolute',
@@ -23,6 +25,7 @@ const Header = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const name = useSelector( (state) => state.user.name)
   return (
     <div className="h-50 bg-r bg-orange-50 fixed top-0 left-0 w-full py-5 px-10">
       <div className="flex justify-between items-center ">
@@ -32,7 +35,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex gap-4 items-center my-5">
-          <h1 className="text-xl font-semibold">Welcome back, Jason</h1>
+          <h1 className="text-xl font-semibold">Welcome back, {name}</h1>
           <img src={logo} alt="logo" className="w-14" />
         </div>
       </div>

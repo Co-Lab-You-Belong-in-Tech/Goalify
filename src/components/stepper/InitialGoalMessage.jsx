@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import HorizontalLinearStepper from "./stepper.jsx";
 import {Grid} from "@mui/material";
 import emoji from "../../assets/icons/emoji.svg";
+import {useDispatch, useSelector} from "react-redux";
 
 const style = {
     position: 'absolute',
@@ -20,11 +21,12 @@ const style = {
 
 export default function InitialGoalMessage() {
     const [open, setOpen] = React.useState(false);
+    const name  = useSelector((state) => state.user.name);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
+    const dispatch = useDispatch();
     return (<Grid display="flex" flexDirection="column" justifyContent="center" alignItems="center" height={`${100-50}vh`} sx={{background:"#FFFFF9"}}>
-        <p className="text-4xl leading-10 font-bold mb-10"> Welcome, Jason</p>
+        <p className="text-4xl leading-10 font-bold mb-10"> Welcome, {name}</p>
 
         <div className="border divide-neutral-300 border-solid p-5 bg-white	">
             <Grid display="flex" flexDirection="column" justifyContent="center" alignItems="center">
