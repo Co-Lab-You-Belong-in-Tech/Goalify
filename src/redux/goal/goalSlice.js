@@ -3,28 +3,28 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = localStorage.getItem('goals')
   ? JSON.parse(localStorage.getItem('goals'))
   : [
-      {
-        categoryId: 0,
-        id: 0,
-        content: 'I want to get a Tech Job min 1400$',
-        milestones: [
-          {
-            id: 0,
-            content: 'I want to strengthen my React skills',
-            completed: false,
-          },
-          {
-            id: 1,
-            content: 'strengthen Tailwind skills',
-            date: 'October 19, 2022',
-            completed: false,
-          },
-          {
-            id: 2,
-            content: 'strengthen Rails skills',
-            completed: false,
-          },
-          { id: 3, content: 'strengthen JS skills', completed: false },
+      // {
+        // categoryId: 0,
+        // id: 0,
+        // content: 'I want to get a Tech Job min 1400$',
+        // milestones: [
+        //   {
+        //     id: 0,
+        //     content: 'I want to strengthen my React skills',
+        //     completed: false,
+        //   },
+        //   {
+        //     id: 1,
+        //     content: 'strengthen Tailwind skills',
+        //     date: 'October 19, 2022',
+        //     completed: false,
+        //   },
+        //   {
+        //     id: 2,
+        //     content: 'strengthen Rails skills',
+        //     completed: false,
+        //   },
+        //   { id: 3, content: 'strengthen JS skills', completed: false },
           // {
           //   id: 4,
           //   content: 'strengthen Ruby skills',
@@ -37,9 +37,9 @@ const initialState = localStorage.getItem('goals')
           //   completed: false,
           // },
           // { id: 7, content: 'strengthen GraphQL skills', completed: false },
-        ],
-        motivation: 'I could save some of it to travel outside.',
-      },
+        // ],
+        // motivation: 'I could save some of it to travel outside.',
+      // },
     ];
 const goalSlice = createSlice({
   name: 'goals',
