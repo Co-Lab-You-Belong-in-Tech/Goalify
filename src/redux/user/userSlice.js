@@ -9,14 +9,15 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        assignName(state, action) {
-            state.name = action.payload;
+        assignUser(state, action) {
+            state = {...state, ...action.payload}
             localStorage.setItem('user', JSON.stringify(state));
+            return state
         },
     },
 });
 
 // export actions
-export const { assignName } = userSlice.actions;
+export const { assignUser } = userSlice.actions;
 
 export default userSlice.reducer;
