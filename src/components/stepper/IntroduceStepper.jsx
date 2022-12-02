@@ -89,8 +89,8 @@ export default function IntroduceStepper( ) {
     };
 
     return (
-        <div className={"w-full h-screen flex justify-center items-center"}>
-            <Box>
+        <div className={"bg-gray-200 w-full h-screen flex justify-center items-center"}>
+            <div className={"border border-solid border-gray-300 p-6 rounded-xl bg-white w-2/5"}>
             <Stepper activeStep={activeStep}>
                 {/*Iterate over the steps*/}
                 {steps.map((step, index) => {
@@ -119,7 +119,7 @@ export default function IntroduceStepper( ) {
                 <React.Fragment>
                     <p className={'text-2xl font-bold leading-9 inline'}>
                         {' '}
-                        Your first goal is set
+                        Your account setup is completed.
                         <img
                             width={30}
                             height={30}
@@ -145,7 +145,7 @@ export default function IntroduceStepper( ) {
                             color="inherit"
                             disabled={activeStep === 0}
                             onClick={handleBack}
-                            sx={{ mr: 1 }}
+                            className={"text-white p-3 rounded-3xl w-24 font-bold hover:rounded-3xl"}
                         >
                             Back
                         </Button>
@@ -156,13 +156,13 @@ export default function IntroduceStepper( ) {
                             </Button>
                         )}
 
-                        <Button onClick={handleNext}>
+                        <Button class={"bg-indigo-600 text-white p-3 rounded-3xl w-24 font-bold"} onClick={handleNext}>
                             {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                         </Button>
                     </Box>
                 </React.Fragment>
             )}
-            </Box>
+            </div>
         </div>
     );
 }
