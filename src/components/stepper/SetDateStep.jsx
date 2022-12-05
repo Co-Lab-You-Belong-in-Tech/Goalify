@@ -16,10 +16,10 @@ function SetDateStep({setGoal}) {
     const [endDate, setEndDate] = useState(null);
 
     return (<Box>
-        <p className={"text-2xl font-bold leading-9"}> Great, dates help keep momentum with our goals!</p>
+        <p className={"text-xl font-bold leading-9 text-[#152e40]"}> Adding dates to your goal</p>
         <div className={"flex my-3 items-center"}>
             <p className={"inline"}>
-                Pick a start and end date below
+                If your goal is time bound, pick a start and end date below. If not, you can skip this part by pressing the "skip" button below.
             </p>
         </div>
         <div className={"flex justify-around items-center"}>
