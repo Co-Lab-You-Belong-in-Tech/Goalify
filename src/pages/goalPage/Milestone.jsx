@@ -82,7 +82,7 @@ const Milestone = () => {
                 'h-10 border rounded-full w-fit p-2  border-slate-300 mr-2 flex '
               }
             >
-              <p className=" bold text-base font-black leading-5">
+              <p className=" bold text-base font-bold leading-5">
                 {' '}
                 {String(i).padStart(2, '0')}{' '}
               </p>

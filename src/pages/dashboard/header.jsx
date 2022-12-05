@@ -35,14 +35,14 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex gap-4 items-center my-5">
-          <h1 className="text-xl font-semibold">Welcome back, {name}</h1>
+          <h1 className="text-xl font-semibold text-[#152E40] ">Welcome back, {name}</h1>
           <img src={logo} alt="logo" className="w-14" />
         </div>
       </div>
       <div className="flex">
         <Category />
         <Button className="btn-primary w-40 ml-2 h-9" onClick={handleOpen}>
-          + Create a goal
+          +    Create a goal
         </Button>
       </div>
 

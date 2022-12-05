@@ -7,6 +7,7 @@ import IntroduceStepper from "../../components/stepper/IntroduceStepper.jsx";
 const Dashboard = () => {
     const name = useSelector((state) => state.user.name);
     return (
+        
         <>
             { (name.length === 0) ?
                 <IntroduceStepper/>
@@ -19,5 +20,6 @@ const Dashboard = () => {
         </>
     );
 };
+
 
 export default Dashboard;

@@ -93,8 +93,8 @@ const Card = ({ goal }) => {
     }
   };
   return (
-    <div className="w-80 p-2 border border-grey-100  w rounded">
-      <div className="flex justify-between mb-4">
+    <div className="w-80 p-3 border border-gray-100  rounded-lg">
+      <div className="flex justify-between mb-2">
         <div>
           {goal.categoryId === 1 ? (
             <img
@@ -120,9 +120,12 @@ const Card = ({ goal }) => {
         </div>
         <div>{actionView}</div>
       </div>
-      <small>Your goal</small>
-      <h3 className="font-semibold">{goal.content}</h3>
-      <div className="bg-gray-100 pb-1">
+      <div className="mt-3  text-xs  font-normal  text-[#717171]">
+        Your goal
+      </div>
+      
+      <h3 className="font-semibold ">{goal.content}</h3>
+      <div className="bg-gray-50 pb-1 rounded">
         <div className="rounded flex justify-between items-center py-2 px-1 mt-4">
           <div className="flex px-1 pt-1">
             <img className="w-5 h-5" src={progressI} alt="progress" />
@@ -134,7 +137,7 @@ const Card = ({ goal }) => {
             <span>
               <img
                 onClick={toggleView}
-                className="w-5 h-5"
+                className="w-4 h-4"
                 src={uneyeI}
                 alt="eyeI"
               />
@@ -143,7 +146,7 @@ const Card = ({ goal }) => {
             <span>
               <img
                 onClick={toggleView}
-                className="w-5 h-5"
+                className="w-4 h-4"
                 src={eyeI}
                 alt="eyeI"
               />
@@ -158,7 +161,7 @@ const Card = ({ goal }) => {
           ''
         )}
       </div>
-      <div className="mt-3  text-sm  font-semibold  text-[#717171]">
+      <div className="mt-3  text-xs  font-semibold  text-[#717171]">
         Next Milestone
       </div>
       <p className="text-xs text-[#717171]">
@@ -166,8 +169,8 @@ const Card = ({ goal }) => {
         update your goal
       </p>
       <div
-        className={`bg-blue-50 rounded px-2 my-4 flex gap-3 ${
-          getCurrentMilestone === goal.milestones.length ? 'py-2' : 'py-4'
+        className={`bg-[#F4F6FF] rounded px-2 my-2 flex gap-3 ${
+          getCurrentMilestone === goal.milestones.length ? 'py-1' : 'py-4'
         }`}
       >
         {getCurrentMilestone === goal.milestones.length ? (
@@ -182,9 +185,9 @@ const Card = ({ goal }) => {
             className="w-5"
           />
         )}
-        <p className="text-sm flex items-center">
+        <p className="text-sm  flex items-center">
           {getCurrentMilestone === goal.milestones.length
-            ? 'CONGRATS You Finished Your Goal'
+            ? <b><i>Congratulations</i> 🥳🎉🎊 </b>
             : `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[
                 getCurrentMilestone
               ]?.content?.substring(0, 24)}...`}
