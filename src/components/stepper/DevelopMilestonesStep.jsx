@@ -10,7 +10,7 @@ function CreateNewGoal({setGoal}) {
     const [milestoneInput, setMileStoneInput] = useState('')
 
     return <div>
-        <p className={"text-xl font-bold leading-9"}> Developing your new goal </p>
+        <p className={"text-xl font-bold leading-9 text-[#152e40]"}> Developing your new goal </p>
         <div className={"flex my-3 items-center"}>
             <p className={"inline"}>
                 <img width={30} height={30} src={net} alt="edit" className="pr-2 inline"/>
