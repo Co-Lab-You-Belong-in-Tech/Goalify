@@ -5,7 +5,7 @@ import * as React from "react";
 function AddNameStep({setUser}) {
     return (<div>
             <div className={"flex my-5 items-center"}>
-                <p className={"font-bold text-2xl text-[#152e40]"}>
+                <p className={"font-bold text-xl text-[#152e40]"}>
                    Welcome, what is your name?
                 </p>
             </div>
