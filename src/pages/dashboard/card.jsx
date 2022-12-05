@@ -124,7 +124,7 @@ const Card = ({ goal }) => {
         Your goal
       </div>
       
-      <h3 className="font-medium text-base ">{goal.content}</h3>
+      <h3 className="font-semibold text-base ">{goal.content}</h3>
       <div className="bg-gray-50 pb-1 rounded">
         <div className="rounded flex justify-between items-center py-2 px-1 mt-4">
           <div className="flex px-1 pt-1">
