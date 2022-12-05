@@ -51,7 +51,7 @@ const Card = ({ goal }) => {
     <div className="flex gap-2">
       <Button
         onClick={() => dispatch(removeGoal(goal.id))}
-        className="w-8 pl-2 btn-primary bg-red-300 font-semibold text-red-600 py-2"
+        className="w-8 pl-2 btn-primary bg-red-100 font-semibold text-red-600 py-2"
       >
         <div>
           <img src={deleteI} alt="delete" className="pr-2" />
