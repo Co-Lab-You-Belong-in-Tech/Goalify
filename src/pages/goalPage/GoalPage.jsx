@@ -16,7 +16,7 @@ const GoalPage = () => {
     <div className={'bg-[#FAFAFA] relative h-full w-full min-h-screen'}>
       {/*header*/}
       <div
-        className="bg-r bg-orange-50 fixed top-0 left-0 w-full h-20 py-5 px-20 flex  justify-between items-center"
+        className="bg-r bg-orange-50  fixed top-0 left-0 w-full h-20 py-5 px-20 flex  justify-between items-center"
         style={
           {
             // 'backgroundColor': 'rgba(251, 234, 200, 0.5)'
@@ -30,14 +30,14 @@ const GoalPage = () => {
           <img src={plusI} />
           <div
             className={
-              'bg-gray-200 w-10 h-10 flex justify-center items-center rounded-3xl'
+              'bg-gray-200 w-8 h-8 flex justify-center items-center rounded-3xl'
             }
           >
             <img src={dir} />
           </div>
           <div
             className={
-              'bg-gray-200 w-10 h-10 flex justify-center items-center rounded-3xl'
+              'bg-gray-200 w-8 h-8 flex justify-center items-center rounded-3xl'
             }
           >
             <img src={share} />
@@ -57,7 +57,7 @@ const GoalPage = () => {
         <div className="w-1/4  left-0 top-20 bottom-0 h-full fixed flex flex-col items-center py-5 p-7">
           <div
             className={
-              'mb-3 p-3  bg-white min-w-full border-solid border border-gray-200 rounded-[4px]'
+              'mb-3 p-3  bg-white min-w-full border-solid border border-gray-200 rounded-[8px]'
             }
           >
             <p className="font-semibold text-[#415472] leading-5 text-base mb-4">
@@ -66,7 +66,7 @@ const GoalPage = () => {
             <blockquote
               suppressContentEditableWarning={true}
               className={
-                'focus:border-0 bg-[#F5F5F5] p-3 text-[#717171] rounded-[4px]'
+                'focus:border-0 bg-[#F5F5F5] p-3 text-[#717171] rounded-[8px]'
               }
               contentEditable={'true'}
             >
@@ -93,7 +93,7 @@ const GoalPage = () => {
                   category == 'all'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                } hover:bg-white rounded-3xl p-2 text-base font-black  `}
+                } hover:bg-white rounded-3xl p-2 text-base font-semibold  `}
               >
                 {' '}
                 All milestones
@@ -106,7 +106,7 @@ const GoalPage = () => {
                   category == 'completed'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                }  hover:bg-white rounded-3xl p-2 text-base font-black   `}
+                }  hover:bg-white rounded-3xl p-2 text-base font-semibold   `}
               >
                 {' '}
                 Achieved milestones
@@ -119,7 +119,7 @@ const GoalPage = () => {
                   category == 'in-progress'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                }  hover:bg-white rounded-3xl p-2 text-base font-black `}
+                }  hover:bg-white rounded-3xl p-2 text-base font- `}
               >
                 {' '}
                 In-progress milestones

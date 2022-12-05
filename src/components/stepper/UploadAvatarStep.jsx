@@ -21,7 +21,7 @@ function UploadAvatarStep({userObj, setUser}) {
 
     return (<div>
             <div className={"flex flex-col my-5"}>
-                <p className={"font-bold text-2xl text-[#152e40]"}>
+                <p className={"font-bold text-xl text-[#152e40]"}>
                     Nice to meet you, {userObj.name}
                 </p>
                 <p className={"font-semibold text-[#415472] text-base mt-3"}>

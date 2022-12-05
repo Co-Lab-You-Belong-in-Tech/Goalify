@@ -125,7 +125,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
               setReflection({ ...reflection, content: e.target.value });
             }}
             className={
-              'my-2 bg-gray-100 border border-gray-300 w-full p-2 rounded-l'
+              'my-2 bg-gray-50 border border-gray-300 w-full p-2 rounded-l'
             }
             value={`${reflection.content ?? ''}`}
           />
@@ -133,7 +133,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
         <button
           className={`${reflection.content && !onChange ? 'hidden' : 'block'} ${
             onChange ? 'bg-indigo-700 text-white' : 'bg-gray-200'
-          } bg-gray-200 flex p-2 rounded-xl`}
+          } bg-gray-200 flex p-2 rounded-3xl`}
           onClick={() => {
             setOnChange(false);
             let milestones = goal.milestones.map((m) => {
@@ -158,7 +158,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
   const background = milestone.completed ? ' bg-yellow-50' : 'bg-indigo-50 ';
   return (
     <div
-      className={`snap-start border border-gray-200 rounded-b-xl bg-gray-100  mb-3 ${
+      className={` border border-gray-200 rounded-xl bg-gray-100  mb-3 ${
         milestone.completed ? 'pb-4' : ''
       }`}
     >
@@ -167,18 +167,20 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           {/*progress row*/}
           <div className={'flex items-center justify-between mb-3'}>
             <div
-              className={`rounded-xl ${background} w-fit p-2 flex  items-center`}
+              className={`rounded ${background} w-fit p-1.5 flex  items-center`}
             >
               {milestone.completed ? (
                 <>
                   <img className={'mr-2'} src={progress} />
-                  <p> Achieved {milestone.date}</p>
+                  <p className={'text-sm font-normal'}>
+                   Achieved {milestone.date}</p>
                 </>
               ) : (
                 <>
                   <div className={'flex items-center'}>
                     <img className={'mr-2'} src={achieved} />
-                    <p> Work In Progress </p>
+                    <p className={'text-sm font-normal'}>
+                     Work In Progress </p>
                   </div>
                 </>
               )}
@@ -221,10 +223,10 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           <div className={'flex items-center '}>
             <div
               className={
-                'h-10 border rounded-full w-fit p-2  border-slate-300 mr-2 flex '
+                'h-15 w-15 border rounded-3xl w-fit p-2  border-slate-200 mr-2 flex '
               }
             >
-              <p className=" bold text-base font-black leading-5">
+              <p className=" bold text-base font-bold leading-5">
                 {' '}
                 {String(i + 1).padStart(2, '0')}{' '}
               </p>
