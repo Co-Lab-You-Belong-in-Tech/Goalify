@@ -185,7 +185,7 @@ const Card = ({ goal }) => {
             className="w-5"
           />
         )}
-        <p className="text-sm  flex items-center">
+        <p className="text-xs  flex items-center">
           {getCurrentMilestone === goal.milestones.length
             ? <b><i>Congratulations</i> 🥳🎉🎊 </b>
             : `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[
