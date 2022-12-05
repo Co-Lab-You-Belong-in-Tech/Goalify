@@ -6,7 +6,7 @@ function AddNameStep({setUser}) {
     return (<div>
             <div className={"flex my-5 items-center"}>
                 <p className={"font-bold text-2xl text-[#152e40]"}>
-                   Welcome, What is your name?
+                   Welcome, what is your name?
                 </p>
             </div>
 
