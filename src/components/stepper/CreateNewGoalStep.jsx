@@ -6,7 +6,7 @@ import * as React from "react";
 function CreateNewGoalStep({setGoal}) {
 
     return (<div>
-            <p className={"text-2xl font-bold leading-9"}> Creating your new goal </p>
+            <p className={"text-xl font-bold leading-9 text-[#152e40]"}> Creating your new goal </p>
             <div className={"flex my-3 items-center"}>
                 <p className={"inline"}>
                     <img width={30} height={30} src={progress} alt="edit" className="pr-2 inline"/>
