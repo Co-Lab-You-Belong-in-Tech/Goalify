@@ -43,7 +43,7 @@ const category = () => {
   };
 
   return (
-    <div className="flex gap-3 w-full rounded-full p-1 bg-slate-100">
+    <div className="flex gap-3 w-full font-medium rounded-full p-1 bg-slate-100">
       {categories.map(({ category, id }) =>
         isEditing && id == selected ? (
           <Tooltip title="press enter to save change" key={id}>

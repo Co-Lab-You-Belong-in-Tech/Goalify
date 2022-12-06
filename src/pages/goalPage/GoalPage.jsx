@@ -60,7 +60,7 @@ const GoalPage = () => {
               'mb-3 p-3  bg-white min-w-full border-solid border border-gray-200 rounded-[8px]'
             }
           >
-            <p className="font-semibold text-[#415472] leading-5 text-base mb-4">
+            <p className="fontFamily-Satoshi font-bold text-sm text-[#415472]  leading-5 text-base mb-4">
               Your Motivation
             </p>
             <blockquote
@@ -93,7 +93,7 @@ const GoalPage = () => {
                   category == 'all'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                } hover:bg-white rounded-3xl p-2 text-base font-medium  `}
+                } hover:bg-white rounded-3xl p-2 text-base font-semibold  `}
               >
                 {' '}
                 All milestones
@@ -106,7 +106,7 @@ const GoalPage = () => {
                   category == 'completed'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                }  hover:bg-white rounded-3xl p-2 text-base font-medium   `}
+                }  hover:bg-white rounded-3xl p-2 text-base font-semibold   `}
               >
                 {' '}
                 Achieved milestones
@@ -119,7 +119,7 @@ const GoalPage = () => {
                   category == 'in-progress'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                }  hover:bg-white rounded-3xl p-2 text-base font-medium `}
+                }  hover:bg-white rounded-3xl p-2 text-base font-semibold `}
               >
                 {' '}
                 In-progress milestones
@@ -172,7 +172,7 @@ const GoalPage = () => {
           </div>
         </div>
         {/*3rd col*/}
-        <div className="flex-none w-1/4 mx-2 right-0 top-20 bottom-0  h-full fixed p-5">
+        <div className="flex-none w-1/4 mx-2 right-0 top-20 bottom-0 text-sm h-full fixed p-5">
           <GoalDetails goal={goal} />
         </div>
       </div>

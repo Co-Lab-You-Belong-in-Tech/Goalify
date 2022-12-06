@@ -129,7 +129,7 @@ const Card = ({ goal }) => {
         <div className="rounded flex justify-between items-center py-2 px-1 mt-3">
           <div className="flex px-1 pt-1">
             <img className="w-5 h-5" src={progressI} alt="progress" />
-            <span className="pl-2 text-xs font-normal text-[#717171]">
+            <span className="pl-2 text-xs font-medium font-inter text-[#717171]">
               {getCurrentMilestone}/{goal.milestones.length} Milestones Reached
             </span>
           </div>
@@ -161,15 +161,15 @@ const Card = ({ goal }) => {
           ''
         )}
       </div>
-      <div className="mt-3  text-xs  font-semibold  text-[#717171]">
+      <div className="mt-3  text-xs   font-semibold  text-[#717171]">
         Next Milestone
       </div>
-      <p className="text-xs text-[#717171]">
+      <p className="text-xs font-inter text-[#717171]">
         When you’ve completed your next milestone, you can check it as done to
         update your goal
       </p>
       <div
-        className={`bg-[#F4F6FF] rounded px-3 my-2 flex gap-2 ${
+        className={`bg-[#F4F6FF] font-medium rounded px-3 my-2 flex gap-2 ${
           getCurrentMilestone === goal.milestones.length ? 'py-1' : 'py-4'
         }`}
       >
