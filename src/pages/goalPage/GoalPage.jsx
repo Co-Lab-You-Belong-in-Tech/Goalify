@@ -93,7 +93,7 @@ const GoalPage = () => {
                   category == 'all'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                } hover:bg-white rounded-3xl p-2 text-base font-semibold  `}
+                } hover:bg-white rounded-3xl p-2 text-base font-medium  `}
               >
                 {' '}
                 All milestones
@@ -106,7 +106,7 @@ const GoalPage = () => {
                   category == 'completed'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                }  hover:bg-white rounded-3xl p-2 text-base font-semibold   `}
+                }  hover:bg-white rounded-3xl p-2 text-base font-medium   `}
               >
                 {' '}
                 Achieved milestones
@@ -119,7 +119,7 @@ const GoalPage = () => {
                   category == 'in-progress'
                     ? 'bg-white border-solid border border-gray-200'
                     : null
-                }  hover:bg-white rounded-3xl p-2 text-base font- `}
+                }  hover:bg-white rounded-3xl p-2 text-base font-medium `}
               >
                 {' '}
                 In-progress milestones

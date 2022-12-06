@@ -81,14 +81,14 @@ const MilestoneCard = ({ milestone, goal, i }) => {
             >
               <div
                 className={
-                  'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4 hover:bg-indigo-100 cursor-pointer'
+                  'h-9 border rounded-3xl w-fit p-2 bg-blue-50 mr-4 hover:bg-blue-100 cursor-pointer'
                 }
               >
                 <img src={uploadImg} />
               </div>
             </label>
             <div
-              className={'h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4'}
+              className={'h-9 border rounded-3xl w-fit p-2 bg-blue-50 mr-4'}
             >
               <img src={selectEmoji} />
             </div>
@@ -103,7 +103,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           >
             <div
               className={
-                'hover:bg-indigo-100 h-9 border rounded-3xl w-fit p-2 bg-indigo-50 mr-4 flex justify-between items-center'
+                'hover:bg-blue-100 h-9 border rounded-3xl w-fit p-2 bg-blue-50 mr-4 flex justify-between items-center'
               }
             >
               <img
@@ -125,7 +125,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
               setReflection({ ...reflection, content: e.target.value });
             }}
             className={
-              'my-2 bg-gray-50 border border-gray-300 w-full p-2 rounded-l'
+              'my-2 bg-gray-50 border border-gray-300 w-full p-2 rounded-lg'
             }
             value={`${reflection.content ?? ''}`}
           />
@@ -172,14 +172,14 @@ const MilestoneCard = ({ milestone, goal, i }) => {
               {milestone.completed ? (
                 <>
                   <img className={'mr-2'} src={progress} />
-                  <p className={'text-sm font-normal'}>
+                  <p className={'text-xs font-normal'}>
                    Achieved {milestone.date}</p>
                 </>
               ) : (
                 <>
                   <div className={'flex items-center'}>
                     <img className={'mr-2'} src={achieved} />
-                    <p className={'text-sm font-normal'}>
+                    <p className={'text-xs font-normal'}>
                      Work In Progress </p>
                   </div>
                 </>
@@ -223,7 +223,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           <div className={'flex items-center '}>
             <div
               className={
-                'h-15 w-15 border rounded-3xl w-fit p-2  border-slate-200 mr-2 flex '
+                'h-15 w-10 border rounded-3xl w-fit p-2  border-slate-200 mr-2 flex '
               }
             >
               <p className=" bold text-base font-bold leading-5">

@@ -87,7 +87,7 @@ const Milestone = () => {
                 {String(i).padStart(2, '0')}{' '}
               </p>
             </div>
-            <p className={'text-lg font-semibold'}> {m.content}</p>
+            <p className={'text-lg font-bold'}> {m.content}</p>
           </div>
         </div>
         {/*Reflection*/}
