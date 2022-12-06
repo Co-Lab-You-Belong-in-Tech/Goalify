@@ -2,9 +2,12 @@
   color: #415472;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 @layer components {
   .btn-primary {
@@ -16,3 +19,4 @@
   background-color: #f5f5f5;
   color: #717171;
 }
+
