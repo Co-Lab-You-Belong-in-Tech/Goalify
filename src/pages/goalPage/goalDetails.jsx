@@ -41,12 +41,12 @@ const GoalDetails = ({ goal }) => {
           <div className="px-1">
             <Progress goal={goal} />
           </div>
-        <div className="mt-3 mb-1.5 text-sm font-semibold text-gray-500">Next Milestone</div>
-        <p className="text-xs">
+        <div className="mt-3 mb-1.5 text-sm font-semibold text-[#717171]">Next Milestone</div>
+        <p className="text-xs text-[#717171]">
           When you’ve completed your next milestone, you can check it as done to
           update your goal
         </p>
-        <div className="bg-blue-50 py-3 rounded-md px-2 my-3 flex gap-3">
+        <div className="bg-[#F4F6FF]  py-3 rounded-md px-2 my-3 flex gap-3">
           {complete ? (
             <img className="w-5" src={completeI} alt="completeI" />
           ) : (
@@ -57,7 +57,7 @@ const GoalDetails = ({ goal }) => {
               className="w-5"
             />
           )}
-          <p className="text-sm">
+          <p className=" text-xs  font-medium">
 
             {getCurrentMilestone === goal.milestones.length ? 'CONGRATS You Finished Your Goal' :
                 `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[getCurrentMilestone]?.content?.substring(0, 24)}...`}
