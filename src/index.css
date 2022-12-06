@@ -2,7 +2,7 @@
   color: #415472;
 }
 
-@import url('Satoshi_Complete%203/Fonts/WEB/css/satoshi.css');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
