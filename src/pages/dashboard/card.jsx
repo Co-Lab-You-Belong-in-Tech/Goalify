@@ -61,7 +61,7 @@ const Card = ({ goal }) => {
         onClick={() => {
           navigate(`/goals/${goal.id}`);
         }}
-        className="w-8 pl-2 btn-primary bg-blue-50 font-semibold text-slate-800 py-2 text-sm"
+        className="w-8 pl-2 btn-primary bg-blue-50 font-semibold text-slate-8000 py-2 text-sm"
       >
         <img src={editI} alt="editI" className="pr-2" />
       </Button>
@@ -93,8 +93,8 @@ const Card = ({ goal }) => {
     }
   };
   return (
-    <div className="w-80 p-3 border border-gray-100  rounded-lg">
-      <div className="flex justify-between mb-2">
+    <div className="w-80 p-3 border border-[#414FC7] border-opacity-10 rounded-lg">
+      <div className="flex justify-between mb-2 ">
         <div>
           {goal.categoryId === 1 ? (
             <img
@@ -126,10 +126,10 @@ const Card = ({ goal }) => {
       
       <h3 className="font-semibold text-base ">{goal.content}</h3>
       <div className="bg-gray-50 pb-1 rounded">
-        <div className="rounded flex justify-between items-center py-2 px-1 mt-4">
+        <div className="rounded flex justify-between items-center py-2 px-1 mt-3">
           <div className="flex px-1 pt-1">
             <img className="w-5 h-5" src={progressI} alt="progress" />
-            <span className="pl-2 text-sm">
+            <span className="pl-2 text-xs font-normal text-[#717171]">
               {getCurrentMilestone}/{goal.milestones.length} Milestones Reached
             </span>
           </div>
@@ -169,7 +169,7 @@ const Card = ({ goal }) => {
         update your goal
       </p>
       <div
-        className={`bg-[#F4F6FF] rounded px-2 my-2 flex gap-3 ${
+        className={`bg-[#F4F6FF] rounded px-3 my-2 flex gap-2 ${
           getCurrentMilestone === goal.milestones.length ? 'py-1' : 'py-4'
         }`}
       >
