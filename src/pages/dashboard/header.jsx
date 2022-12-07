@@ -31,17 +31,17 @@ const Header = () => {
       <div className="flex justify-between items-center ">
         <div>
           <Link to="/">
-            <img src={Glogo} />
+            <img  src={Glogo} />
           </Link>
         </div>
         <div className="flex gap-4 items-center my-5">
           <h1 className="text-xl font-semibold text-[#152E40] ">Welcome back, {name}</h1>
-          <img src={localStorage.getItem('userAvatar')} alt="logo" className="rounded-3xl w-10 h-10" />
+          <img src={localStorage.getItem('userAvatar')} alt="logo" className="rounded-3xl w-10 h-10 " />
         </div>
       </div>
       <div className="flex">
         <Category />
-        <Button className="btn-primary w-40 ml-2 h-9  text-sm font-bold" onClick={handleOpen}>
+        <Button className="btn-primary w-40 ml-2 h-9  text-sm font-bold hover:scale-[.95]" onClick={handleOpen}>
           +  Create a goal
         </Button>
       </div>

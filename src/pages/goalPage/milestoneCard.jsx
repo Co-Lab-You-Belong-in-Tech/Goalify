@@ -189,13 +189,13 @@ const MilestoneCard = ({ milestone, goal, i }) => {
               <div className={'flex items-center'}>
                 <button className={'mr-4'}>
                   <img
-                    className={'justify-end bg-indigo-50 rounded-full p-3'}
+                    className={'hover:bg-red-100 justify-end bg-red-50 rounded-full p-3'}
                     src={remove}
                   />
                 </button>
 
                 <button
-                  className={`hover:bg-indigo-100 mr-4 flex bg-indigo-50 rounded-full py-1.5 px-4 `}
+                  className={`hover:bg-[#FFFDF8] mr-4 flex bg-indigo-50 rounded-full py-1.5 px-2 `}
                   onClick={editGoalMilestone}
                 >
                   <img
@@ -204,9 +204,10 @@ const MilestoneCard = ({ milestone, goal, i }) => {
                   />
                   <p> {milestone.completed ? 'Undo' : 'Mark as achieved'} </p>
                 </button>
+
                 <button
                   onClick={() => setVisible({ ...visible, dotsMenu: false })}
-                  className={'mr-4'}
+                  className={'mr-4'}S
                 >
                   <img className={'justify-end'} src={x} />
                 </button>

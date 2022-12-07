@@ -24,7 +24,7 @@ const GoalPage = () => {
         }
       >
         <Link to="/">
-          <img src={Glogo} alt="" />
+          <img className= "hover:scale-[.95]" src={Glogo} alt="Goalify logo" />
         </Link>
         <div className={'flex justify-center items-center gap-4'}>
           <img src={plusI} />
