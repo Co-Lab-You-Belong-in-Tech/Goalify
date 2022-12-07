@@ -36,7 +36,7 @@ const Header = () => {
         </div>
         <div className="flex gap-4 items-center my-5">
           <h1 className="text-xl font-semibold text-[#152E40] ">Welcome back, {name}</h1>
-          <img src={logo} alt="logo" className="w-14" />
+          <img src={localStorage.getItem('userAvatar')} alt="logo" className="rounded-3xl w-10 h-10" />
         </div>
       </div>
       <div className="flex">
