@@ -42,12 +42,8 @@ const GoalPage = () => {
           >
             <img src={share} />
           </div>
-          <div
-            className={
-              'bg-red-100 w-10 h-10 flex justify-center items-center rounded-3xl font-bold text-2xl leading-8'
-            }
-          >
-            <p> A </p>
+          
+          <div className={"rounded-3xl w-10 h-10"}> <img src={localStorage.getItem('userAvatar')} alt="logo" className={"rounded-3xl w-10 h-10"}/> 
           </div>
         </div>
       </div>
