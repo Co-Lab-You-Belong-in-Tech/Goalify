@@ -226,12 +226,12 @@ const MilestoneCard = ({ milestone, goal, i }) => {
                 'h-15 w-10 border rounded-3xl w-fit p-2  border-slate-200 mr-2 flex '
               }
             >
-              <p className=" bold text-base font-bold leading-5">
+              <p className=" bold text-base font-semibold leading-5">
                 {' '}
                 {String(i + 1).padStart(2, '0')}{' '}
               </p>
             </div>
-            <p className={'text-lg font-semibold'}> {milestone.content}</p>
+            <p className={'text-base font-medium'}> {milestone.content}</p>
           </div>
         </div>
         {/*Reflection*/}
