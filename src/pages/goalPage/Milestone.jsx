@@ -9,7 +9,7 @@ import dots from '../../assets/icons/dots.svg';
 const Milestone = () => {
   return (
     <div
-      className={`border border-gray-200 rounded-b-xl bg-gray-100  mb-3 ${
+      className={`border border-gray-200 rounded-xl bg-gray-100  mb-3 ${
         m.completed ? 'pb-4' : ''
       }`}
       key={i}
@@ -17,9 +17,9 @@ const Milestone = () => {
       <div className={'bg-grey '}>
         <div className={'bg-white p-4'}>
           {/*progress row*/}
-          <div className={'flex items-center justify-between mb-3'}>
+          <div className={'flex items-center  justify-between mb-3 '}>
             <div
-              className={`rounded-xl ${background} w-fit p-2 flex  items-center`}
+              className={`rounded-xl ${background} w-fit p-2 flex  items-center `}
             >
               {m.completed ? (
                 <>
@@ -34,7 +34,7 @@ const Milestone = () => {
               )}
             </div>
             {modify.state && modify.id === m.id ? (
-              <div className={'flex items-center'}>
+              <div className={'flex items-center  '}>
                 <button className={'mr-4'}>
                   <img
                     className={'justify-end bg-indigo-50 rounded-full p-3'}
@@ -42,7 +42,7 @@ const Milestone = () => {
                   />
                 </button>
                 <button
-                  className={'mr-4 flex bg-indigo-50 rounded-full p-1.5'}
+                  className={'mr-4 flex bg-indigo-50 font-bold  rounded-full p-1.5'}
                   onClick={() => {
                     let milestones = goal.milestones.map((milestone) => {
                       if (milestone.id === m.id) {
@@ -60,8 +60,10 @@ const Milestone = () => {
                   }}
                 >
                   <img className={'justify-end mr-2'} src={undo} />
-                  <p> Undo </p>
+
+                  <p>Undo</p>
                 </button>
+
                 <button
                   onClick={() => setModify({ state: false, id: null })}
                   className={'mr-4 '}
@@ -79,7 +81,7 @@ const Milestone = () => {
           <div className={'flex items-center '}>
             <div
               className={
-                'h-10 border rounded-full w-fit p-2 border-slate-300 mr-2 flex '
+                'h-10 border rounded-full w-fit p-2 mr-2 flex '
               }
             >
               <p className=" bold text-base font-bold leading-5">

@@ -56,7 +56,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
 
   const reflectionComponent = (
     <div>
-      <div className={'pl-4 pb-4 mb-5 flex bg-white flex-col'}>
+      <div className={'pl-4 pr-2 pb-2 mb-4 flex bg-white flex-col'}>
         {visible.reflectionImhg && localStorage.getItem(`${milestone.id}`) ? (
           <img
             className={`h-96 object-contain`}
