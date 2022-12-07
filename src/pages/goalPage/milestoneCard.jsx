@@ -167,7 +167,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           {/*progress row*/}
           <div className={'flex items-center justify-between mb-3'}>
             <div
-              className={`rounded-sm ${background} w-fit p-1.5 flex  items-center`}
+              className={`rounded-md ${background} w-fit p-1.5 flex  items-center`}
             >
               {milestone.completed ? (
                 <>

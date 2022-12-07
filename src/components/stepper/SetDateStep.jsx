@@ -22,7 +22,7 @@ function SetDateStep({setGoal}) {
                 If your goal is time bound, pick a start and end date below. If not, you can skip this part by pressing the "skip" button below.
             </p>
         </div>
-        <div className={"flex justify-around"}>
+        <div className={"flex justify-around items-center"}>
             <div className={"my-2"}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
