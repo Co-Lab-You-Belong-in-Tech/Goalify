@@ -18,11 +18,11 @@ function SetDateStep({setGoal}) {
     return (<Box>
         <p className={"text-xl font-bold leading-9 text-[#152e40]"}> Adding dates to your goal</p>
         <div className={"flex my-3 items-center"}>
-            <p className={"inline"}>
+            <p className={"inline font-medium text-sm"}>
                 If your goal is time bound, pick a start and end date below. If not, you can skip this part by pressing the "skip" button below.
             </p>
         </div>
-        <div className={"flex justify-around items-center"}>
+        <div className={"flex justify-around"}>
             <div className={"my-2"}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker

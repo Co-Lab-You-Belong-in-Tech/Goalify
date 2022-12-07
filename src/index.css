@@ -7,12 +7,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.font-sans { font-family: Satoshi, sans-serif;}
 
 
 
 @layer components {
   .btn-primary {
-    @apply bg-indigo-800 flex justify-center items-center font-medium  text-white w-full rounded-3xl py-1.5;
+    @apply bg-[#414FC7] flex justify-center items-center font-medium  text-white w-full rounded-3xl py-1.5;
   }
 }
 

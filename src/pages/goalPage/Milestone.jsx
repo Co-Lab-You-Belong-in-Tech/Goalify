@@ -9,7 +9,7 @@ import dots from '../../assets/icons/dots.svg';
 const Milestone = () => {
   return (
     <div
-      className={`border border-gray-200 rounded-b-xl bg-gray-100  mb-3 ${
+      className={`border border-gray-200 rounded-b-xl bg-gray-800  mb-3 ${
         m.completed ? 'pb-4' : ''
       }`}
       key={i}
@@ -79,7 +79,7 @@ const Milestone = () => {
           <div className={'flex items-center '}>
             <div
               className={
-                'h-10 border rounded-full w-fit p-2  border-slate-300 mr-2 flex '
+                'h-10 border rounded-full w-fit p-2 border-slate-800 mr-2 flex '
               }
             >
               <p className=" bold text-base font-bold leading-5">

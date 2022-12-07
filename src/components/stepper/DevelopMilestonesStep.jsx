@@ -11,19 +11,18 @@ function CreateNewGoal({setGoal}) {
 
     return <div>
         <p className={"text-xl font-bold leading-9 text-[#152e40]"}> Developing your new goal </p>
-        <div className={"flex my-3 items-center"}>
+        <div className={"flex my-3 font-medium items-center"}>
             <p className={"inline"}>
-                <img width={30} height={30} src={net} alt="edit" className="pr-2 inline"/>
+                <img width={24} height={24} src={net} alt="edit" className="pr-2 inline"/>
                 To develop this goal, let’s break it down into smaller goals or as we like to call them, Milestones.
             </p>
         </div>
-
-        <Typography variant="caption" display="block" gutterBottom>
+        <p className={"text-sm font-normal leading-6 text-[#717171]"} variant="caption" display="block" gutterBottom>
             Visualize the end result of the goal you are working on to a high standard.
             Work backwards to plan each step you need to take to increase the chances of achieving this goal.
             Have a go at setting a few milestones you think would be worth celebrating towards your goal and don’t
             worry you can always add or reduce milestones later.
-        </Typography>
+        </p>
         <div
             className={"snap-mandatory snap-y max-h-96 overflow-scroll  overscroll-contain "}
         >
@@ -32,7 +31,7 @@ function CreateNewGoal({setGoal}) {
             {<Milestone milestoneInput={milestoneInput} setMileStoneInput={setMileStoneInput}
                         number={milestones.length + 1}/>}
         </div>
-        <Button variant="text" size="large" fullWidth
+        <Button variant="text" size="normal" fullWidth
                 sx={{
                     border: "none",
                     display: "flex",
@@ -41,7 +40,7 @@ function CreateNewGoal({setGoal}) {
                     alignItems: "center",
                     padding: "16px",
                     gap: "10px",
-                    height: "56px",
+                    height: "36px",
                     background: "#F4F6FF",
                     borderRadius: "50px",
                 }}
@@ -54,7 +53,7 @@ function CreateNewGoal({setGoal}) {
                         return {...prev, milestones: [...prev.milestones, {id:prev.milestones.length, completed: false, content: milestoneInput}]}
                     })
                 }}>
-            <p className={"font-black"}>+ Add milestone</p>
+            <p className={"font-satoshi"}>+ Add milestone</p>
         </Button>
     </div>
 

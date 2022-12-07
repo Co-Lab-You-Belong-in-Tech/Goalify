@@ -6,7 +6,7 @@ import * as React from "react";
 function CreateNewGoalStep({setGoal}) {
     return (<div>
             <p className={"text-xl font-bold leading-9 text-[#152e40]"}> Creating your new goal </p>
-            <div className={"flex my-3 items-center"}>
+            <div className={"flex my-3 text-sm items-center"}>
                 <p className={"inline"}>
                     <img width={26} height={26} src={progress} alt="edit" className="pr-2 inline"/>
                     What is your goal?
@@ -20,7 +20,7 @@ function CreateNewGoalStep({setGoal}) {
                            })
                        }}
             />
-            <div className={"flex my-3 items-center"}>
+            <div className={"flex my-3 text-sm items-center"}>
                 <p className={"inline"}>
                     <img width={26} height={26} src={progress} alt="edit" className="pr-2 inline"/>
                     Why do you want to achieve this goal?
