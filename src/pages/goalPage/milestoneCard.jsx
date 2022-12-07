@@ -81,14 +81,14 @@ const MilestoneCard = ({ milestone, goal, i }) => {
             >
               <div
                 className={
-                  'h-9 border rounded-3xl w-fit p-2 bg-blue-50 mr-4 hover:bg-blue-100 cursor-pointer'
+                  'h-9  rounded-3xl w-fit p-2 bg-[#F4F6FF]  mr-4 hover:bg-blue-100 cursor-pointer'
                 }
               >
                 <img src={uploadImg} />
               </div>
             </label>
             <div
-              className={'h-9 border rounded-3xl w-fit p-2 bg-blue-50 mr-4'}
+              className={'h-8 bg-[#F4F6FF]  rounded-3xl w-fit p-2  mr-4'}
             >
               <img src={selectEmoji} />
             </div>
@@ -103,7 +103,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           >
             <div
               className={
-                'hover:bg-blue-100 h-9 border rounded-3xl w-fit p-2 bg-blue-50 mr-4 flex justify-between items-center'
+                'hover:bg-blue-100 font-semibold text-xs h-9                                                                                                  rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-2 flex justify-between items-center'
               }
             >
               <img
@@ -117,8 +117,8 @@ const MilestoneCard = ({ milestone, goal, i }) => {
       </div>
 
       <div className={'pl-4'}>
-        <div className={' bg-gray-100 w-full pr-4 mb-3'}>
-          <p> Reflection </p>
+        <div className={' bg-gray-100 text-xs w-full pr-4  mb-3'}>
+          <p><b> Reflection</b> </p>
           <input
             onChange={(e) => {
               setOnChange(true);
@@ -132,8 +132,8 @@ const MilestoneCard = ({ milestone, goal, i }) => {
         </div>
         <button
           className={`${reflection.content && !onChange ? 'hidden' : 'block'} ${
-            onChange ? 'bg-indigo-700 text-white' : 'bg-gray-200'
-          } bg-gray-200 flex p-2 rounded-3xl`}
+            onChange ? 'bg-[#414FC7] text-white' : 'bg-gray-200'
+          } bg-gray-200 flex p-2 rounded-3xl text-sm`}
           onClick={() => {
             setOnChange(false);
             let milestones = goal.milestones.map((m) => {
@@ -150,7 +150,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           }}
         >
           <img className={'mr-4'} src={onChange ? saveWhite : save} />
-          <p> Save reflection</p>
+          <p><b> Save reflection</b></p>
         </button>
       </div>
     </div>
@@ -167,19 +167,19 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           {/*progress row*/}
           <div className={'flex items-center justify-between mb-3'}>
             <div
-              className={`rounded ${background} w-fit p-1.5 flex  items-center`}
+              className={`rounded-sm ${background} w-fit p-1.5 flex  items-center`}
             >
               {milestone.completed ? (
                 <>
                   <img className={'mr-2'} src={progress} />
-                  <p className={'text-xs font-normal'}>
+                  <p className={'text-xs font-medium'}>
                    Achieved {milestone.date}</p>
                 </>
               ) : (
                 <>
                   <div className={'flex items-center'}>
                     <img className={'mr-2'} src={achieved} />
-                    <p className={'text-xs font-normal'}>
+                    <p className={'text-xs font-medium'}>
                      Work In Progress </p>
                   </div>
                 </>

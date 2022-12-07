@@ -198,7 +198,7 @@ const Card = ({ goal }) => {
         <Button
           disabled={!complete}
           onClick={handleProgress}
-          className="btn-primary btn-progress font-semibold"
+          className="btn-primary btn-progress text-sm font-bold"
         >
           Update Progress
         </Button>
