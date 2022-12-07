@@ -11,7 +11,7 @@
 
 
 
-@layer components {
+@layer components {ß
   .btn-primary {
     @apply bg-[#414FC7] flex justify-center items-center font-medium  text-white w-full rounded-3xl py-1.5;
   }
