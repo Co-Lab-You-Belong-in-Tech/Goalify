@@ -156,7 +156,7 @@ export default function IntroduceStepper( ) {
                             </Button>
                         )}
 
-                        <Button class={"bg-indigo-600 text-white p-3 rounded-3xl w-24 font-bold"} onClick={handleNext}>
+                        <Button className={"bg-indigo-600 text-white p-3 rounded-3xl w-24 font-bold"} onClick={handleNext}>
                             {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                         </Button>
                     </Box>

@@ -7,16 +7,15 @@ function UploadAvatarStep({userObj, setUser}) {
 
     const user = useSelector(state => state.user)
     const uploadImgHandler = (event) => {
-        console.log(localStorage.getItem(`${user.name}`))
+        console.log(localStorage.getItem('userAvatar'))
         const reader = new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.addEventListener('load', () => {
-            localStorage.setItem(`${user.name}`, reader.result);
+            localStorage.setItem('userAvatar', reader.result);
         });
         // setUser((prev) => {
         //     return {...prev, imgUrl: e.target.value}
         // })
-        console.log(localStorage.getItem(`${user.name}`))
     };
 
     return (<div>
