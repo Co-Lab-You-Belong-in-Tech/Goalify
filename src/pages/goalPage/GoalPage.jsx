@@ -43,7 +43,7 @@ const GoalPage = () => {
             <img src={share} />
           </div>
           
-          <div className={"rounded-3xl w-10 h-10"}> <img src={localStorage.getItem('userAvatar')} alt="logo" className={"rounded-3xl w-10 h-10"}/> 
+          <div className={"rounded-3xl w-10 h-10"}> <img src={localStorage.getItem('userAvatar')} alt="userAvatar" className={"rounded-3xl w-10 h-10"}/> 
           </div>
         </div>
       </div>
