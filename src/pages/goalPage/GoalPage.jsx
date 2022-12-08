@@ -16,7 +16,7 @@ const GoalPage = () => {
     <div className={'bg-[#FAFAFA] relative h-full w-full min-h-screen'}>
       {/*header*/}
       <div
-        className="bg-r bg-orange-50  fixed top-0 left-0 w-full h-20 py-5 px-10 flex  justify-between items-center"
+        className="bg-r bg-orange-50 fixed top-0 left-0 w-full h-20 py-5 px-10 flex  justify-between items-center"
         style={
           {
             // 'backgroundColor': 'rgba(251, 234, 200, 0.5)'
