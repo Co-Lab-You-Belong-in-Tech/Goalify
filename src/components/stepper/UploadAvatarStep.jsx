@@ -31,7 +31,6 @@ function UploadAvatarStep({userObj, setUser}) {
                  </p>
             </div>
        
-          <div>  <img src={localStorage.getItem('userAvatar')} alt="your-avatar-preview" className={'my-8 h-32 w-32 border border-blue-500 rounded-full  '}></img></div>
         
             <input
                 type="file"
