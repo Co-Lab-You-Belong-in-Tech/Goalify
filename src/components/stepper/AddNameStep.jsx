@@ -10,7 +10,7 @@ function AddNameStep({setUser}) {
                 </p>
             </div>
 
-          <TextField placeholder="Add your name"  fullWidth
+          <TextField placeholder="Add your name" fullWidth
                        onChange={(e) => {
                            setUser((prev) => {
                                return {...prev, name: e.target.value}

@@ -4,6 +4,8 @@ import ListCards from './listCards';
 import {useSelector} from "react-redux";
 import IntroduceStepper from "../../components/stepper/IntroduceStepper.jsx";
 
+
+
 const Dashboard = () => {
     const name = useSelector((state) => state.user.name);
     return (
@@ -12,6 +14,7 @@ const Dashboard = () => {
             { (name.length === 0) ?
                 <IntroduceStepper/>
                 : <>
+            
                     <Header/>
                     <ListCards/>
                 </>
