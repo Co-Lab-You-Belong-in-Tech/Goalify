@@ -30,6 +30,9 @@ function UploadAvatarStep({userObj, setUser}) {
                     <b>Tip✨:</b>For a more personal experience, it's highly recommended.
                  </p>
             </div>
+       
+          <div>  <img src={localStorage.getItem('userAvatar')} alt="your-avatar-preview" className={'my-8 h-32 w-32 border border-blue-500 rounded-full  '}></img></div>
+        
             <input
                 type="file"
                 id="uploadImg-btn"
@@ -42,7 +45,7 @@ function UploadAvatarStep({userObj, setUser}) {
                 >
                 <div
                     className={
-                         'flex items-center gap-3 h-9  font-semibold text-xs rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-4 hover:bg-indigo-50 cursor-pointer'
+                         'flex items-center gap-2 h-9  font-semibold text-xs rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-4 hover:bg-indigo-50 cursor-pointer'
                     }>
 
                     <img src={uploadImg} /> Add Image

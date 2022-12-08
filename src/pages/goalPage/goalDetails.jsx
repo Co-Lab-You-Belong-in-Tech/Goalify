@@ -15,7 +15,7 @@ const GoalDetails = ({ goal }) => {
         if (milestone.id === goal.milestones[getCurrentMilestone].id) {
           return {
             ...milestone,
-            completed: true,
+            completed: true,   
           };
         } else {
           return milestone ;
@@ -46,7 +46,8 @@ const GoalDetails = ({ goal }) => {
           When you’ve completed your next milestone, you can check it as done to
           update your goal
         </p>
-        <div className="bg-[#F4F6FF]  py-3 rounded-md px-2 my-3 flex gap-3">
+        
+        <div onClick={() => setComplete(true)}   className="bg-[#F4F6FF]  py-3 rounded-md px-2 my-3 flex gap-3 hover:cursor-pointer">
           {complete ? (
             <img className="w-5" src={completeI} alt="completeI" />
           ) : (
@@ -61,7 +62,9 @@ const GoalDetails = ({ goal }) => {
 
             {getCurrentMilestone === goal.milestones.length ? 'CONGRATS You Finished Your Goal' :
                 `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[getCurrentMilestone]?.content?.substring(0, 24)}...`}
-          </p>
+            </p>
+
+
         </div>
         {getCurrentMilestone !== goal.milestones.length ?  <Button
             disabled={!complete}
