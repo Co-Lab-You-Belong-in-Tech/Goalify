@@ -17,20 +17,21 @@ function CreateNewGoal({setGoal}) {
                 To develop this goal, let’s break it down into smaller goals or as we like to call them, Milestones.
             </p>
         </div>
-        <p className={"text-sm font-normal leading-6 text-[#717171]"} variant="caption" display="block" gutterBottom>
+        <p className={"text-xs font-normal leading-5 pb-8 text-[#454749]"} variant="caption" display="block" gutterBottom>
             Visualize the end result of the goal you are working on to a high standard.
             Work backwards to plan each step you need to take to increase the chances of achieving this goal.
             Have a go at setting a few milestones you think would be worth celebrating towards your goal and don’t
             worry you can always add or reduce milestones later.
         </p>
         <div
-            className={"snap-mandatory snap-y max-h-96 overflow-scroll  overscroll-contain "}
+            className={" snap-mandatory  snap-y max-h-72 overflow-scroll  overscroll-contain "}
         >
             {milestones.map((m, i) => (<Milestone key={i}
                                                   milestoneContent={m.content} number={i + 1}/>))}
             {<Milestone milestoneInput={milestoneInput} setMileStoneInput={setMileStoneInput}
                         number={milestones.length + 1}/>}
         </div>
+     
         <Button variant="text" size="normal" fullWidth
                 sx={{
                     border: "none",
@@ -43,6 +44,7 @@ function CreateNewGoal({setGoal}) {
                     height: "36px",
                     background: "#F4F6FF",
                     borderRadius: "50px",
+                 
                 }}
                 onClick={() => {
                     console.log(milestoneInput)
@@ -53,7 +55,7 @@ function CreateNewGoal({setGoal}) {
                         return {...prev, milestones: [...prev.milestones, {id:prev.milestones.length, completed: false, content: milestoneInput}]}
                     })
                 }}>
-            <p className={"font-satoshi"}>+ Add milestone</p>
+            <p className={""}>+ Add milestone</p>
         </Button>
     </div>
 

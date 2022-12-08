@@ -138,10 +138,10 @@ export default function HorizontalLinearStepper({ handleClose }) {
         <React.Fragment>
           <p className={'text-2xl font-bold leading-9 inline'}>
             {' '}
-            Your first goal is set
+            Your goal is set
             <img
-              width={30}
-              height={30}
+              width={24}
+              height={24}
               src={star}
               alt="edit"
               className="mx-3 pr-2 inline"
