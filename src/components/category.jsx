@@ -43,7 +43,7 @@ const category = () => {
   };
 
   return (
-    <div className="flex gap-3 w-full font-medium rounded-full p-1 bg-slate-100">
+    <div className="flex gap-3 w-full font-medium rounded-full p-1 bg-[#F8F8F8]">
       {categories.map(({ category, id }) =>
         isEditing && id == selected ? (
           <Tooltip title="press enter to save change" key={id}>
@@ -53,7 +53,7 @@ const category = () => {
               onChange={onChange}
               onKeyPress={handleKeyPress}
               className={
-                'py-1 px-2 border-solid border border-gray-100 rounded-3xl '
+                'py-1 px-2 border-solid border border-blue-50 rounded-3xl '
               }
               type="text"
             />
@@ -82,7 +82,7 @@ const category = () => {
           </div>
         )
       )}
-      <img
+      <img className={' bg-[#FaFaFa] border p-2 hover:scale-[.85] cursor-pointer  rounded-3xl '}
         src={plusI}
         onClick={() => {
           dispatch(

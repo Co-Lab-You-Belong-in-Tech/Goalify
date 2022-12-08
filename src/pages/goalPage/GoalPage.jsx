@@ -16,7 +16,7 @@ const GoalPage = () => {
     <div className={'bg-[#FAFAFA] relative h-full w-full min-h-screen'}>
       {/*header*/}
       <div
-        className="bg-r bg-orange-50  fixed top-0 left-0 w-full h-20 py-5 px-20 flex  justify-between items-center"
+        className="bg-r bg-orange-50  fixed top-0 left-0 w-full h-20 py-5 px-10 flex  justify-between items-center"
         style={
           {
             // 'backgroundColor': 'rgba(251, 234, 200, 0.5)'
@@ -26,13 +26,11 @@ const GoalPage = () => {
         <Link to="/">
           <img className= "hover:scale-[.95]" src={Glogo} alt="Goalify logo" />
         </Link>
-        <div className={'flex justify-center items-center gap-4'}>
-          <img src={plusI} />
+        <div className={'flex justify-center items-center gap-4  '}>
+          <img className={'p-2 rounded-3xl border bg-[#fafafa] hover:scale-[.95] '} src={plusI} />
           <div
-            className={
-              'bg-gray-200 w-8 h-8 flex justify-center items-center rounded-3xl'
-            }
-          >
+            className={'bg-gray-200 w-8 h-8 flex justify-center items-center rounded-3xl'
+            }>
             <img src={dir} />
           </div>
           <div

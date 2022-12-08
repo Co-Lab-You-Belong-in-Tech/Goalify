@@ -24,6 +24,7 @@ import {
   congrts,
 } from '../../assets/icons';
 
+
 const Card = ({ goal }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

@@ -27,7 +27,7 @@ const Header = () => {
   const handleClose = () => setOpen(false);
   const name = useSelector( (state) => state.user.name)
   return (
-    <div className="h-50 bg-r bg-orange-50 fixed top-0 left-0 w-full py-5 px-10">
+    <div className="h-50 bg-r bg-orange-50 bg-opacity-90  fixed top-0 left-0 w-full py-5 px-10">
       <div className="flex justify-between items-center ">
         <div>
           <Link to="/">
@@ -51,6 +51,7 @@ const Header = () => {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+     
       >
         <Box sx={style}>
           <HorizontalLinearStepper handleClose={handleClose} />
