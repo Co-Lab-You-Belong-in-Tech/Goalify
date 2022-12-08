@@ -23,7 +23,7 @@ const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}
                 height: "48px",
             }}
             gutterBottom>
-            <p className="font-black text-xl"> {String(number).padStart(2, '0')} </p>
+            <p className="font-bold text-m"> {String(number).padStart(2, '0')} </p>
         </Typography>
         <TextField id="filled-basic"
                    fullWidth
