@@ -27,7 +27,8 @@ const Header = () => {
   const handleClose = () => setOpen(false);
   const name = useSelector( (state) => state.user.name)
   return (
-    <div className="h-50 bg-r bg-orange-50 fixed top-0 left-0 w-full py-5 px-10">
+    <div className="h-42  bg-orange-50 bg-opacity-[60%] bg-blur-[90%] fixed top-0 left-0 w-full py-5 px-10">
+    
       <div className="flex justify-between items-center ">
         <div>
           <Link to="/">
