@@ -60,7 +60,7 @@ const category = () => {
           </Tooltip>
         ) : (
           <div
-            className={`select-none py-1 px-2 hover:cursor-pointer flex justify-between w-[10rem] ${
+            className={`select-none py-1 px-2 hover:cursor-pointer flex justify-between w-[10rem]  hover:scale-[.95] ${
               selected === id
                 ? 'bg-white border-solid border border-gray-200 rounded-3xl '
                 : ''
