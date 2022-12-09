@@ -43,7 +43,7 @@ const category = () => {
   };
 
   return (
-    <div className="flex gap-3 w-full  text-base font-medium rounded-full p-1 bg-[#F8F8F8]">
+    <div className="flex gap-3 w-full  text-base font-medium rounded-full p-1 bg-[#F8F8F8] ">
       {categories.map(({ category, id }) =>
         isEditing && id == selected ? (
           <Tooltip title="press enter to save change" key={id}>
@@ -60,7 +60,7 @@ const category = () => {
           </Tooltip>
         ) : (
           <div
-            className={`select-none py-1 px-2 hover:cursor-pointer flex justify-between w-[10rem] ${
+            className={`select-none py-1 px-2 hover:cursor-pointer flex justify-between w-[10rem]  hover:scale-[.95] ${
               selected === id
                 ? 'bg-white border-solid border border-gray-200 rounded-3xl '
                 : ''
