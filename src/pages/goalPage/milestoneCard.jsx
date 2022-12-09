@@ -132,7 +132,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
         </div>
         <button
           className={`${reflection.content && !onChange ? 'hidden' : 'block'} ${
-            onChange ? 'bg-[#414FC7] text-white' : 'bg-gray-200'
+            onChange ? 'bg-[#535edb] text-white hover:scale-[.95]'  : 'bg-gray-200'
           } bg-gray-200 flex p-2 rounded-3xl text-sm`}
           onClick={() => {
             setOnChange(false);
@@ -149,7 +149,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
             dispatch(editGoal({ ...goal, milestones: [...milestones] }));
           }}
         >
-          <img className={'mr-4'} src={onChange ? saveWhite : save} />
+          <img className={'mr-3'} src={onChange ? saveWhite : save} />
           <p><b> Save reflection</b></p>
         </button>
       </div>
