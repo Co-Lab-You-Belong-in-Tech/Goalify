@@ -27,7 +27,7 @@ const Header = () => {
   const handleClose = () => setOpen(false);
   const name = useSelector( (state) => state.user.name)
   return (
-    <div className="h-50 bg-r bg-orange-50 bg-opacity-90  fixed top-0 left-0 w-full py-5 px-10">
+    <div className="h-42  bg-orange-50 bg-opacity-[60%] bg-blur-[90%] fixed top-0 left-0 w-full py-5 px-10">
       <div className="flex justify-between items-center ">
         <div>
           <Link to="/">
@@ -35,7 +35,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex gap-4 items-center my-5">
-          <h1 className="text-xl font-semibold text-[#152E40] ">Welcome back, {name}</h1>
+          <h1 className="text-xl font-semibold text-[#82E40] ">Welcome back, {name}</h1>
           <img src={localStorage.getItem('userAvatar')} alt="useravatar" className="rounded-3xl w-10 h-10 " />
         </div>
       </div>
