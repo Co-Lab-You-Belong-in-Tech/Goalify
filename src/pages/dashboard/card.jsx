@@ -94,7 +94,7 @@ const Card = ({ goal }) => {
     }
   };
   return (
-    <div className="w-80 p-3 border border-[#415472] bg-[#ffffff] border-opacity-10  rounded-lg">
+    <div className="w-80 p-3 border border-[#415472] bg-[#ffffff] border-opacity-10  rounded-lg hover:border-blue-100 ">
       <div className="flex justify-between mb-2 ">
         <div>
           {goal.categoryId === 1 ? (
