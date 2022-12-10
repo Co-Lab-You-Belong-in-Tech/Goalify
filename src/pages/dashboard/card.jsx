@@ -24,7 +24,6 @@ import {
   congrts,
 } from '../../assets/icons';
 
-
 const Card = ({ goal }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,7 +51,7 @@ const Card = ({ goal }) => {
     <div className="flex gap-2">
       <Button
         onClick={() => dispatch(removeGoal(goal.id))}
-        className="w-8 pl-2 btn-primary bg-red-100 font-semibold text-red-600 py-2 hover:scale-90"
+        className="w-8 pl-2 btn-primary bg-red-100 font-semibold text-red-600 py-2"
       >
         <div>
           <img src={deleteI} alt="delete" className="pr-2" />
@@ -62,14 +61,14 @@ const Card = ({ goal }) => {
         onClick={() => {
           navigate(`/goals/${goal.id}`);
         }}
-        className="w-8 pl-2 btn-primary bg-[#F4F6FF] hover:scale-90 font-semibold text-slate-8000 py-2 text-sm"
+        className="w-8 pl-2 btn-primary bg-blue-50 font-semibold text-slate-8000 py-2 text-sm"
       >
         <img src={editI} alt="editI" className="pr-2" />
       </Button>
     </div>
   ) : (
     <img
-      className="w-8 h-8 hover:scale-90 cursor-pointer"
+      className="w-8 h-8 hover:cursor-pointer"
       onClick={() => setAction((prev) => !prev)}
       src={dotsI}
       alt="dots"
@@ -94,12 +93,12 @@ const Card = ({ goal }) => {
     }
   };
   return (
-    <div className="w-80 p-3 border border-[#415472] bg-[#ffffff] border-opacity-10  rounded-lg hover:border-blue-100 ">
+    <div className="w-80 p-3 border border-[#414FC7] border-opacity-10 rounded-lg">
       <div className="flex justify-between mb-2 ">
         <div>
           {goal.categoryId === 1 ? (
             <img
-              className="w-8 h-8 hover:scale-90 cursor-pointer"
+              className="w-8 h-8 hover:scale-75"
               src={playI}
               alt="playI"
               onClick={() => {
@@ -109,7 +108,7 @@ const Card = ({ goal }) => {
             />
           ) : (
             <img
-              className="w-8 h-8 hover:scale-90 cursor-pointer"
+              className="w-8 h-8 hover:scale-75"
               src={pauseI}
               alt="pauseI"
               onClick={() => {
@@ -130,7 +129,7 @@ const Card = ({ goal }) => {
         <div className="rounded flex justify-between items-center py-2 px-1 mt-3">
           <div className="flex px-1 pt-1">
             <img className="w-5 h-5" src={progressI} alt="progress" />
-            <span className="pl-2 text-xs font-medium text-[#717171]">
+            <span className="pl-2 text-xs font-normal text-[#717171]">
               {getCurrentMilestone}/{goal.milestones.length} Milestones Reached
             </span>
           </div>
@@ -138,7 +137,7 @@ const Card = ({ goal }) => {
             <span>
               <img
                 onClick={toggleView}
-                className="w-4 h-4 hover:cursor-pointer"
+                className="w-4 h-4"
                 src={uneyeI}
                 alt="eyeI"
               />
@@ -147,7 +146,7 @@ const Card = ({ goal }) => {
             <span>
               <img
                 onClick={toggleView}
-                className="w-4 h-4 hover:cursor-pointer"
+                className="w-4 h-4"
                 src={eyeI}
                 alt="eyeI"
               />
@@ -162,18 +161,16 @@ const Card = ({ goal }) => {
           ''
         )}
       </div>
-      <div className="mt-3  text-xs pb-1  font-semibold  text-[#717171]">
+      <div className="mt-3  text-xs  font-semibold  text-[#717171]">
         Next Milestone
       </div>
-      <p className="text-xs pb-1 font-inter text-[#717171]">
+      <p className="text-xs text-[#717171]">
         When you’ve completed your next milestone, you can check it as done to
         update your goal
       </p>
-      <div 
-      onClick={() => setComplete(true)} 
-    
-        className={`bg-[#F4F6FF] hover:scale-[1.001] cursor-pointer font-medium rounded px-3 my-2 flex gap-2 ${
-          getCurrentMilestone === goal.milestones.length ? 'py-1' : 'py-3'
+      <div
+        className={`bg-[#F4F6FF] rounded px-3 my-2 flex gap-2 ${
+          getCurrentMilestone === goal.milestones.length ? 'py-1' : 'py-4'
         }`}
       >
         {getCurrentMilestone === goal.milestones.length ? (
@@ -201,7 +198,7 @@ const Card = ({ goal }) => {
         <Button
           disabled={!complete}
           onClick={handleProgress}
-          className="btn-primary btn-progress text-sm font-bold"
+          className="btn-primary btn-progress font-semibold"
         >
           Update Progress
         </Button>
