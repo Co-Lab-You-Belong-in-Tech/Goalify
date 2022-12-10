@@ -51,7 +51,7 @@ const Card = ({ goal }) => {
     <div className="flex gap-2">
       <Button
         onClick={() => dispatch(removeGoal(goal.id))}
-        className="w-8 pl-2 btn-primary bg-red-100 font-semibold text-red-600 py-2"
+        className="w-8 pl-2 btn-primary bg-red-100 font-semibold text-red-600 py-2 hover:scale-90"
       >
         <div>
           <img src={deleteI} alt="delete" className="pr-2" />
@@ -61,14 +61,14 @@ const Card = ({ goal }) => {
         onClick={() => {
           navigate(`/goals/${goal.id}`);
         }}
-        className="w-8 pl-2 btn-primary bg-blue-50 font-semibold text-slate-8000 py-2 text-sm"
+        className="w-8 pl-2 btn-primary bg-blue-50 font-semibold text-slate-8000 py-2 text-sm hover:scale-90"
       >
         <img src={editI} alt="editI" className="pr-2" />
       </Button>
     </div>
   ) : (
     <img
-      className="w-8 h-8 hover:cursor-pointer"
+      className="w-8 h-8 hover:cursor-pointer hover:scale-90"
       onClick={() => setAction((prev) => !prev)}
       src={dotsI}
       alt="dots"
@@ -93,12 +93,12 @@ const Card = ({ goal }) => {
     }
   };
   return (
-    <div className="w-80 p-3 border border-[#414FC7] border-opacity-10 rounded-lg">
+    <div className="w-80 p-3 border border-gray-500 bg-white border-opacity-10 rounded-lg hover:border-indigo-100">
       <div className="flex justify-between mb-2 ">
         <div>
           {goal.categoryId === 1 ? (
             <img
-              className="w-8 h-8 hover:scale-75"
+              className="w-8 h-8 hover:scale-90 cursor-pointer"
               src={playI}
               alt="playI"
               onClick={() => {
@@ -108,7 +108,7 @@ const Card = ({ goal }) => {
             />
           ) : (
             <img
-              className="w-8 h-8 hover:scale-75"
+              className="w-8 h-8 hover:scale-90 cursor-pointer"
               src={pauseI}
               alt="pauseI"
               onClick={() => {
@@ -137,7 +137,7 @@ const Card = ({ goal }) => {
             <span>
               <img
                 onClick={toggleView}
-                className="w-4 h-4"
+                className="w-4 h-4 hover:cursor-pointer"
                 src={uneyeI}
                 alt="eyeI"
               />
@@ -146,7 +146,7 @@ const Card = ({ goal }) => {
             <span>
               <img
                 onClick={toggleView}
-                className="w-4 h-4"
+                className="w-4 h-4 hover:cursor-pointer"
                 src={eyeI}
                 alt="eyeI"
               />
@@ -161,7 +161,7 @@ const Card = ({ goal }) => {
           ''
         )}
       </div>
-      <div className="mt-3  text-xs  font-semibold  text-[#717171]">
+      <div className="mt-3  text-xs  font-medium  text-[#717171] pb-1">
         Next Milestone
       </div>
       <p className="text-xs text-[#717171]">
@@ -169,7 +169,7 @@ const Card = ({ goal }) => {
         update your goal
       </p>
       <div
-        className={`bg-[#F4F6FF] rounded px-3 my-2 flex gap-2 ${
+        className={` bg-[#F4F6FF] rounded px-3 my-2 flex gap-2 ${
           getCurrentMilestone === goal.milestones.length ? 'py-1' : 'py-4'
         }`}
       >
@@ -185,7 +185,9 @@ const Card = ({ goal }) => {
             className="w-5"
           />
         )}
-        <p className="text-xs  flex items-center">
+        
+        <p onClick={() => setComplete(true)}
+ className="text-xs  flex items-center hover: cursor-pointer">
           {getCurrentMilestone === goal.milestones.length
             ? <b><i>Congratulations</i> 🥳🎉🎊 </b>
             : `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[
@@ -198,7 +200,7 @@ const Card = ({ goal }) => {
         <Button
           disabled={!complete}
           onClick={handleProgress}
-          className="btn-primary btn-progress font-semibold"
+          className="btn-primary btn-progress text-sm font-semibold"
         >
           Update Progress
         </Button>
