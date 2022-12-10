@@ -187,7 +187,7 @@ const Card = ({ goal }) => {
         )}
         
         <p onClick={() => setComplete(true)}
- className="text-xs  flex items-center hover: cursor-pointer">
+ className="text-xs font-medium  flex items-center hover: cursor-pointer">
           {getCurrentMilestone === goal.milestones.length
             ? <b><i>Congratulations</i> 🥳🎉🎊 </b>
             : `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[
