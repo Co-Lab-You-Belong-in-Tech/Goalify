@@ -61,7 +61,7 @@ const Card = ({ goal }) => {
         onClick={() => {
           navigate(`/goals/${goal.id}`);
         }}
-        className="w-8 pl-2 btn-primary bg-blue-50 font-semibold text-slate-8000 py-2 text-sm hover:scale-90"
+        className="w-8 pl-2 btn-primary bg-[#F4F6FF]  font-semibold text-slate-8000 py-2 text-sm hover:scale-90"
       >
         <img src={editI} alt="editI" className="pr-2" />
       </Button>
