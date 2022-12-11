@@ -168,8 +168,9 @@ const Card = ({ goal }) => {
         When you’ve completed your next milestone, you can check it as done to
         update your goal
       </p>
-      <div
-        className={` bg-[#F4F6FF] rounded px-3 my-2 flex gap-2 ${
+      <div          onClick={() => setComplete(true)}
+
+        className={` bg-[#F4F6FF] hover:cursor-pointer rounded px-3 my-2 flex gap-2 ${
           getCurrentMilestone === goal.milestones.length ? 'py-1' : 'py-4'
         }`}
       >
