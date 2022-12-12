@@ -30,7 +30,9 @@ function UploadAvatarStep({userObj, setUser}) {
                     <b>Tip✨:</b>For a more personal experience, it's highly recommended.
                  </p>
             </div>
-       
+
+
+    
 
             <input
                 type="file"

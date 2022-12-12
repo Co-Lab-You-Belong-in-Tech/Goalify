@@ -56,7 +56,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
 
   const reflectionComponent = (
     <div>
-      <div className={'pl-4 pr-2 pb-2 mb-4 flex bg-white flex-col'}>
+      <div className={'pl-4 pr-2 pb-2 mb-4 flex bg-white  flex-col'}>
         {visible.reflectionImhg && localStorage.getItem(`${milestone.id}`) ? (
           <img
             className={`h-96 object-contain`}
@@ -103,7 +103,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           >
             <div
               className={
-                'hover:bg-blue-100 font-semibold text-xs h-9                                                                                                  rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-2 flex justify-between items-center'
+                'hover:bg-blue-100 font-semibold text-xs h-9 rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-2 flex justify-between items-center'
               }
             >
               <img
@@ -125,7 +125,7 @@ const MilestoneCard = ({ milestone, goal, i }) => {
               setReflection({ ...reflection, content: e.target.value });
             }}
             className={
-              'my-2 bg-gray-50 border border-gray-300 w-full p-2 rounded-lg'
+              'my-2 bg-gray-50 border border-gray-200 w-full p-2 rounded-lg'
             }
             value={`${reflection.content ?? ''}`}
           />

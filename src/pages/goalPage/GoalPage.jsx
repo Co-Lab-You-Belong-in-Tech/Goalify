@@ -78,7 +78,7 @@ const GoalPage = () => {
             >
               {goal.content}
             </p>
-            <div className="bg-[#F9F9F9] border-2 border-[rgba(65, 84, 114, 0.08)] w-fit rounded-full p-2 flex  font-semibold gap-3 text-slate-600 leading-5  mb-4">
+            <div className="bg-[#F5F5F5] border-[1px] border-[rgba(65, 84, 114, 0.08)] w-fit rounded-full p-2 flex  font-semibold gap-2 text-slate-600 leading-5  mb-4">
               <button
                 onClick={() => {
                   setCategory('all');
