@@ -125,7 +125,7 @@ const Card = ({ goal }) => {
       </div>
       
       <h3 className="font-semibold text-base ">{goal.content}</h3>
-      <div className="bg-gray-50 pb-1 rounded">
+      <div className="bg-gray-50 pb-1 pr-1.5 rounded">
         <div className="rounded flex justify-between items-center py-2 px-1 mt-3">
           <div className="flex px-1 pt-1">
             <img className="w-5 h-5" src={progressI} alt="progress" />
