@@ -44,7 +44,7 @@ const Card = ({ goal }) => {
     setIsAlertVisible(true);
     setTimeout(() => {
       setIsAlertVisible(false);
-    }, 6000);
+    }, 6500);
   };
 
   const actionView = action ? (
