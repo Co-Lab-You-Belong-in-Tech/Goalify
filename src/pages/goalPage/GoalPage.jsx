@@ -47,7 +47,8 @@ const GoalPage = () => {
               'bg-red-100 w-10 h-10 flex justify-center items-center rounded-3xl font-bold text-2xl leading-8'
             }
           >
-            <p> A </p>
+           <img src={localStorage.getItem('userAvatar')} alt="useravatar" className="rounded-3xl w-10 h-10 " />
+
           </div>
         </div>
       </div>
