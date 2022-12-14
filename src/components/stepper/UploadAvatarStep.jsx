@@ -18,6 +18,8 @@ function UploadAvatarStep({userObj, setUser}) {
         // })
     };
 
+    
+
     return (<div>
             <div className={"flex flex-col my-8"}>
                 <p className={"font-bold text-2xl pb-1 text-[#152e40]"}>
@@ -49,7 +51,7 @@ function UploadAvatarStep({userObj, setUser}) {
                          'flex items-center gap-2 h-9  font-semibold text-xs rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-4 hover:bg-indigo-50 cursor-pointer'
                     }>
 
-                    <img src={uploadImg} /> Add Image
+                    <img src={uploadImg} /> Upload Image
                 </div>
             </label>
         </div>
