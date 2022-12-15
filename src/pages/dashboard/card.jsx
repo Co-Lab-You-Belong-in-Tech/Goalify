@@ -193,7 +193,7 @@ const Card = ({ goal }) => {
             ? <b><i>Congratulations</i> 🥳🎉🎊 </b>
             : `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[
                 getCurrentMilestone
-              ]?.content?.substring(0, 24)}...`}
+              ]?.content?.substring(0, 31)}...`}
           {isAlertVisible && <Celebrate />}
         </p>
       </div>
