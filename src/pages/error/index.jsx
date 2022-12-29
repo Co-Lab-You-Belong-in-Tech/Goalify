@@ -4,19 +4,18 @@ const ErrorPage = () => {
   const error = useRouteError();
   return (
     <div className="flex flex-col items-center justify-center w-auto">
-      <h1>Oops!</h1>
+      
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
       <p>
-        Our guard dog is working hard to fix that but in the meantime, please
-        let him enjoy his coffee
+        Hey, you must have reloaded the page when you were on of your goals' main pages. To get back press the "Back" arrow on your browser and reload the page.
       </p>
 
       <div>
         <img
           width="100%"
-          src="https://dashboard.microverse.org/assets/this-is-fine-58d6f8740ed69396a34da5c219fc18a6b2b9b17c1907eef01f6efab4797087df.png"
+          src="https://i.imgur.com/rE88mVV.png"
           alt="Page not found"
         />
       </div>
@@ -25,3 +24,5 @@ const ErrorPage = () => {
 };
 
 export default ErrorPage;
+
+

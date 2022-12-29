@@ -24,6 +24,8 @@ import {
   congrts,
 } from '../../assets/icons';
 
+
+
 const Card = ({ goal }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,6 +37,8 @@ const Card = ({ goal }) => {
   const indexOfFirstCompleted = goal.milestones.indexOf(
     goal.milestones.filter((m) => !m.completed)[0]
   );
+
+
   const getCurrentMilestone =
     indexOfFirstCompleted === -1
       ? goal.milestones.length
@@ -46,6 +50,9 @@ const Card = ({ goal }) => {
       setIsAlertVisible(false);
     }, 6500);
   };
+
+
+
 
   const actionView = action ? (
     <div className="flex gap-2">

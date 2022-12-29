@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { editGoal } from '../../redux/goal/goalSlice';
+import {updateGoalMilestone, deleteGoalMilestone } from '../../redux/goal/goalSlice';
 import progress from '../../assets/icons/progress.svg';
 import dots from '../../assets/icons/dots.svg';
 import uploadImg from '../../assets/icons/uploadImg.svg';
@@ -14,6 +14,7 @@ import inProgress from '../../assets/icons/inProgress.svg';
 import achieved from '../../assets/icons/cardAchieved.svg';
 import show from '../../assets/icons/show.svg';
 import hide from '../../assets/icons/hide.svg';
+  
 
 const MilestoneCard = ({ milestone, goal, i }) => {
   const dispatch = useDispatch();
@@ -21,10 +22,19 @@ const MilestoneCard = ({ milestone, goal, i }) => {
     reflectionImhg: false,
     dotsMenu: false,
   });
+
+
   const [onChange, setOnChange] = useState(false);
   const [reflection, setReflection] = useState({
     content: milestone?.reflection?.content ?? null,
   });
+
+  function handleDelete(goal, milestoneId) {
+    dispatch(deleteGoalMilestone({
+      goal,
+      currentMilestoneId: milestoneId,
+    }))
+  }
 
   // const [selectedFile, setSelectedFile] = useState();
   // const [isFileLoaded, setIsFileLoaded] = useState(false);
@@ -38,20 +48,6 @@ const MilestoneCard = ({ milestone, goal, i }) => {
       // setReflection({...reflection, imgSrc: localStorage.getItem(`${milestone.id}`)})
       // setIsFileLoaded(true);
     });
-  };
-
-  const editGoalMilestone = () => {
-    let milestones = goal.milestones.map((m) => {
-      if (m.id === milestone.id) {
-        return {
-          ...m,
-          completed: !m.completed,
-        };
-      } else {
-        return m;
-      }
-    });
-    dispatch(editGoal({ ...goal, milestones: [...milestones] }));
   };
 
   const reflectionComponent = (
@@ -136,17 +132,11 @@ const MilestoneCard = ({ milestone, goal, i }) => {
           } bg-gray-200 flex p-2 rounded-3xl text-sm`}
           onClick={() => {
             setOnChange(false);
-            let milestones = goal.milestones.map((m) => {
-              if (m.id === milestone.id) {
-                return {
-                  ...m,
-                  reflection: reflection,
-                };
-              } else {
-                return m;
-              }
-            });
-            dispatch(editGoal({ ...goal, milestones: [...milestones] }));
+            dispatch(updateGoalMilestone({ 
+              goal, 
+              currentMilestoneId: milestone.id, 
+              milestoneUpdates: { reflection } 
+            }))
           }}
         >
           <img className={'mr-3'} src={onChange ? saveWhite : save} />
@@ -185,9 +175,12 @@ const MilestoneCard = ({ milestone, goal, i }) => {
                 </>
               )}
             </div>
+
             {visible.dotsMenu ? (
               <div className={'flex items-center'}>
-                <button className={'mr-4'}>
+                <button className={'mr-4'} onClick={() => {
+                  handleDelete(goal, milestone.id)
+                }}>
                   <img
                     className={'hover:bg-red-100 justify-end bg-red-50 rounded-full p-3'}
                     src={remove}
@@ -196,7 +189,13 @@ const MilestoneCard = ({ milestone, goal, i }) => {
 
                 <button
                   className={`hover:bg-[#FFFDF8] hover:scale-[.95] mr-4 flex bg-indigo-50 text-sm rounded-full py-1.5 px-2 `}
-                  onClick={editGoalMilestone}
+                  onClick={() => {
+                    dispatch(updateGoalMilestone({ 
+                      goal, 
+                      currentMilestoneId: milestone.id, 
+                      milestoneUpdates: { completed: !milestone.completed } 
+                    }))
+                  }}
                 >
                   <img
                     className={'justify-end mr-2 '}

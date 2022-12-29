@@ -26,7 +26,7 @@ export default function HorizontalLinearStepper({ handleClose }) {
   };
 
   const [goalObj, setGoalObj] = useState({
-    id: goals.length,
+    id: null,
     content: '',
     motivation: '',
     milestones: [],
@@ -103,7 +103,7 @@ export default function HorizontalLinearStepper({ handleClose }) {
   // };
 
   const navigateDashboard = () => {
-    createGoal(goalObj);
+    createGoal({...goalObj, id:goals.length });
     handleClose();
     navigate('/');
   };

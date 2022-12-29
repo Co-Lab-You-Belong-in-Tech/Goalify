@@ -1,7 +1,7 @@
 import {TextField} from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}) => {
+const Milestone = ({milestoneInput, setMileStoneInput, updateMileStoneInput, milestoneContent, number}) => {
     return <div className={"snap-end my-2"}>
         <div className={"p-4"}
                  style={{
@@ -32,8 +32,15 @@ const Milestone = ({milestoneInput, setMileStoneInput, milestoneContent, number}
                    }}
                    mb={1}
                    value={milestoneContent || milestoneInput}
-                   placeholder={"Ex: The first milestone towards my goal of getting all A’s this semester is creating a schedule so I can manage my time better."}
-                   onChange={(e) => milestoneContent || setMileStoneInput(e.target.value)}/>
+                   placeholder={"Ex: The first milestone towards my goal of getting all A’s this semester is creating a schedule to manage my time better."}
+                   onChange={(e) => {
+                    if (!milestoneContent) {
+                        setMileStoneInput(e.target.value)
+                    } else {
+                        updateMileStoneInput(e.target.value);
+                    }
+                     
+                    }}/>
     </div>
     </div>
 }
