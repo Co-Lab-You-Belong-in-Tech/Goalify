@@ -6,19 +6,21 @@ import {useSelector} from "react-redux";
 function UploadAvatarStep({userObj, setUser}) {
 
     const user = useSelector(state => state.user)
+    const [avatarLoaded, setAvatarLoaded] = React.useState(false);
     const uploadImgHandler = (event) => {
-        console.log(localStorage.getItem('userAvatar'))
+        setAvatarLoaded(false);
         const reader = new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.addEventListener('load', () => {
             localStorage.setItem('userAvatar', reader.result);
+            setAvatarLoaded(true);
         });
         // setUser((prev) => {
         //     return {...prev, imgUrl: e.target.value}
         // })
     };
 
-    
+
 
     return (<div>
             <div className={"flex flex-col my-8"}>
@@ -29,10 +31,11 @@ function UploadAvatarStep({userObj, setUser}) {
                     If you’d like to add an avatar to your Goalify account, feel free to do so below.
                  </p>
                  <p className={" flex-wrap font-normal text-[#454749] pl-1 text-xs mt-3"}>
-                    <b>Tip✨:</b>For a more personal experience, it's highly recommended.
+                    <b>Tip✨:</b> For a more personal experience, it's highly recommended.
                  </p>
             </div>
 
+            <div>  <img src={avatarLoaded ? localStorage.getItem('userAvatar') : ""} alt="avatar-preview" className={'my-4 h-32 w-32 border border-blue-500 rounded-full  '}></img></div>
 
     
 

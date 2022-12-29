@@ -1,7 +1,7 @@
 import progress from '../../assets/icons/progress.svg';
 import inProgress from '../../assets/icons/inProgress.svg';
 import remove from '../../assets/icons/delete.svg';
-import { editGoal } from '../../redux/goal/goalSlice.js';
+import { updateGoalMilestone } from '../../redux/goal/goalSlice.js';
 import undo from '../../assets/icons/undo.svg';
 import x from '../../assets/icons/x.svg';
 import dots from '../../assets/icons/dots.svg';
@@ -44,19 +44,11 @@ const Milestone = () => {
                 <button
                   className={'mr-4 flex bg-indigo-50 font-bold  rounded-full p-1.5'}
                   onClick={() => {
-                    let milestones = goal.milestones.map((milestone) => {
-                      if (milestone.id === m.id) {
-                        return {
-                          ...milestone,
-                          completed: false,
-                        };
-                      } else {
-                        return milestone;
-                      }
-                    });
-                    dispatch(
-                      editGoal({ ...goal, milestones: [...milestones] })
-                    );
+                    dispatch(updateGoalMilestone({
+                      goal, 
+                      currentMilestoneId: m.id, 
+                      milestoneUpdates: { completed: false } 
+                    }))
                   }}
                 >
                   <img className={'justify-end mr-2'} src={undo} />

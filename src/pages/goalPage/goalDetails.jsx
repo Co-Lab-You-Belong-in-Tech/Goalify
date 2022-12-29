@@ -5,6 +5,7 @@ import Button from '../../components/button';
 import { progressI, unprogressI, completeI } from '../../assets/icons';
 import {editGoal} from "../../redux/goal/goalSlice.js";
 
+
 const GoalDetails = ({ goal }) => {
   const dispatch = useDispatch();
   const [complete, setComplete] = useState(false);
