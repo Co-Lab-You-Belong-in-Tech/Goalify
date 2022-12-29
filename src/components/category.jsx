@@ -92,7 +92,8 @@ const category = () => {
             ])
           );
           dispatch(updateSelected(categories.length - 1));
-        }}
+        }}title="Click to add a new goal category"
+        data-tooltip="This is the tooltip content"
       />
     </div>
   );
