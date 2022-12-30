@@ -24,9 +24,6 @@ const MilestoneCard = ({milestone, goal, i}) => {
         dotsMenu: false,
     });
 
-
-
-
     function handleDelete(goal, milestoneId) {
         dispatch(deleteGoalMilestone({
             goal,
