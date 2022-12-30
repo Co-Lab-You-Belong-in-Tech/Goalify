@@ -20,7 +20,7 @@ import Reflection from "./Reflection.jsx";
 const MilestoneCard = ({milestone, goal, i}) => {
     const dispatch = useDispatch();
     const [visible, setVisible] = useState({
-        reflectionImhg: false,
+        reflectionImg: false,
         dotsMenu: false,
     });
 
