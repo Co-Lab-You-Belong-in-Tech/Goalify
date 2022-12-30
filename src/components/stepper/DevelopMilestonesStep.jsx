@@ -36,7 +36,6 @@ function CreateNewGoal({setGoal}) {
                 milestonesCopy[index] = milestoneToEditWithinGoal;
             }
 
-            
             return {...prevGoalState, milestones: [...milestonesCopy]}
         })
     }
@@ -46,7 +45,7 @@ function CreateNewGoal({setGoal}) {
         <div className={"flex my-3 font-Normal items-center"}>
             <p className={"inline text-lg font-medium"}>
                 <img width={24} height={24} src={net} alt="edit" className="pr-2 inline"/>
-                To develop this goal, let’s break it down into smaller goals or as we call them, milestones.
+                To develop this goal, let’s break it down into smaller goals or as we like to call them, Milestones.
             </p>
         </div>
         <p className={"text-sm font-normal leading-5 pb-5 text-[#757575]"} variant="caption" display="block" gutterBottom>
@@ -54,9 +53,9 @@ function CreateNewGoal({setGoal}) {
             Work backwards to plan each step you need to take to increase the chances of achieving this goal.
             Have a go at setting a few milestones you think would be worth celebrating towards your goal and don’t
             worry you can always add or reduce milestones later.</p>
-        
 
-    <Alert variant="outlined" severity="info"> 
+
+    <Alert variant="outlined" severity="info">
     We are aware of an issue that causes the last milestone created to be deleted. To <b>avoid</b> this issue, we recommend adding an "empty" milestone as the last one to save all milestones. We are working on resolving this issue and appreciate your patience :D
         </Alert>
 
