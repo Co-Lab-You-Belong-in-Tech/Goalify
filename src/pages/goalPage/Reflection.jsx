@@ -1,0 +1,134 @@
+import uploadImg from "../../assets/icons/uploadImg.svg";
+import selectEmoji from "../../assets/icons/selectEmoji.svg";
+import hide from "../../assets/icons/hide.svg";
+import show from "../../assets/icons/show.svg";
+import {updateGoalMilestone} from "../../redux/goal/goalSlice.js";
+import saveWhite from "../../assets/icons/saveWhite.svg";
+import save from "../../assets/icons/save.svg";
+import React, {useState} from "react";
+import {useDispatch} from "react-redux";
+
+const Reflection = ({setVisible, visible, milestone, goal}) =>
+{
+    const dispatch = useDispatch();
+    const [reflection, setReflection] = useState({
+        content: milestone?.reflection?.content ?? null,
+    });
+    const [onChange, setOnChange] = useState(false);
+
+    const uploadImgHandler = (event, id) => {
+        console.log(milestone)
+        // setSelectedFile(event.target.files[0]);
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.addEventListener('load', () => {
+            localStorage.setItem(`${id}`, reader.result);
+            dispatch(updateGoalMilestone({
+                goal,
+                id,
+                milestoneUpdates: {reflection : {...milestone.reflection, imgSrc: localStorage.getItem(`${id}`)}}
+            }));
+        });
+    };
+
+    return (
+        <div>
+            <div className={'pl-4 pr-2 pb-2 mb-4 flex bg-white  flex-col'}>
+                {/*visible.reflectionImhg && */}
+                {localStorage.getItem(`${milestone.id}`) ? (
+                    <div>
+                        <img
+                            className={`h-96 object-contain`}
+                            src={localStorage.getItem(`${milestone.id}`)}
+                        />
+                        <p> {milestone.id} </p>
+                    </div>
+                ) : <p> {milestone.id} {localStorage.getItem(`${milestone.id}`)} </p>}
+
+                <div className={'flex mt-4 justify-between'}>
+                    <div className={'flex'}>
+                        {/**/}
+                        <input
+                            type="file"
+                            id="uploadImg-btn"
+                            className={'hidden'}
+                            onChange={(e) => {
+                                uploadImgHandler(e, milestone.id);
+                            }}
+                        />
+                        <label
+                            htmlFor="uploadImg-btn"
+                        >
+                            <div
+                                className={
+                                    'h-9  rounded-3xl w-fit p-2 bg-[#F4F6FF]  mr-4 hover:bg-blue-100 cursor-pointer'
+                                }
+                            >
+                                <img src={uploadImg}/>
+                            </div>
+                        </label>
+                        <div
+                            className={'h-8 bg-[#F4F6FF]  rounded-3xl w-fit p-2  mr-4'}
+                        >
+                            <img src={selectEmoji}/>
+                        </div>
+                    </div>
+                    <button
+                        onClick={() => {
+                            setVisible({
+                                ...visible,
+                                reflectionImhg: !visible.reflectionImhg,
+                            });
+                        }}
+                    >
+                        <div
+                            className={
+                                'hover:bg-blue-100 font-semibold text-xs h-9 rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-2 flex justify-between items-center'
+                            }
+                        >
+                            <img
+                                className={'mr-3'}
+                                src={visible.reflectionImhg ? hide : show}
+                            />
+                            <p> {visible.reflectionImhg ? 'Hide image ' : ' View image'}</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div className={'pl-4'}>
+                <div className={' bg-gray-100 text-xs w-full pr-4  mb-3'}>
+                    <p><b> Reflection</b></p>
+                    <input
+                        onChange={(e) => {
+                            setOnChange(true);
+                            setReflection({...milestone.reflection, content: e.target.value});
+                        }}
+                        className={
+                            'my-2 bg-gray-50 border border-gray-200 w-full p-2 rounded-lg'
+                        }
+                        value={`${reflection.content ?? ''}`}
+                    />
+                </div>
+                <button
+                    className={`${reflection.content && !onChange ? 'hidden' : 'block'} ${
+                        onChange ? 'bg-[#535edb] text-white hover:scale-[.95]' : 'bg-gray-200'
+                    } bg-gray-200 flex p-2 rounded-3xl text-sm`}
+                    onClick={() => {
+                        setOnChange(false);
+                        dispatch(updateGoalMilestone({
+                            goal,
+                            currentMilestoneId: milestone.id,
+                            milestoneUpdates: {reflection}
+                        }))
+                    }}
+                >
+                    <img className={'mr-3'} src={onChange ? saveWhite : save}/>
+                    <p><b> Save reflection</b></p>
+                </button>
+            </div>
+        </div>
+    );
+}
+
+export default Reflection
