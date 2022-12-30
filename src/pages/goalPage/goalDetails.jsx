@@ -62,7 +62,7 @@ const GoalDetails = ({ goal }) => {
           <p className=" text-xs  font-medium">
 
             {getCurrentMilestone === goal.milestones.length ? 'CONGRATS You Finished Your Goal' :
-                `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[getCurrentMilestone]?.content?.substring(0,28)}...`}
+                `Milestone   ${getCurrentMilestone + 1}: ${goal?.milestones[getCurrentMilestone]?.content?.substring(0,23)}...`}
             </p>
 
 
