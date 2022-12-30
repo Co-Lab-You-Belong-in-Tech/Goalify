@@ -20,11 +20,11 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
         const reader = new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.addEventListener('load', () => {
-            localStorage.setItem(`${milestone.id}`, reader.result);
+            localStorage.setItem(`${goal.id}#${milestone.id}`, reader.result);
             dispatch(updateGoalMilestone({
                 goal,
                 currentMilestoneId: milestone.id,
-                milestoneUpdates: {reflection : {...milestone.reflection, imgSrc: localStorage.getItem(`${milestone.id}`)}}
+                milestoneUpdates: {reflection : {...milestone.reflection, imgSrc: localStorage.getItem(`${goal.id}#${milestone.id}`)}}
             }));
         });
     }
@@ -33,11 +33,11 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
         <div>
             <div className={'pl-4 pr-2 pb-2 mb-4 flex bg-white  flex-col'}>
                 {/*visible.reflectionImhg && */}
-                {localStorage.getItem(`${milestone.id}`) ? (
+                {localStorage.getItem(`${goal.id}#${milestone.id}`) ? (
                     <div>
                         <img
                             className={`h-96 object-contain`}
-                            src={localStorage.getItem(`${milestone.id}`)}
+                            src={localStorage.getItem(`${goal.id}#${milestone.id}`)}
                         />
                         <p> {milestone.id} </p>
                     </div>
