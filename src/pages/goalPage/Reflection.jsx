@@ -12,7 +12,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
 {
     const dispatch = useDispatch();
     const [onChange, setOnChange] = useState(false);
-    const [reflection, setReflection] = useState(milestone.reflection?.content);
+    const [reflection, setReflection] = useState(milestone.reflection?.content || '');
 
     const uploadImgHandler = (event) => {
         console.log("Uploading image for milestone ID", milestone.id)
@@ -41,7 +41,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         />
                         <p> {milestone.id} </p>
                     </div>
-                ) : <p> {milestone.id} {localStorage.getItem(`${milestone.id}`)} </p>}
+                ) :''}
 
                 <div className={'flex mt-4 justify-between'}>
                     <div className={'flex'}>
