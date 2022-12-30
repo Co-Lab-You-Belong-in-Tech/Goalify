@@ -11,25 +11,23 @@ import {useDispatch} from "react-redux";
 const Reflection = ({setVisible, visible, milestone, goal}) =>
 {
     const dispatch = useDispatch();
-    const [reflection, setReflection] = useState({
-        content: milestone?.reflection?.content ?? null,
-    });
     const [onChange, setOnChange] = useState(false);
+    const [reflection, setReflection] = useState(milestone.reflection?.content);
 
-    const uploadImgHandler = (event, id) => {
-        console.log(milestone)
+    const uploadImgHandler = (event) => {
+        console.log("Uploading image for milestone ID", milestone.id)
         // setSelectedFile(event.target.files[0]);
         const reader = new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.addEventListener('load', () => {
-            localStorage.setItem(`${id}`, reader.result);
+            localStorage.setItem(`${milestone.id}`, reader.result);
             dispatch(updateGoalMilestone({
                 goal,
-                id,
-                milestoneUpdates: {reflection : {...milestone.reflection, imgSrc: localStorage.getItem(`${id}`)}}
+                currentMilestoneId: milestone.id,
+                milestoneUpdates: {reflection : {...milestone.reflection, imgSrc: localStorage.getItem(`${milestone.id}`)}}
             }));
         });
-    };
+    }
 
     return (
         <div>
@@ -50,14 +48,15 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         {/**/}
                         <input
                             type="file"
-                            id="uploadImg-btn"
+                            id={`uploadImg-btn-${milestone.id}`}
                             className={'hidden'}
+                            onClick={() => console.log("clicked for milestone", milestone.id)}
                             onChange={(e) => {
-                                uploadImgHandler(e, milestone.id);
+                                uploadImgHandler(e);
                             }}
                         />
                         <label
-                            htmlFor="uploadImg-btn"
+                            htmlFor={`uploadImg-btn-${milestone.id}`}
                         >
                             <div
                                 className={
@@ -101,17 +100,17 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                     <p><b> Reflection</b></p>
                     <input
                         onChange={(e) => {
-                            setOnChange(true);
-                            setReflection({...milestone.reflection, content: e.target.value});
+                            setOnChange(true)
+                            setReflection(e.target.value)
                         }}
                         className={
                             'my-2 bg-gray-50 border border-gray-200 w-full p-2 rounded-lg'
                         }
-                        value={`${reflection.content ?? ''}`}
+                        value={`${reflection}`}
                     />
                 </div>
                 <button
-                    className={`${reflection.content && !onChange ? 'hidden' : 'block'} ${
+                    className={`${milestone.reflection?.content && !onChange ? 'hidden' : 'block'} ${
                         onChange ? 'bg-[#535edb] text-white hover:scale-[.95]' : 'bg-gray-200'
                     } bg-gray-200 flex p-2 rounded-3xl text-sm`}
                     onClick={() => {
@@ -119,8 +118,9 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         dispatch(updateGoalMilestone({
                             goal,
                             currentMilestoneId: milestone.id,
-                            milestoneUpdates: {reflection}
+                            milestoneUpdates: {reflection: {content: reflection }}
                         }))
+                        setReflection("")
                     }}
                 >
                     <img className={'mr-3'} src={onChange ? saveWhite : save}/>
