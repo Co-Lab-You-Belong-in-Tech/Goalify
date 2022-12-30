@@ -32,7 +32,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
     return (
         <div>
             <div className={'pl-4 pr-2 pb-2 mb-4 flex bg-white  flex-col'}>
-                {/*visible.reflectionImhg && */}
+                visible.reflectionImg &&
                 {localStorage.getItem(`${goal.id}#${milestone.id}`) ? (
                     <div>
                         <img
@@ -76,7 +76,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         onClick={() => {
                             setVisible({
                                 ...visible,
-                                reflectionImhg: !visible.reflectionImhg,
+                                reflectionImg: !visible.reflectionImg,
                             });
                         }}
                     >
@@ -87,9 +87,9 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         >
                             <img
                                 className={'mr-3'}
-                                src={visible.reflectionImhg ? hide : show}
+                                src={visible.reflectionImg ? hide : show}
                             />
-                            <p> {visible.reflectionImhg ? 'Hide image ' : ' View image'}</p>
+                            <p> {visible.reflectionImg ? 'Hide image ' : ' View image'}</p>
                         </div>
                     </button>
                 </div>
