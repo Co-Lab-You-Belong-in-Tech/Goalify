@@ -27,18 +27,21 @@ const GoalPage = () => {
           <img className= "hover:scale-[.95]" src={Glogo} alt="Goalify logo" />
         </Link>
         <div className={'flex justify-center items-center gap-4  '}>
-          <img className={'p-2 rounded-3xl border bg-[#fafafa] hover:scale-[.85] '} src={plusI} />
+          <img className={'p-2 rounded-3xl border bg-[#fafafa] hover:scale-[.85] '} src={plusI} title="Feature is under development"
+  data-tooltip="This is the tooltip content" />
           <div
             className={'bg-gray-200 w-8 h-8 flex justify-center items-center rounded-3xl'
             }>
-            <img src={dir} />
+            <img src={dir} title="Feature is under development"
+  data-tooltip="This is the tooltip content" />
           </div>
           <div
             className={
               'bg-gray-200 w-8 h-8 flex justify-center items-center rounded-3xl'
             }
           >
-            <img src={share} />
+            <img src={share} title="Feature is under development"
+  data-tooltip="This is the tooltip content" />
           </div>
           
           <div className={"rounded-3xl w-10 h-10"}> <img src={localStorage.getItem('userAvatar')} alt="userAvatar" className={"rounded-3xl w-10 h-10"}/> 

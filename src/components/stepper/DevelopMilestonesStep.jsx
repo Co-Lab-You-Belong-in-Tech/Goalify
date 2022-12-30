@@ -44,12 +44,12 @@ function CreateNewGoal({setGoal}) {
     return <div>
         <p className={"text-xl font-bold leading-9 text-[#152e40]"}> Developing your new goal </p>
         <div className={"flex my-3 font-Normal items-center"}>
-            <p className={"inline text-lg"}>
+            <p className={"inline text-lg font-medium"}>
                 <img width={24} height={24} src={net} alt="edit" className="pr-2 inline"/>
                 To develop this goal, let’s break it down into smaller goals or as we call them, milestones.
             </p>
         </div>
-        <p className={"text-sm font-normal leading-5 pb-5 text-[#454749]"} variant="caption" display="block" gutterBottom>
+        <p className={"text-sm font-normal leading-5 pb-5 text-[#757575]"} variant="caption" display="block" gutterBottom>
             Visualize the end result of the goal you are working on to a high standard.
             Work backwards to plan each step you need to take to increase the chances of achieving this goal.
             Have a go at setting a few milestones you think would be worth celebrating towards your goal and don’t
