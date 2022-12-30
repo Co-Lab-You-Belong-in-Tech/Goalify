@@ -38,6 +38,7 @@ const Card = ({ goal }) => {
     goal.milestones.filter((m) => !m.completed)[0]
   );
 
+  const getNumberOfAchieved =  goal.milestones.filter(m => m.completed).length
 
   const getCurrentMilestone =
     indexOfFirstCompleted === -1
@@ -137,7 +138,7 @@ const Card = ({ goal }) => {
           <div className="flex px-1 pt-1">
             <img className="w-5 h-5" src={progressI} alt="progress" />
             <span className="pl-2 text-xs font-normal text-[#717171]">
-              {getCurrentMilestone}/{goal.milestones.length} Milestones Reached
+              {getNumberOfAchieved}/{goal.milestones.length} Milestones Reached
             </span>
           </div>
           {view ? (
