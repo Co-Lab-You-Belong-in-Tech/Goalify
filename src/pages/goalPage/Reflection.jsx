@@ -72,26 +72,30 @@ const Reflection = ({setVisible, visible, milestone, goal}) => {
                             <img src={selectEmoji}/>
                         </div>
                     </div>
-                    <button
-                        onClick={() => {
-                            setVisible({
-                                ...visible,
-                                reflectionImg: !visible.reflectionImg,
-                            });
-                        }}
-                    >
-                        <div
-                            className={
-                                'hover:bg-blue-100 font-semibold text-xs h-9 rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-2 flex justify-between items-center'
-                            }
+                    {milestone.reflection?.imgSrc?
+                        <button
+                            onClick={() => {
+                                setVisible({
+                                    ...visible,
+                                    reflectionImg: !visible.reflectionImg,
+                                });
+                            }}
                         >
-                            <img
-                                className={'mr-3'}
-                                src={visible.reflectionImg ? hide : show}
-                            />
-                            <p> {visible.reflectionImg ? 'Hide image ' : ' View image'}</p>
-                        </div>
-                    </button>
+                            <div
+                                className={
+                                    'hover:bg-blue-100 font-semibold text-xs h-9 rounded-3xl w-fit p-2 bg-[#F4F6FF] mr-2 flex justify-between items-center'
+                                }
+                            >
+                                <img
+                                    className={'mr-3'}
+                                    src={visible.reflectionImg ? hide : show}
+                                />
+                                <p> {visible.reflectionImg? 'Hide image ' : ' View image'}</p>
+                            </div>
+                        </button> : ''
+
+                    }
+
                 </div>
             </div>
 
