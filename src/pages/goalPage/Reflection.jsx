@@ -69,7 +69,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) => {
                         <div
                             className={'h-8 bg-[#F4F6FF]  rounded-3xl w-fit p-2  mr-4'}
                         >
-                            <img src={selectEmoji}/>
+                            <img src={selectEmoji} title="Feature under development"/>
                         </div>
                     </div>
                     {milestone.reflection?.imgSrc?
