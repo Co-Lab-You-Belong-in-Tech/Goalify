@@ -8,23 +8,25 @@ import save from "../../assets/icons/save.svg";
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 
-const Reflection = ({setVisible, visible, milestone, goal}) =>
-{
+const Reflection = ({setVisible, visible, milestone, goal}) => {
     const dispatch = useDispatch();
     const [onChange, setOnChange] = useState(false);
-    const [reflection, setReflection] = useState(milestone.reflection?.content);
+    const [reflection, setReflection] = useState(milestone.reflection?.content || '');
 
     const uploadImgHandler = (event) => {
-        console.log("Uploading image for milestone ID", milestone.id)
-        // setSelectedFile(event.target.files[0]);
         const reader = new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.addEventListener('load', () => {
-            localStorage.setItem(`${milestone.id}`, reader.result);
+            localStorage.setItem(`${goal.id}#${milestone.id}`, reader.result);
             dispatch(updateGoalMilestone({
                 goal,
                 currentMilestoneId: milestone.id,
-                milestoneUpdates: {reflection : {...milestone.reflection, imgSrc: localStorage.getItem(`${milestone.id}`)}}
+                milestoneUpdates: {
+                    reflection: {
+                        ...milestone.reflection,
+                        imgSrc: localStorage.getItem(`${goal.id}#${milestone.id}`)
+                    }
+                }
             }));
         });
     }
@@ -32,20 +34,18 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
     return (
         <div>
             <div className={'pl-4 pr-2 pb-2 mb-4 flex bg-white  flex-col'}>
-                {/*visible.reflectionImhg && */}
-                {localStorage.getItem(`${milestone.id}`) ? (
+                {visible.reflectionImg &&
+                localStorage.getItem(`${goal.id}#${milestone.id}`) ? (
                     <div>
                         <img
                             className={`h-96 object-contain`}
-                            src={localStorage.getItem(`${milestone.id}`)}
+                            src={localStorage.getItem(`${goal.id}#${milestone.id}`)}
                         />
-                        <p> {milestone.id} </p>
                     </div>
-                ) : <p> {milestone.id} {localStorage.getItem(`${milestone.id}`)} </p>}
+                ) : ''}
 
                 <div className={'flex mt-4 justify-between'}>
                     <div className={'flex'}>
-                        {/**/}
                         <input
                             type="file"
                             id={`uploadImg-btn-${milestone.id}`}
@@ -76,7 +76,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         onClick={() => {
                             setVisible({
                                 ...visible,
-                                reflectionImhg: !visible.reflectionImhg,
+                                reflectionImg: !visible.reflectionImg,
                             });
                         }}
                     >
@@ -87,9 +87,9 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         >
                             <img
                                 className={'mr-3'}
-                                src={visible.reflectionImhg ? hide : show}
+                                src={visible.reflectionImg ? hide : show}
                             />
-                            <p> {visible.reflectionImhg ? 'Hide image ' : ' View image'}</p>
+                            <p> {visible.reflectionImg ? 'Hide image ' : ' View image'}</p>
                         </div>
                     </button>
                 </div>
@@ -118,7 +118,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) =>
                         dispatch(updateGoalMilestone({
                             goal,
                             currentMilestoneId: milestone.id,
-                            milestoneUpdates: {reflection: {content: reflection }}
+                            milestoneUpdates: {reflection: {content: reflection}}
                         }))
                         setReflection("")
                     }}

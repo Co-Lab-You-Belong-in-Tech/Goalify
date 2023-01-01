@@ -30,7 +30,6 @@ export default function InitialGoalMessage() {
 
         <div className="border divide-neutral-300 rounded-lg border-indigo-50  p-5 bg-white	">
             <Grid display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-
                 <p className="text-xl font-medium leading-9 ">
                     Looks like you don’t have any goals just yet....let’s get that sorted
                 </p>
