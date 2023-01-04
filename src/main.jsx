@@ -34,6 +34,7 @@ const router = createBrowserRouter([
     {
         path: '/goals/:goalId',
         element: <GoalPage/>,
+        errorElement: <ErrorPage/>,
     },
 ]);
 
