@@ -122,7 +122,7 @@ const Reflection = ({setVisible, visible, milestone, goal}) => {
                         dispatch(updateGoalMilestone({
                             goal,
                             currentMilestoneId: milestone.id,
-                            milestoneUpdates: {reflection: {content: reflection}}
+                            milestoneUpdates: {reflection: {...milestone.reflection, content: reflection}}
                         }))
                         setReflection("")
                     }}
